@@ -1,0 +1,85 @@
+/* style.css - giao diện đơn giản, tương tự mẫu gốc */
+:root{
+  --max-width: 900px;
+  --accent: #222;
+  --muted: #666;
+  --bg: #fff;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background: #f6f7fb;
+  color: #111;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width: var(--max-width);
+  margin: 48px auto;
+  background: var(--bg);
+  padding: 28px;
+  border-radius:8px;
+  box-shadow: 0 6px 20px rgba(20,20,40,0.06);
+}
+
+h1{
+  margin:0 0 6px 0;
+  font-size:28px;
+  color: var(--accent);
+}
+
+.lead{
+  margin:0 0 18px 0;
+  color: var(--muted);
+}
+
+section{ margin-top:22px; }
+
+.welcome p { margin:8px 0 0 0; }
+
+.members ul{
+  list-style: none;
+  padding:0;
+  margin: 8px 0 0 0;
+}
+
+.members li{
+  padding:8px 10px;
+  border-radius:6px;
+  background: #fbfbfd;
+  border: 1px solid #eee;
+  margin-bottom:8px;
+  display:inline-block;
+  min-width:160px;
+}
+
+.task{
+  background: #fbfbff;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #eee;
+  margin-bottom:12px;
+}
+
+.task h3{ margin:0 0 6px 0; }
+.btn{
+  display:inline-block;
+  padding:8px 12px;
+  text-decoration:none;
+  border-radius:6px;
+  border:1px solid #ddd;
+  color: var(--accent);
+  background: transparent;
+}
+
+.site-footer{
+  margin-top:28px;
+  border-top:1px solid #f0f0f0;
+  padding-top:14px;
+  color: var(--muted);
+  font-size:14px;
+  text-align:center;
+}
