@@ -4,8 +4,99 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nhóm 5 – 12Anh</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS GỘP CHUNG TRONG 1 FILE -->
+  <style>
+    :root{
+      --accent: #2a72ff;
+      --accent-dark: #1e55cc;
+      --background: #f0f5ff;
+      --text: #0d1b2a;
+      --muted: #556;
+      --card: #ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      font-family: "Segoe UI", Arial;
+      margin:0;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .container{
+      max-width:900px;
+      margin:40px auto;
+      background: var(--card);
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 10px 0;
+      font-size:32px;
+      color: var(--accent-dark);
+    }
+
+    .lead{
+      margin:0 0 18px 0;
+      color: var(--muted);
+    }
+
+    section{ margin-top:28px; }
+
+    .members ul{
+      list-style:none;
+      padding:0;
+      margin:12px 0 0 0;
+    }
+
+    .members li{
+      background:#e8efff;
+      color:#123;
+      padding:10px 14px;
+      border-radius:8px;
+      border:1px solid #d3dfff;
+      margin-bottom:8px;
+      display:inline-block;
+      min-width:150px;
+      font-weight:500;
+    }
+
+    .task{
+      background:#f7f9ff;
+      border:1px solid #dbe3ff;
+      border-radius:8px;
+      padding:14px;
+      margin-bottom:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:8px 14px;
+      text-decoration:none;
+      background: var(--accent);
+      color:white;
+      border-radius:6px;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      background: var(--accent-dark);
+    }
+
+    .site-footer{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid #eee;
+      text-align:center;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
   <main class="container">
     <h1>Nhóm 5 – 12Anh</h1>
@@ -33,13 +124,13 @@
 
       <article class="task">
         <h3>Bài tập 1</h3>
-        <p>Mô tả bài làm</p>
+        <p>Mô tả bài làm...</p>
         <p><a href="#" class="btn">Xem bài làm</a></p>
       </article>
 
       <article class="task">
         <h3>Bài tập 2</h3>
-        <p>Mô tả bài làm</p>
+        <p>Mô tả bài làm...</p>
         <p><a href="#" class="btn">Xem bài làm</a></p>
       </article>
     </section>
@@ -48,7 +139,7 @@
       <h2>Bài thuyết trình</h2>
       <article>
         <h3>Chủ đề thuyết trình</h3>
-        <p>Mô tả ngắn nội dung thuyết trình.</p>
+        <p>Mô tả nội dung thuyết trình...</p>
         <p><a href="#" class="btn">Xem bài thuyết trình</a></p>
       </article>
     </section>
