@@ -3,153 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nhóm 5 – 12Anh</title>
+  <title>Nhóm 5 – 12Anh (Inside Out Theme)</title>
 
-  <!-- CSS GỘP CHUNG TRONG 1 FILE -->
   <style>
     :root{
-      --accent: #2a72ff;
-      --accent-dark: #1e55cc;
-      --background: #f0f5ff;
-      --text: #0d1b2a;
-      --muted: #556;
-      --card: #ffffff;
+      --joy: #FFD700;        /* vàng tươi */
+      --sadness: #1E90FF;    /* xanh da trời */
+      --anger: #FF4500;      /* đỏ cam */
+      --fear: #8A2BE2;       /* tím */
+      --disgust: #32CD32;    /* xanh lá */
+      --background: #FFF8E7; /* nền sáng, ấm áp */
+      --text: #333;
+      --muted: #555;
+      --card: #FFFFFF;
     }
 
-    *{ box-sizing:border-box; }
+    *{ box-sizing:border-box; margin:0; padding:0; }
 
     body{
-  font-family: "Segoe UI", Arial;
-  margin:0;
-  background-image: url('images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--text);
-}
-
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      min-height: 100vh;
+    }
 
     .container{
       max-width:900px;
       margin:40px auto;
       background: var(--card);
       padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      border: 4px solid var(--joy);
     }
 
     h1{
-      margin:0 0 10px 0;
-      font-size:32px;
-      color: var(--accent-dark);
+      font-size:36px;
+      color: var(--joy);
+      text-align:center;
+      margin-bottom:10px;
     }
 
     .lead{
-      margin:0 0 18px 0;
+      text-align:center;
+      font-size:18px;
       color: var(--muted);
+      margin-bottom:28px;
     }
 
     section{ margin-top:28px; }
 
+    .members h2, .assignments h2, .presentation h2{
+      color: var(--sadness);
+      border-bottom: 2px solid var(--fear);
+      display:inline-block;
+      padding-bottom:4px;
+      margin-bottom:14px;
+    }
+
     .members ul{
       list-style:none;
       padding:0;
-      margin:12px 0 0 0;
+      display:flex;
+      flex-wrap: wrap;
+      gap:10px;
     }
 
     .members li{
-      background:#e8efff;
-      color:#123;
+      background: var(--disgust);
+      color:white;
       padding:10px 14px;
-      border-radius:8px;
-      border:1px solid #d3dfff;
-      margin-bottom:8px;
-      display:inline-block;
-      min-width:150px;
-      font-weight:500;
+      border-radius:12px;
+      border:2px solid var(--fear);
+      font-weight:600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .members li:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .members li a{
+      color:white;
+      text-decoration:none;
     }
 
     .task{
-      background:#f7f9ff;
-      border:1px solid #dbe3ff;
-      border-radius:8px;
-      padding:14px;
-      margin-bottom:14px;
+      background: #FFF5E6;
+      border:2px solid var(--joy);
+      border-radius:12px;
+      padding:16px;
+      margin-bottom:16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .task:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .task h3{
+      color: var(--anger);
+      margin-bottom:6px;
     }
 
     .btn{
       display:inline-block;
-      padding:8px 14px;
+      padding:10px 16px;
       text-decoration:none;
-      background: var(--accent);
+      background: var(--joy);
       color:white;
-      border-radius:6px;
+      border-radius:8px;
       font-weight:600;
+      transition: background 0.2s, transform 0.2s;
     }
 
     .btn:hover{
-      background: var(--accent-dark);
+      background: var(--anger);
+      transform: scale(1.05);
     }
 
     .site-footer{
-      margin-top:26px;
-      padding-top:14px;
-      border-top:1px solid #eee;
+      margin-top:36px;
+      padding-top:16px;
+      border-top:2px dashed var(--fear);
       text-align:center;
       color: var(--muted);
+      font-style: italic;
     }
   </style>
 </head>
 
 <body>
   <main class="container">
-    <section class="members">
-  <h2>Thành viên nhóm</h2>
-  <ul>
-    <li><a href="thanh.html">Huỳnh Thị Kim Thanh</a></li>
-    <li><a href="diep.html">Huỳnh Thị Ngọc Diệp</a></li>
-    <li><a href="dang.html">Hồ Hải Đăng</a></li>
-    <li><a href="thao.html">Thiều Quang Thảo</a></li>
-    <li><a href="thuan.html">Lương Huy Thuận</a></li>
-  </ul>
-</section>
-
     <h1>Nhóm 5 – 12Anh</h1>
-
     <p class="lead">Trang web tổng hợp bài tập – thuyết trình – sản phẩm học tập</p>
+
+    <section class="members">
+      <h2>Thành viên nhóm</h2>
+      <ul>
+        <li><a href="thanh.html">Huỳnh Thị Kim Thanh</a></li>
+        <li><a href="diep.html">Huỳnh Thị Ngọc Diệp</a></li>
+        <li><a href="dang.html">Hồ Hải Đăng</a></li>
+        <li><a href="thao.html">Thiều Quang Thảo</a></li>
+        <li><a href="thuan.html">Lương Huy Thuận</a></li>
+      </ul>
+    </section>
 
     <section class="welcome">
       <h2>Xin chào!</h2>
       <p>Chào mừng bạn đến với trang web của Nhóm 5 – 12Anh. Đây là nơi lưu trữ toàn bộ bài tập và sản phẩm học tập của nhóm.</p>
     </section>
 
-   
-
     <section class="assignments">
       <h2>Bài tập</h2>
 
-     <article class="task">
-    <h3>Link 2</h3>
-    <p>Mô tả bài làm: B9,B10</p>
-    <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">
-        Xem bài làm
-    </a></p>
-</article>
-
+      <article class="task">
+        <h3>Link 1</h3>
+        <p>Mô tả bài làm: B4 → B6</p>
+        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài làm</a></p>
+      </article>
 
       <article class="task">
-    <h3>Link 2</h3>
-    <p>Mô tả bài làm: B9,B10</p>
-    <p><a href="https://www.canva.com/design/DAG5eW-rS0E/VyfOyU2q73o4RTjtogj_pw/edit" class="btn" target="_blank">
-        Xem bài làm
-    </a></p>
-</article>
+        <h3>Link 2</h3>
+        <p>Mô tả bài làm: B9, B10</p>
+        <p><a href="https://www.canva.com/design/DAG5eW-rS0E/VyfOyU2q73o4RTjtogj_pw/edit" class="btn" target="_blank">Xem bài làm</a></p>
+      </article>
 
     </section>
 
     <section class="presentation">
       <h2>Bài thuyết trình</h2>
-      <article>
+      <article class="task">
         <h3>Chủ đề thuyết trình</h3>
         <p>Mô tả nội dung thuyết trình...</p>
         <p><a href="#" class="btn">Xem bài thuyết trình</a></p>
@@ -157,7 +183,7 @@
     </section>
 
     <footer class="site-footer">
-      <p>© 2025 – Nhóm 5 – 12Anh</p>
+      <p>© 2025 – Nhóm 5 – 12Anh | Theme: Inside Out</p>
     </footer>
   </main>
 </body>
