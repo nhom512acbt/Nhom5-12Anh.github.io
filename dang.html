@@ -3,58 +3,249 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thông tin thành viên - Hồ Hải Đăng</title>
+  <title>Sadness Profile – Hồ Hải Đăng</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
+    :root{
+      --s1:#90a7ff;
+      --s2:#4a6bff;
+      --s3:#283a87;
+      --bg1:#d8e1ff;
+      --bg2:#b5c3ff;
+    }
+
+    /* NỀN BẦU TRỜI XANH + MƯA RƠI */
     body{
-      font-family: "Segoe UI", Arial;
-      background:#f0f5ff;
       margin:0;
-      padding:0;
-      color:#0d1b2a;
+      font-family: "Segoe UI", Arial;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      overflow-x:hidden;
+      position:relative;
+      height:100%;
     }
+
+    /* Mưa */
+    .rain{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      z-index:0;
+      background-image:
+       radial-gradient(circle, rgba(255,255,255,0.9) 2px, transparent 2px);
+      background-size: 3px 40px;
+      animation: rainFall 0.7s linear infinite;
+      opacity:0.55;
+    }
+
+    @keyframes rainFall {
+      0%{ background-position: 0 0; }
+      100%{ background-position: -3px 40px; }
+    }
+
+    /* Bong bóng nổi */
+    .bubble{
+      position:fixed;
+      bottom:-50px;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.4);
+      animation: bubble 6s linear infinite;
+      filter:blur(1px);
+    }
+
+    @keyframes bubble {
+      0%{ transform:translateY(0) scale(1); }
+      100%{ transform:translateY(-120vh) scale(1.8); opacity:0; }
+    }
+
+    /* CARD PROFILE */
     .card{
-      max-width:600px;
-      margin:40px auto;
+      max-width:750px;
+      margin:100px auto 80px;
       background:white;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.1);
+      border-radius:25px;
+      padding:45px;
       text-align:center;
+      position:relative;
+      z-index:2;
+      box-shadow:0 0 30px rgba(70,90,255,0.4);
+      border:5px solid var(--s1);
+      animation: cardGlow 4s ease-in-out infinite;
     }
-    img{
-      width:160px;
-      height:160px;
+
+    @keyframes cardGlow{
+      0%{ box-shadow:0 0 20px rgba(70,90,255,0.35); }
+      50%{ box-shadow:0 0 40px rgba(70,90,255,0.8); }
+      100%{ box-shadow:0 0 20px rgba(70,90,255,0.35); }
+    }
+
+    /* SADNESS ĐI QUA LẠI */
+    .sadness-walk{
+      position:absolute;
+      bottom:-30px;
+      left:-120px;
+      width:150px;
+      z-index:3;
+      animation: walk 12s linear infinite;
+      opacity:0.92;
+    }
+
+    @keyframes walk{
+      0%{ left:-200px; transform:scaleX(1); }
+      45%{ left:calc(100% - 50px); transform:scaleX(1); }
+      50%{ transform:scaleX(-1); }
+      95%{ left:-200px; transform:scaleX(-1); }
+      100%{ transform:scaleX(1); }
+    }
+
+    /* AVATAR */
+    .avatar{
+      width:170px;
+      height:170px;
       border-radius:50%;
       object-fit:cover;
-      margin-bottom:20px;
-      border:4px solid #dbe3ff;
+      border:6px solid #cdd9ff;
+      box-shadow:0 0 30px rgba(90,110,255,0.6);
+      animation: glowAvatar 4s ease-in-out infinite;
+      margin-top:15px;
     }
+
+    @keyframes glowAvatar{
+      0%{ box-shadow:0 0 20px rgba(60,80,255,0.35); }
+      50%{ box-shadow:0 0 40px rgba(60,80,255,0.7); }
+      100%{ box-shadow:0 0 20px rgba(60,80,255,0.35); }
+    }
+
+    /* GIỌT NƯỚC */
+    .tear{
+      position:absolute;
+      top:-10px;
+      right:15px;
+      font-size:25px;
+      animation: tearDrop 2.5s linear infinite;
+      opacity:0.8;
+    }
+
+    @keyframes tearDrop {
+      0%{ transform:translateY(0); opacity:0; }
+      30%{ opacity:1; }
+      100%{ transform:translateY(150px); opacity:0; }
+    }
+
+    h2{
+      color:var(--s3);
+      font-size:30px;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .section-title{
+      font-size:22px;
+      font-weight:700;
+      margin-top:30px;
+      margin-bottom:12px;
+      color:var(--s2);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .box{
+      background:var(--s1);
+      padding:20px;
+      border-radius:15px;
+      text-align:left;
+      border-left:6px solid var(--s3);
+      color:#0d1b2a;
+      margin-bottom:18px;
+      box-shadow:0 5px 12px rgba(0,0,0,0.1);
+    }
+
     a{
       display:inline-block;
-      margin-top:20px;
-      padding:10px 18px;
-      background:#2a72ff;
+      margin-top:35px;
+      padding:12px 20px;
+      background:var(--s2);
       color:white;
-      border-radius:6px;
+      border-radius:10px;
       text-decoration:none;
       font-weight:600;
+      transition:.2s;
+      box-shadow:0 5px 15px rgba(60,80,255,0.4);
     }
     a:hover{
-      background:#1e55cc;
+      background:var(--s3);
     }
+
   </style>
 </head>
 
 <body>
+
+  <div class="rain"></div>
+
+  <!-- Bong bóng -->
+  <script>
+    for(let i=0;i<18;i++){
+      const b=document.createElement("div");
+      b.className="bubble";
+      b.style.left=Math.random()*100+"%";
+      b.style.width=b.style.height=(10+Math.random()*20)+"px";
+      b.style.animationDuration=(5+Math.random()*4)+"s";
+      document.body.appendChild(b);
+    }
+  </script>
+
   <div class="card">
-    <img src="hinhdang.jpg" alt="Avatar Đăng">
+
+    <img class="sadness-walk" 
+      src="https://static.wikia.nocookie.net/pixar/images/2/2d/Sadness_Render.png"/>
+
+    <div class="tear">💧</div>
+
+    <img class="avatar" src="hinhdang.jpg">
 
     <h2>Hồ Hải Đăng</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 15/07/2008</p>
 
+    <div class="section-title">
+      <span class="material-icons">person</span> Giới thiệu
+    </div>
+    <div class="box">
+      Xin chào! Mình là <strong>Hồ Hải Đăng</strong>.  
+      Tính cách dịu dàng, trầm một chút – giống Sadness.  
+      Mình thích sự bình yên, thích lắng nghe và luôn muốn giúp đỡ người khác theo cách nhẹ nhàng nhất.
+    </div>
+
+    <div class="section-title">
+      <span class="material-icons">emoji_emotions</span> Tính cách
+    </div>
+    <div class="box">
+      • Nhạy cảm nhưng chân thành  
+      • Kiên nhẫn  
+      • Suy nghĩ logic  
+      • Tốt bụng và thấu hiểu  
+    </div>
+
+    <div class="section-title">
+      <span class="material-icons">favorite</span> Sở thích
+    </div>
+    <div class="box">
+      • Học tiếng Anh mỗi ngày 
+      • Nghe nhạc nhẹ  
+      • Đọc sách khám phá điều mới  
+      • Ngắm trời mưa  
+    </div>
+
     <a href="index.html">← Quay lại trang chính</a>
   </div>
+
 </body>
 </html>
