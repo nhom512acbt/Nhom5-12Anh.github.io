@@ -3,104 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thông tin thành viên - Huỳnh Thị Kim Thanh</title>
+  <title>Huỳnh Thị Kim Thanh</title>
 
   <style>
-    body{
-      font-family: "Segoe UI", Arial, sans-serif;
-      background:#f0f5ff;
-      margin:0;
-      padding:0;
-      color:#0d1b2a;
+    :root{
+      --g1:#ffe6f0; 
+      --g2:#ffb6d9; 
+      --g3:#e6396f; 
+      --dark:#0d1b2a;
     }
+
+    /* NỀN LẤP LÁNH */
+    body{
+      margin:0;
+      font-family: "Segoe UI", Arial;
+      background:linear-gradient(180deg, var(--g1), var(--g2));
+      overflow-x:hidden;
+    }
+
+    /* BỤI BAY */
+    .dust{
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      pointer-events:none;
+      background-image:
+        radial-gradient(rgba(255,255,255,0.8) 2px, transparent 2px),
+        radial-gradient(rgba(255,255,255,0.5) 1.5px, transparent 1.5px);
+      background-size: 3px 60px, 2px 40px;
+      animation: dustMove 1.5s linear infinite;
+      opacity:0.55;
+      z-index:0;
+    }
+
+    @keyframes dustMove{
+      from{ background-position:0 0, 0 0; }
+      to{ background-position:-3px 60px, 2px 40px; }
+    }
+
+    /* CARD */
     .card{
-      max-width:600px;
-      margin:40px auto;
+      max-width:750px;
+      margin:100px auto 80px;
       background:white;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.1);
+      padding:45px;
+      border-radius:25px;
+      position:relative;
+      z-index:2;
+      border:5px solid var(--g2);
+      box-shadow:0 0 30px rgba(230, 57, 111,0.4);
+      animation: glowCard 4s ease-in-out infinite;
       text-align:center;
     }
-    img{
+
+    @keyframes glowCard{
+      0%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
+      50%{ box-shadow:0 0 40px rgba(230,57,111,0.9); }
+      100%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
+    }
+
+    /* ENVY ĐI NGANG */
+    .envy-walk{
+      position:absolute;
+      bottom:-35px;
+      left:-150px;
       width:160px;
-      height:160px;
+      opacity:0.97;
+      animation: envyWalk 11s linear infinite;
+    }
+
+    @keyframes envyWalk{
+      0%{ left:-180px; transform:scaleX(1); }
+      45%{ left:calc(100% - 60px); transform:scaleX(1); }
+      50%{ transform:scaleX(-1); }
+      95%{ left:-180px; transform:scaleX(-1); }
+      100%{ transform:scaleX(1); }
+    }
+
+    /* AVATAR */
+    img.avatar{
+      width:170px;
+      height:170px;
       border-radius:50%;
       object-fit:cover;
-      margin-bottom:20px;
-      border:4px solid #dbe3ff;
+      border:6px solid #ffb6d9;
+      box-shadow:0 0 30px rgba(230,57,111,0.7);
+      animation: glowAvatar 4s ease-in-out infinite;
+      margin-top:15px;
     }
-    a{
-      display:inline-block;
-      margin-top:20px;
-      padding:10px 18px;
-      background:#2a72ff;
-      color:white;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:600;
+
+    @keyframes glowAvatar{
+      0%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
+      50%{ box-shadow:0 0 40px rgba(230,57,111,0.8); }
+      100%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
     }
-    a:hover{
-      background:#1e55cc;
+
+    /* ICON LUNG LINH */
+    .envy-sparkle{
+      position:absolute;
+      top:-10px;
+      right:20px;
+      font-size:28px;
+      color:#ff4da6;
+      opacity:0.9;
+      animation: sparkle 2.8s linear infinite;
     }
-    .section{
-      text-align:left;
-      margin-top:20px;
+
+    @keyframes sparkle{
+      0%{ transform:translateY(0) scale(1); opacity:0; }
+      30%{ opacity:1; }
+      100%{ transform:translateY(140px) scale(1.4); opacity:0; }
     }
-    .section h3{
-      color:#2a72ff;
+
+    h2{
+      font-size:30px;
+      color:var(--dark);
       margin-bottom:10px;
+      font-weight:700;
     }
-    .section p, .section ul{
+
+    p{
+      font-size:18px;
       margin:5px 0 15px 0;
+    }
+
+    .section-title{
+      font-size:22px;
+      font-weight:600;
+      margin-top:25px;
+      color:var(--g3);
+      text-align:left;
+    }
+
+    .box{
+      text-align:left;
+      margin:10px 0 20px 0;
       line-height:1.6;
     }
-    .section ul{
-      list-style: square inside;
-      padding-left:0;
+
+    a{
+      display:inline-block;
+      margin-top:35px;
+      padding:12px 25px;
+      background:var(--g3);
+      color:white;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 5px 15px rgba(230,57,111,0.3);
+      transition:.2s;
     }
+    a:hover{ background:#b5174f; }
+
   </style>
 </head>
 
 <body>
+
+  <div class="dust"></div>
+
   <div class="card">
-    <img src="hinhthanh.jpg" alt="Avatar Thanh">
+
+    <img class="envy-walk"
+      src="https://i.pinimg.com/originals/df/aa/11/dfaa11e4de1e9e41e983d85396de423d.png"
+      alt="Inside Out 2 - Envy">
+
+    <div class="envy-sparkle">✨</div>
+
+    <img class="avatar" src="hinhthanh.jpg" alt="Avatar Kim Thanh">
 
     <h2>Huỳnh Thị Kim Thanh</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 25/05/2008</p>
 
-    <div class="section">
-      <h3>Sơ lược</h3>
-      <p>Mình là một cá nhân năng động, luôn tràn đầy năng lượng và ham học hỏi. Mình luôn tìm cách khám phá những điều mới mẻ và không ngại thử thách bản thân trong mọi lĩnh vực.</p>
+    <div class="section-title">🌿 Sơ lược</div>
+    <div class="box">
+      Mình là một cá nhân năng động, luôn tràn đầy năng lượng và ham học hỏi. Mình luôn tìm cách khám phá những điều mới mẻ và không ngại thử thách bản thân trong mọi lĩnh vực.
     </div>
 
-    <div class="section">
-      <h3>Tính cách</h3>
-      <p>Mình vui vẻ, thân thiện và hòa đồng, dễ dàng tạo ấn tượng tốt với mọi người xung quanh. Đồng thời, mình cũng rất kiên nhẫn và quyết tâm, luôn kiên trì đạt mục tiêu đã đề ra.</p>
+    <div class="section-title">💚 Tính cách</div>
+    <div class="box">
+      • Vui vẻ, thân thiện và hòa đồng<br>
+      • Kiên nhẫn, quyết tâm, luôn kiên trì đạt mục tiêu
     </div>
 
-    <div class="section">
-      <h3>Sở thích</h3>
-      <ul>
-        <li>Đọc sách</li>
-        <li>Nghe nhạc</li>
-        <li>Khám phá nghệ thuật</li>
-        <li>Tham gia các hoạt động nhóm và dự án xã hội</li>
-      </ul>
+    <div class="section-title">✨ Sở thích</div>
+    <div class="box">
+      • Đọc sách<br>
+      • Nghe nhạc<br>
+      • Khám phá nghệ thuật<br>
+      • Tham gia các hoạt động nhóm và dự án xã hội
     </div>
 
-    <div class="section">
-      <h3>Định hướng nghề nghiệp</h3>
-      <p>Mình hướng tới một sự nghiệp trong lĩnh vực quản lý dự án hoặc marketing, nơi mình có thể kết hợp khả năng sáng tạo, tư duy logic và kỹ năng giao tiếp hiệu quả.</p>
+    <div class="section-title">🎯 Định hướng nghề nghiệp</div>
+    <div class="box">
+      Mình hướng tới một sự nghiệp trong lĩnh vực quản lý dự án hoặc marketing, nơi có thể kết hợp khả năng sáng tạo, tư duy logic và kỹ năng giao tiếp hiệu quả.
     </div>
 
-    <div class="section">
-      <h3>Mục tiêu</h3>
-      <p>Mình phấn đấu trở thành chuyên gia trong lĩnh vực mình chọn, xây dựng sự nghiệp vững chắc và cân bằng cuộc sống, đồng thời truyền cảm hứng tích cực đến những người xung quanh.</p>
+    <div class="section-title">🏆 Mục tiêu</div>
+    <div class="box">
+      Phấn đấu trở thành chuyên gia trong lĩnh vực mình chọn, xây dựng sự nghiệp vững chắc và cân bằng cuộc sống, đồng thời truyền cảm hứng tích cực đến mọi người xung quanh.
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
+
   </div>
+
 </body>
 </html>
