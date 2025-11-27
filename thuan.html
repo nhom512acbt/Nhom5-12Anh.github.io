@@ -3,58 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thông tin thành viên - Lương Huy Thuận</title>
+  <title>Lương Huy Thuận</title>
 
   <style>
-    body{
-      font-family: "Segoe UI", Arial;
-      background:#f0f5ff;
-      margin:0;
-      padding:0;
-      color:#0d1b2a;
+    :root{
+      --r1:#ffd1c0;
+      --r2:#ff9b7a;
+      --r3:#ff3b1f;
+      --dark:#1a0d0d;
     }
+
+    /* NỀN NÓNG GIẬN */
+    body{
+      margin:0;
+      font-family: "Segoe UI", Arial;
+      background:linear-gradient(180deg, var(--r1), var(--r2));
+      overflow-x:hidden;
+    }
+
+    /* TIA LỬA BAY */
+    .embers{
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      pointer-events:none;
+      background-image:
+        radial-gradient(rgba(255,80,0,0.9) 3px, transparent 3px),
+        radial-gradient(rgba(255,110,0,0.7) 2px, transparent 2px);
+      background-size: 4px 60px, 3px 40px;
+      animation: fireMove 1.2s linear infinite;
+      opacity:0.55;
+      z-index:0;
+    }
+
+    @keyframes fireMove{
+      from{ background-position:0 0, 0 0; }
+      to{ background-position:-4px 60px, 3px 40px; }
+    }
+
+    /* CARD */
     .card{
-      max-width:600px;
-      margin:40px auto;
+      max-width:750px;
+      margin:100px auto 80px;
       background:white;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.1);
+      padding:45px;
+      border-radius:25px;
+      position:relative;
+      z-index:2;
+      border:5px solid var(--r2);
+      box-shadow:0 0 30px rgba(255,60,0,0.45);
+      animation: glowCard 4s ease-in-out infinite;
       text-align:center;
     }
-    img{
+
+    @keyframes glowCard{
+      0%{ box-shadow:0 0 20px rgba(255,50,0,0.35); }
+      50%{ box-shadow:0 0 45px rgba(255,40,0,1); }
+      100%{ box-shadow:0 0 20px rgba(255,50,0,0.35); }
+    }
+
+    /* ANGER ĐI NGANG */
+    .anger-walk{
+      position:absolute;
+      bottom:-40px;
+      left:-160px;
       width:160px;
-      height:160px;
+      opacity:0.96;
+      animation: angerWalk 10s linear infinite;
+    }
+
+    @keyframes angerWalk{
+      0%{ left:-200px; transform:scaleX(1); }
+      45%{ left:calc(100% - 60px); transform:scaleX(1); }
+      50%{ transform:scaleX(-1); }
+      95%{ left:-200px; transform:scaleX(-1); }
+      100%{ transform:scaleX(1); }
+    }
+
+    /* LỬA BỐC (ANGRY SPARK) */
+    .angry-fire{
+      position:absolute;
+      top:-10px;
+      right:20px;
+      font-size:34px;
+      color:#ff3b1f;
+      animation: fireUp 2.2s ease-in-out infinite;
+    }
+
+    @keyframes fireUp{
+      0%{ transform:translateY(0) scale(1); opacity:0; }
+      20%{ opacity:1; }
+      100%{ transform:translateY(-140px) scale(1.4); opacity:0; }
+    }
+
+    /* AVATAR */
+    img.avatar{
+      width:170px;
+      height:170px;
       border-radius:50%;
       object-fit:cover;
-      margin-bottom:20px;
-      border:4px solid #dbe3ff;
+      border:6px solid #ffd3c8;
+      box-shadow:0 0 30px rgba(255,60,0,0.7);
+      animation: glowAvatar 3.5s ease-in-out infinite;
+      margin-top:15px;
     }
+
+    @keyframes glowAvatar{
+      0%{ box-shadow:0 0 20px rgba(255,40,0,0.35); }
+      50%{ box-shadow:0 0 45px rgba(255,40,0,0.9); }
+      100%{ box-shadow:0 0 20px rgba(255,40,0,0.35); }
+    }
+
+    h2{
+      font-size:30px;
+      color:var(--dark);
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    p{
+      font-size:18px;
+    }
+
     a{
       display:inline-block;
-      margin-top:20px;
-      padding:10px 18px;
-      background:#2a72ff;
+      margin-top:35px;
+      padding:12px 25px;
+      background:var(--r3);
       color:white;
-      border-radius:6px;
+      border-radius:10px;
       text-decoration:none;
       font-weight:600;
+      box-shadow:0 6px 15px rgba(255,40,0,0.4);
+      transition:.2s;
     }
-    a:hover{
-      background:#1e55cc;
-    }
+    a:hover{ background:#b62012; }
   </style>
 </head>
 
 <body>
+
+  <div class="embers"></div>
+
   <div class="card">
-    <img src="thuan.jpg" alt="Avatar Thuận">
+
+    <img class="anger-walk"
+      src="https://i.pinimg.com/originals/4b/1d/13/4b1d13ba3527776e79a0e1d87bb151b7.png"
+      alt="Inside Out - Anger">
+
+    <div class="angry-fire">🔥</div>
+
+    <img class="avatar" src="thuan.jpg">
 
     <h2>Lương Huy Thuận</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 09/10/2008</p>
 
     <a href="index.html">← Quay lại trang chính</a>
+
   </div>
+
 </body>
 </html>
+
