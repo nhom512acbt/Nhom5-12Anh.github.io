@@ -3,58 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thông tin thành viên - Thiều Quang Thảo</title>
+  <title>Thiều Quang Thảo</title>
 
   <style>
-    body{
-      font-family: "Segoe UI", Arial;
-      background:#f0f5ff;
-      margin:0;
-      padding:0;
-      color:#0d1b2a;
+    :root{
+      --g1:#fff2d9; 
+      --g2:#ffd9a3; 
+      --g3:#ff7b00; 
+      --dark:#2b1a0f;
     }
+
+    body{
+      margin:0;
+      font-family:"Segoe UI", Arial;
+      background:linear-gradient(180deg, var(--g1), var(--g2));
+      overflow-x:hidden;
+    }
+
+    /* Bụi sáng cam */
+    .dust{
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      pointer-events:none;
+      background-image:
+        radial-gradient(rgba(255,255,255,0.8) 2px, transparent 2px),
+        radial-gradient(rgba(255,180,80,0.7) 1.5px, transparent 1.5px);
+      background-size:3px 60px, 2px 40px;
+      animation:dustMove 1.7s linear infinite;
+      opacity:0.55;
+      z-index:0;
+    }
+
+    @keyframes dustMove{
+      from{background-position:0 0, 0 0;}
+      to{background-position:-3px 60px, 2px 40px;}
+    }
+
+    /* Thẻ thông tin */
     .card{
-      max-width:600px;
-      margin:40px auto;
+      max-width:750px;
+      margin:100px auto 80px;
       background:white;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.1);
+      padding:45px;
+      border-radius:25px;
+      position:relative;
+      z-index:2;
+      border:5px solid var(--g2);
+      box-shadow:0 0 30px rgba(255,140,40,0.4);
+      animation:glowCard 4s ease-in-out infinite;
       text-align:center;
     }
-    img{
-      width:160px;
-      height:160px;
+
+    @keyframes glowCard{
+      0%{box-shadow:0 0 20px rgba(255,140,40,0.35);}
+      50%{box-shadow:0 0 40px rgba(255,140,40,1);}
+      100%{box-shadow:0 0 20px rgba(255,140,40,0.35);}
+    }
+
+    /* Nhân vật đi ngang */
+    .envy-walk{
+      position:absolute;
+      bottom:-35px;
+      left:-150px;
+      width:180px;
+      opacity:0.97;
+      animation:envyWalk 11s linear infinite;
+    }
+
+    @keyframes envyWalk{
+      0%{left:-200px; transform:scaleX(1);}
+      45%{left:calc(100% - 40px); transform:scaleX(1);}
+      50%{transform:scaleX(-1);}
+      95%{left:-200px; transform:scaleX(-1);}
+      100%{transform:scaleX(1);}
+    }
+
+    /* Ảnh đại diện */
+    img.avatar{
+      width:170px;
+      height:170px;
       border-radius:50%;
       object-fit:cover;
-      margin-bottom:20px;
-      border:4px solid #dbe3ff;
+      border:6px solid #ffa347;
+      box-shadow:0 0 30px rgba(255,130,20,0.7);
+      animation:glowAvatar 4s ease-in-out infinite;
+      margin-top:15px;
     }
+
+    @keyframes glowAvatar{
+      0%{box-shadow:0 0 20px rgba(255,140,40,0.35);}
+      50%{box-shadow:0 0 40px rgba(255,140,40,0.8);}
+      100%{box-shadow:0 0 20px rgba(255,140,40,0.35);}
+    }
+
+    /* Sparkle hiệu ứng */
+    .envy-sparkle{
+      position:absolute;
+      top:-10px;
+      right:20px;
+      font-size:28px;
+      color:#ff8c1a;
+      opacity:0.9;
+      animation:sparkle 2.5s linear infinite;
+    }
+
+    @keyframes sparkle{
+      0%{transform:translateY(0) scale(1); opacity:0;}
+      30%{opacity:1;}
+      100%{transform:translateY(140px) scale(1.4); opacity:0;}
+    }
+
+    h2{
+      font-size:30px;
+      color:var(--dark);
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    p{
+      font-size:18px;
+      margin:5px 0 15px 0;
+    }
+
+    .section-title{
+      font-size:22px;
+      font-weight:600;
+      margin-top:25px;
+      color:var(--g3);
+      text-align:left;
+    }
+
+    .box{
+      text-align:left;
+      margin:10px 0 20px 0;
+      line-height:1.6;
+    }
+
     a{
       display:inline-block;
-      margin-top:20px;
-      padding:10px 18px;
-      background:#2a72ff;
+      margin-top:35px;
+      padding:12px 25px;
+      background:var(--g3);
       color:white;
-      border-radius:6px;
+      border-radius:10px;
       text-decoration:none;
       font-weight:600;
+      box-shadow:0 5px 15px rgba(255,120,10,0.3);
+      transition:.2s;
     }
-    a:hover{
-      background:#1e55cc;
-    }
+    a:hover{background:#cc6100;}
   </style>
 </head>
 
 <body>
+
+  <div class="dust"></div>
+
   <div class="card">
-    <img src="thao.jpg" alt="Avatar Thảo">
+
+    <!-- Nhân vật hoạt hình bạn gửi -->
+    <img class="envy-walk" 
+      src="character.png" 
+      alt="Nhân vật hoạt hình">
+
+    <div class="envy-sparkle">✨</div>
+
+    <img class="avatar" src="avatar.jpg" alt="Avatar Quang Thảo">
 
     <h2>Thiều Quang Thảo</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 04/04/2008</p>
 
+    <div class="section-title">🔥 Sơ lược</div>
+    <div class="box">
+      Mình là người luôn tràn đầy năng lượng, thích tạo không khí vui vẻ cho mọi người. Tính cách hơi “cháy”, hơi nghịch nhưng luôn chân thành và nhiệt huyết trong mọi việc mình làm.
+    </div>
+
+    <div class="section-title">⚡ Tính cách</div>
+    <div class="box">
+      • Nhiệt tình, hài hước và rất dễ gần<br>
+      • Sáng tạo, linh hoạt, làm việc có cảm hứng<br>
+      • Dám nghĩ – dám làm – dám bùng nổ
+    </div>
+
+    <div class="section-title">🎨 Sở thích</div>
+    <div class="box">
+      • Nghe nhạc và remix thử nghiệm<br>
+      • Thiết kế, sáng tạo nội dung<br>
+      • Chơi game giải trí<br>
+      • Tham gia các hoạt động tập thể
+    </div>
+
+    <div class="section-title">🎯 Định hướng tương lai</div>
+    <div class="box">
+      Mình muốn theo các lĩnh vực liên quan đến sáng tạo như thiết kế đồ họa, truyền thông hoặc xây dựng nội dung. Môi trường càng năng động – càng hợp với mình.
+    </div>
+
+    <div class="section-title">💬 Châm ngôn sống</div>
+    <div class="box">
+      <i>“Đừng để bản thân mờ nhạt khi sinh ra vốn dĩ đã đủ rực rỡ.”</i>
+    </div>
+
+    <div class="section-title">🎧 Bài nhạc yêu thích</div>
+    <div class="box">
+      Nghe tại đây:  
+      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">🎶 Click để mở</a>
+    </div>
+
     <a href="index.html">← Quay lại trang chính</a>
+
   </div>
+
 </body>
 </html>
+
