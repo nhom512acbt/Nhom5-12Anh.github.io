@@ -1,4 +1,4 @@
-F<!doctype html>
+<!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
@@ -7,50 +7,72 @@ F<!doctype html>
 
   <style>
   body{
-  position: relative;
-  overflow-x: hidden; /* chỉ ẩn tràn ngang, không khoá scroll dọc */
-}
+    position: relative;
+    overflow-x: hidden;
+  }
 
-/* Background hình của bạn + blur */
-body::before{
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("background.jpg") center/cover no-repeat;
-  
-  filter: blur(5px) brightness(0.85);
-  -webkit-filter: blur(15px) brightness(0.85);
+  /* Background hình mờ */
+  body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background.jpg") center/cover no-repeat;
+    filter: blur(5px) brightness(0.85);
+    -webkit-filter: blur(15px) brightness(0.85);
+    z-index: -1;
+  }
 
-  z-index: -1; /* nằm dưới toàn bộ nội dung */
-}
+  /* ===========================
+        BANNER FULL + SƯƠNG MÙ
+     =========================== */
 
-    .top-banner{
-  width: 100%;
-  height: 200px; /* banner cao rõ ràng */
-  background: linear-gradient(to bottom, #00205B, #003A70);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+  .top-banner{
+    width: 100%;
+    height: 260px;         /* Bạn muốn tăng lên? → chỉ cần đổi số */
+    position: relative;
+    overflow: hidden;
+  }
 
+  .top-banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* hình phủ toàn bộ banner */
+  }
 
-.top-banner img{
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-}
+  /* Hiệu ứng sương mù */
+  .fog{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: url("fog.png") repeat-x;
+    opacity: 0.45;
+    animation: fog-move 18s linear infinite;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    filter: blur(8px);
+  }
 
+  @keyframes fog-move{
+    from{ transform: translateX(-20%); }
+    to{ transform: translateX(20%); }
+  }
 
-    :root{
-      --joy: #FFD700;        /* vàng tươi */
-      --sadness: #1E90FF;    /* xanh da trời */
-      --anger: #FF4500;      /* đỏ cam */
-      --fear: #8A2BE2;       /* tím */
-      --disgust: #32CD32;    /* xanh lá */
-      --background: #FFF8E7; /* nền sáng, ấm áp */
+  /* ===========================
+          CÁC STYLE GỐC
+     =========================== */
+
+  :root{
+      --joy: #FFD700;
+      --sadness: #1E90FF;
+      --anger: #FF4500;
+      --fear: #8A2BE2;
+      --disgust: #32CD32;
+      --background: #FFF8E7;
       --text: #333;
       --muted: #555;
       --card: #FFFFFF;
@@ -174,9 +196,13 @@ body::before{
 </head>
 
 <body>
+
+  <!-- BANNER FULL WIDTH + FOG -->
   <div class="top-banner">
-  <img src="banner.jpg" alt="Banner của nhóm">
+    <img src="banner.jpg" alt="Banner của nhóm">
+    <div class="fog"></div>
   </div>
+
   <main class="container">
     <h1>Nhóm 5 – 12Anh</h1>
     <p class="lead">Trang web tổng hợp bài tập – thuyết trình – sản phẩm học tập</p>
@@ -211,8 +237,6 @@ body::before{
         <p>Mô tả bài làm: B9, B10</p>
         <p><a href="https://www.canva.com/design/DAG5eW-rS0E/VyfOyU2q73o4RTjtogj_pw/edit" class="btn" target="_blank">Xem bài làm</a></p>
       </article>
-
-   
 
     <footer class="site-footer">
       <p>© 2025 – Nhóm 5 – 12Anh | Theme: Inside Out</p>
