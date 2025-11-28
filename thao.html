@@ -20,7 +20,6 @@
       overflow-x:hidden;
     }
 
-    /* Bụi sáng cam */
     .dust{
       position:fixed;
       top:0; left:0;
@@ -40,7 +39,6 @@
       to{background-position:-3px 60px, 2px 40px;}
     }
 
-    /* Thẻ thông tin */
     .card{
       max-width:750px;
       margin:100px auto 80px;
@@ -61,7 +59,6 @@
       100%{box-shadow:0 0 20px rgba(255,140,40,0.35);}
     }
 
-    /* Nhân vật đi ngang */
     .envy-walk{
       position:absolute;
       bottom:-35px;
@@ -79,7 +76,6 @@
       100%{transform:scaleX(1);}
     }
 
-    /* Ảnh đại diện */
     img.avatar{
       width:170px;
       height:170px;
@@ -97,7 +93,6 @@
       100%{box-shadow:0 0 20px rgba(255,140,40,0.35);}
     }
 
-    /* Sparkle hiệu ứng */
     .envy-sparkle{
       position:absolute;
       top:-10px;
@@ -136,7 +131,7 @@
 
     .box{
       text-align:left;
-      margin:10px 0 20px 0;
+      margin:10px 0 20px;
       line-height:1.6;
     }
 
@@ -162,7 +157,6 @@
 
   <div class="card">
 
-    <!-- Nhân vật hoạt hình bạn gửi -->
     <img class="envy-walk" 
       src="character.png" 
       alt="Nhân vật hoạt hình">
@@ -182,22 +176,22 @@
 
     <div class="section-title">⚡ Tính cách</div>
     <div class="box">
-      • Nhiệt tình, hài hước và rất dễ gần<br>
-      • Sáng tạo, linh hoạt, làm việc có cảm hứng<br>
+      • Nhiệt tình, hài hước và dễ gần<br>
+      • Sáng tạo, linh hoạt, làm việc theo cảm hứng<br>
       • Dám nghĩ – dám làm – dám bùng nổ
     </div>
 
     <div class="section-title">🎨 Sở thích</div>
     <div class="box">
-      • Nghe nhạc và remix thử nghiệm<br>
+      • Nghe nhạc và remix<br>
       • Thiết kế, sáng tạo nội dung<br>
       • Chơi game giải trí<br>
-      • Tham gia các hoạt động tập thể
+      • Hoạt động tập thể
     </div>
 
     <div class="section-title">🎯 Định hướng tương lai</div>
     <div class="box">
-      Mình muốn theo các lĩnh vực liên quan đến sáng tạo như thiết kế đồ họa, truyền thông hoặc xây dựng nội dung. Môi trường càng năng động – càng hợp với mình.
+      Mình muốn theo các ngành liên quan đến sáng tạo nội dung, thiết kế đồ họa hoặc truyền thông.
     </div>
 
     <div class="section-title">💬 Châm ngôn sống</div>
@@ -205,10 +199,17 @@
       <i>“Đừng để bản thân mờ nhạt khi sinh ra vốn dĩ đã đủ rực rỡ.”</i>
     </div>
 
+    <!-- =============================
+         🎧 MUSIC PLAYER TRỰC TIẾP
+       ============================= -->
     <div class="section-title">🎧 Bài nhạc yêu thích</div>
     <div class="box">
-      Nghe tại đây:  
-      <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">🎶 Click để mở</a>
+      <iframe width="100%" height="120"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1"
+              title="YouTube music player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+      </iframe>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
@@ -217,4 +218,5 @@
 
 </body>
 </html>
+
 
