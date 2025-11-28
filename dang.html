@@ -17,7 +17,7 @@
       --bg2:#b5c3ff;
     }
 
-    /* NỀN BẦU TRỜI XANH + MƯA RƠI */
+    /* Nền */
     body{
       margin:0;
       font-family: "Segoe UI", Arial;
@@ -27,7 +27,7 @@
       height:100%;
     }
 
-    /* Mưa */
+    /* ---- HIỆU ỨNG MƯA ---- */
     .rain{
       position:fixed;
       top:0;
@@ -44,8 +44,30 @@
     }
 
     @keyframes rainFall {
-      0%{ background-position: 0 0; }
-      100%{ background-position: -3px 40px; }
+      from{ background-position: 0 0; }
+      to{ background-position: -3px 40px; }
+    }
+
+    /* ---- SƯƠNG MÙ ---- */
+    .fog{
+      position:fixed;
+      top:0;
+      left:0;
+      width:160%;
+      height:160%;
+      pointer-events:none;
+      background:url('https://i.imgur.com/2ZC5ZVn.png');
+      background-size:cover;
+      opacity:0.55;
+      filter:blur(14px);
+      animation:fogMove 35s linear infinite;
+      z-index:1;
+    }
+
+    @keyframes fogMove{
+      0%{ transform:translate(-60px,-40px); }
+      50%{ transform:translate(70px,40px); }
+      100%{ transform:translate(-60px,-40px); }
     }
 
     /* Bong bóng nổi */
@@ -58,6 +80,7 @@
       background:rgba(255,255,255,0.4);
       animation: bubble 6s linear infinite;
       filter:blur(1px);
+      z-index:1;
     }
 
     @keyframes bubble {
@@ -74,7 +97,7 @@
       padding:45px;
       text-align:center;
       position:relative;
-      z-index:2;
+      z-index:3;
       box-shadow:0 0 30px rgba(70,90,255,0.4);
       border:5px solid var(--s1);
       animation: cardGlow 4s ease-in-out infinite;
@@ -86,7 +109,7 @@
       100%{ box-shadow:0 0 20px rgba(70,90,255,0.35); }
     }
 
-    /* SADNESS ĐI QUA LẠI */
+    /* Sadness đi qua lại */
     .sadness-walk{
       position:absolute;
       bottom:-30px;
@@ -105,7 +128,7 @@
       100%{ transform:scaleX(1); }
     }
 
-    /* AVATAR */
+    /* Avatar */
     .avatar{
       width:170px;
       height:170px;
@@ -123,7 +146,6 @@
       100%{ box-shadow:0 0 20px rgba(60,80,255,0.35); }
     }
 
-    /* GIỌT NƯỚC */
     .tear{
       position:absolute;
       top:-10px;
@@ -184,11 +206,31 @@
       background:var(--s3);
     }
 
+    /* Nút bật/tắt âm thanh */
+    .btn{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:5;
+      padding:10px 18px;
+      background:rgba(255,255,255,0.2);
+      border:1px solid white;
+      border-radius:10px;
+      color:white;
+      backdrop-filter:blur(6px);
+      cursor:pointer;
+      font-weight:600;
+    }
+
   </style>
 </head>
 
 <body>
 
+  <!-- SƯƠNG MÙ -->
+  <div class="fog"></div>
+
+  <!-- MƯA -->
   <div class="rain"></div>
 
   <!-- Bong bóng -->
@@ -203,11 +245,27 @@
     }
   </script>
 
+  <!-- ÂM THANH MƯA -->
+  <audio id="rainSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7f4d9f22b0.mp3?filename=rain-ambient-110239.mp3" loop></audio>
+
+  <button class="btn" onclick="toggleRain()">🔊 Âm mưa</button>
+
+  <script>
+    const sound = document.getElementById("rainSound");
+
+    function toggleRain(){
+      if(sound.paused){
+        sound.play();
+      } else {
+        sound.pause();
+      }
+    }
+  </script>
+
   <div class="card">
 
     <img class="sadness-walk" 
-      src="<img src="https://th.bing.com/th/id/R.fc7156f24d0e1b875ad0ccf6f9d69064?rik=cYzMPei36vJkdg&pid=ImgRaw&r=0" alt="Inside Out - Sadness" width="300">
-"/>
+         src="https://th.bing.com/th/id/R.fc7156f24d0e1b875ad0ccf6f9d69064?rik=cYzMPei36vJkdg&pid=ImgRaw&r=0">
 
     <div class="tear">💧</div>
 
@@ -239,7 +297,7 @@
       <span class="material-icons">favorite</span> Sở thích
     </div>
     <div class="box">
-      • Học tiếng Anh mỗi ngày 
+      • Học tiếng Anh mỗi ngày  
       • Nghe nhạc nhẹ  
       • Đọc sách khám phá điều mới  
       • Ngắm trời mưa  
