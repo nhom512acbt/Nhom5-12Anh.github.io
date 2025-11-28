@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài tập 1 – Tin học</title>
+
+<style>
+  :root{
+      --joy: #FFD700;
+      --sadness: #1E90FF;
+      --anger: #FF4500;
+      --fear: #8A2BE2;
+      --disgust: #32CD32;
+      --bg: #FFF8E7;
+      --text: #333;
+    }
+
+  body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+  }
+
+  /* Nền mờ giống trang chính */
+  body::before{
+    content:"";
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:url("background.jpg") center/cover no-repeat;
+    filter: blur(8px) brightness(0.85);
+    z-index:-1;
+  }
+
+  /* Khung bài */
+  .container{
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    padding:35px;
+    border-radius:16px;
+    border:4px solid var(--joy);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  }
+
+  h1{
+    text-align:center;
+    color:var(--sadness);
+    margin-bottom:10px;
+    font-size:34px;
+  }
+
+  .subtitle{
+    text-align:center;
+    font-size:18px;
+    color:#666;
+    margin-bottom:20px;
+  }
+
+  h2{
+    margin-top:28px;
+    color:var(--fear);
+    border-left:5px solid var(--anger);
+    padding-left:10px;
+  }
+
+  p, li{
+    font-size:18px;
+    line-height:1.6;
+    color:var(--text);
+  }
+
+  .box{
+    background:#FFF3D2;
+    padding:18px;
+    border-left:6px solid var(--joy);
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:15px;
+  }
+
+  .back-btn{
+    display:inline-block;
+    margin-top:30px;
+    text-decoration:none;
+    background:var(--joy);
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.2s;
+  }
+  .back-btn:hover{
+    background:var(--anger);
+    transform:scale(1.05);
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Bài tập 1 – Tin học</h1>
+  <p class="subtitle">Nội dung: Bài B4 → B6 (SGK Tin học 12)</p>
+
+  <!-- B4 -->
+  <h2>Bài B4 – Phân tích yêu cầu</h2>
+  <div class="box">
+    <p><strong>Yêu cầu:</strong> Tóm tắt, phân tích nội dung bài toán Tin học được giao.</p>
+    <p><strong>Bài làm:</strong><br>
+      • Xác định mục tiêu cần xử lý trong bài.<br>
+      • Tìm các dữ liệu đầu vào, đầu ra.<br>
+      • Phân tích quy trình xử lý và mối quan hệ giữa chúng.<br>
+      • Liệt kê các thành phần cần được mô tả hoặc lập trình.
+    </p>
+  </div>
+
+  <!-- B5 -->
+  <h2>Bài B5 – Thiết kế thuật toán</h2>
+  <div class="box">
+    <p><strong>Yêu cầu:</strong> Xây dựng thuật toán hoặc lưu đồ theo nội dung bài.</p>
+    <p><strong>Bài làm:</strong><br>
+      • Xây dựng chuỗi bước xử lý theo đúng logic.<br>
+      • Sử dụng cấu trúc: tuần tự – rẽ nhánh – lặp.<br>
+      • Thể hiện thuật toán bằng liệt kê hoặc sơ đồ khối.<br>
+      • Bảo đảm thuật toán chính xác và đầy đủ cho bài toán.
+    </p>
+  </div>
+
+  <!-- B6 -->
+  <h2>Bài B6 – Trình bày kết quả</h2>
+  <div class="box">
+    <p><strong>Yêu cầu:</strong> Trình bày lại kết quả, mô tả, phân tích hoặc giải pháp cuối cùng.</p>
+    <p><strong>Bài làm:</strong><br>
+      • Tóm tắt quá trình xử lý dữ liệu.<br>
+      • Nêu ra kết quả đã đạt được sau khi hoàn thành thuật toán.<br>
+      • Kiểm tra độ chính xác: đối chiếu dữ liệu đầu vào – đầu ra.<br>
+      • Đánh giá ưu điểm, hạn chế của thuật toán vừa xây dựng.
+    </p>
+  </div>
+
+  <a href="index.html" class="back-btn">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>
