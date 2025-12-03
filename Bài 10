@@ -124,58 +124,34 @@
 
     <!-- Luyện tập 1 -->
     <div class="question">
-      Luyện tập 1 trang 61: Viết đoạn mã để tạo liên kết quay về trang chủ <strong>CLB.html</strong> trong trang <strong>thong_tin.html</strong>.
+      Luyện tập 1 trang 61: Tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.
     </div>
 
     <div class="solution">
-      <p><strong>Lời giải:</strong></p>
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Thông tin&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Thông tin CLB&lt;/h1&gt;
-    &lt;p&gt;Đây là trang thông tin về CLB của chúng ta.&lt;/p&gt;
-
-    &lt;!-- Liên kết quay về trang chủ --&gt;
-    &lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+      <h2>Trang thông tin CLB</h2>
+      <h3>Nội dung trang</h3>
+      <p>Đây là trang thông tin về CLB của chúng ta.</p>
+      <!-- Liên kết quay về trang chủ -->
+      <a href="CLB.html" class="btn">Quay về trang chủ</a>
     </div>
 
     <!-- Luyện tập 2 -->
     <div class="question">
-      Luyện tập 2 trang 61: Viết một trang web giới thiệu bản thân, có ít nhất 3 liên kết tới Facebook của ba bạn cùng lớp.
+      Luyện tập 2 trang 61: Giới thiệu bản thân với ít nhất 3 liên kết tới Facebook của bạn cùng lớp.
     </div>
 
     <div class="solution">
-      <p><strong>Lời giải:</strong></p>
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
-    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+      <h2>Giới thiệu bản thân</h2>
+      <p>Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.</p>
 
-    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+      <h3>Bạn cùng lớp</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/friend1" target="_blank">Facebook của Bạn 1</a></li>
+        <li><a href="https://www.facebook.com/friend2" target="_blank">Facebook của Bạn 2</a></li>
+        <li><a href="https://www.facebook.com/friend3" target="_blank">Facebook của Bạn 3</a></li>
+      </ul>
 
-    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+      <p>Cảm ơn bạn đã ghé thăm!</p>
     </div>
 
     <p><a href="index.html" class="btn">Quay lại Trang chính</a></p>
