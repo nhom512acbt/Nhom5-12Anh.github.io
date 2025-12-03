@@ -1,162 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bài 10 – Tạo liên kết</title>
-
-  <style>
-    :root{
-      --joy: #FFD700;
-      --sadness: #1E90FF;
-      --anger: #FF4500;
-      --fear: #8A2BE2;
-      --disgust: #32CD32;
-      --background: #FFF8E7;
-      --text: #333;
-      --muted: #555;
-      --card: #FFFFFF;
-      --highlight: #FFF3C4;
-    }
-
-    *{ box-sizing:border-box; margin:0; padding:0; }
-
-    body{
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: var(--background);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      animation: fade-in 1s ease-out;
-    }
-
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(-20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-
-    .container{
-      max-width:900px;
-      margin:40px auto;
-      background: var(--card);
-      padding:30px;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.1);
-      border: 4px solid var(--joy);
-      animation: slide-down 0.8s ease-out;
-    }
-
-    @keyframes slide-down {
-      from { opacity: 0; transform: translateY(-30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-
-    h1{
-      font-size:32px;
-      color: var(--joy);
-      text-align:center;
-      margin-bottom:20px;
-    }
-
-    h2{
-      color: var(--sadness);
-      border-bottom: 2px solid var(--fear);
-      display:inline-block;
-      padding-bottom:4px;
-      margin-bottom:20px;
-    }
-
-    .question{
-      background: var(--highlight);
-      border-left: 6px solid var(--anger);
-      padding:16px;
-      margin-bottom:16px;
-      font-weight:bold;
-      color: var(--anger);
-    }
-
-    .solution{
-      background:#E0F7FA;
-      border:2px solid var(--sadness);
-      padding:16px;
-      border-radius:12px;
-      margin-bottom:20px;
-      animation: glow 1.5s infinite alternate;
-    }
-
-    @keyframes glow{
-      from { box-shadow: 0 0 10px rgba(30,144,255,0.5);}
-      to { box-shadow: 0 0 20px rgba(30,144,255,0.8);}
-    }
-
-    ul{ margin-left:20px; }
-
-    .btn{
-      display:inline-block;
-      padding:10px 16px;
-      text-decoration:none;
-      background: var(--joy);
-      color:white;
-      border-radius:8px;
-      font-weight:600;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .btn:hover{
-      background: var(--anger);
-      transform: scale(1.05);
-    }
-
-    .site-footer{
-      margin-top:36px;
-      padding-top:16px;
-      border-top:2px dashed var(--fear);
-      text-align:center;
-      color: var(--muted);
-      font-style: italic;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Hiển thị code HTML</title>
+    <style>
+        body {
+            font-family: Consolas, monospace;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        pre {
+            background-color: #fff;
+            border: 2px solid #FFD700;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        h1 {
+            color: #FF4500;
+        }
+    </style>
 </head>
-
 <body>
-  <main class="container">
-    <h1>Bài 10 – Tạo liên kết</h1>
 
-    <!-- Luyện tập 1 -->
-    <div class="question">
-      Luyện tập 1 trang 61: Viết đoạn mã để tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.
-    </div>
+<h1>Luyện tập 1 trang 61</h1>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Thông tin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Nội dung của trang thông tin --&gt;
+    &lt;h1&gt;Thông tin CLB&lt;/h1&gt;
+    &lt;p&gt;Đây là trang thông tin về CLB của chúng ta.&lt;/p&gt;
+    &lt;!-- Liên kết quay về trang chủ --&gt;
+    &lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-    <div class="solution">
-      <h2>Trang thông tin CLB</h2>
-      <p>Đây là trang thông tin về CLB của chúng ta.</p>
-      <a href="CLB.html" class="btn">Quay về trang chủ</a>
-    </div>
+<h1>Luyện tập 2 trang 61</h1>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-    <!-- Luyện tập 2 -->
-    <div class="question">
-      Luyện tập 2 trang 61: Viết một trang web giới thiệu bản thân, trong đó để ít nhất 3 liên kết tới trang web (Facebook) của ba bạn cùng lớp.
-    </div>
-
-    <div class="solution">
-      <h2>Giới thiệu bản thân</h2>
-      <p>Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.</p>
-
-      <h3>Bạn cùng lớp</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/friend1" target="_blank">Facebook của Bạn 1</a></li>
-        <li><a href="https://www.facebook.com/friend2" target="_blank">Facebook của Bạn 2</a></li>
-        <li><a href="https://www.facebook.com/friend3" target="_blank">Facebook của Bạn 3</a></li>
-      </ul>
-
-      <p>Cảm ơn bạn đã ghé thăm!</p>
-    </div>
-
-    <p><a href="index.html" class="btn">Quay lại Trang chính</a></p>
-
-    <footer class="site-footer">
-      <p>© 2025 – Nhóm 5 – 12Anh | Theme: Inside Out</p>
-    </footer>
-  </main>
 </body>
 </html>
