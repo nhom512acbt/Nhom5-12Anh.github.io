@@ -3,12 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bài 9: Tạo danh sách, bảng</title>
+  <title>Bài 9 – Tạo danh sách, bảng</title>
 
   <style>
-    /* =====================
-          CHUNG
-       ===================== */
     :root{
       --joy: #FFD700;
       --sadness: #1E90FF;
@@ -131,22 +128,12 @@
       color: var(--muted);
       font-style: italic;
     }
-
-    code{
-      background: #f2f2f2;
-      padding:4px 6px;
-      border-radius:4px;
-      display:block;
-      margin:8px 0;
-      overflow-x:auto;
-    }
   </style>
 </head>
 
 <body>
-
   <main class="container">
-    <h1>Bài tập Tin học 12 – Trang 56</h1>
+    <h1>Bài 9 – Tạo danh sách, bảng</h1>
 
     <div class="question">
       Luyện tập trang 56 Tin học 12: Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì border để tạo viền cho bảng. Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
@@ -173,23 +160,38 @@
 
     <div class="solution">
       <p><strong>Lời giải:</strong></p>
-      <code>
-def generate_html_table(data):<br>
-&nbsp;&nbsp;html_content = "&lt;table style='border-collapse: collapse;'&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;tr&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;th style='border: 2px solid blue;'&gt;Họ tên&lt;/th&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;th style='border: 2px solid blue;'&gt;Điểm Toán&lt;/th&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;th style='border: 2px solid blue;'&gt;Điểm Vật lí&lt;/th&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;th style='border: 2px solid blue;'&gt;Điểm Hóa học&lt;/th&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;/tr&gt;"<br>
-&nbsp;&nbsp;for row in data:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;html_content += "&lt;tr&gt;"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;for value in row:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html_content += f"&lt;td style='border: 2px solid black;'&gt;{value}&lt;/td&gt;"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;html_content += "&lt;/tr&gt;"<br>
-&nbsp;&nbsp;html_content += "&lt;/table&gt;"<br>
-&nbsp;&nbsp;return html_content
-      </code>
+      <table>
+        <tr>
+          <th style="border: 2px solid blue;">Họ tên</th>
+          <th style="border: 2px solid blue;">Điểm Toán</th>
+          <th style="border: 2px solid blue;">Điểm Vật lí</th>
+          <th style="border: 2px solid blue;">Điểm Hóa học</th>
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;">Nguyễn Văn A</td>
+          <td style="border: 2px solid black;">8.5</td>
+          <td style="border: 2px solid black;">7.0</td>
+          <td style="border: 2px solid black;">9.0</td>
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;">Trần Thị B</td>
+          <td style="border: 2px solid black;">7.0</td>
+          <td style="border: 2px solid black;">8.0</td>
+          <td style="border: 2px solid black;">8.5</td>
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;">Lê Quang C</td>
+          <td style="border: 2px solid black;">6.5</td>
+          <td style="border: 2px solid black;">7.5</td>
+          <td style="border: 2px solid black;">8.0</td>
+        </tr>
+        <tr>
+          <td style="border: 2px solid black;">Phạm Thị D</td>
+          <td style="border: 2px solid black;">9.0</td>
+          <td style="border: 2px solid black;">8.5</td>
+          <td style="border: 2px solid black;">7.5</td>
+        </tr>
+      </table>
     </div>
 
     <p><a href="index.html" class="btn">Quay lại Trang chính</a></p>
@@ -198,6 +200,6 @@ def generate_html_table(data):<br>
       <p>© 2025 – Nhóm 5 – 12Anh | Theme: Inside Out</p>
     </footer>
   </main>
-
 </body>
 </html>
+
