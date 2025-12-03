@@ -124,20 +124,18 @@
 
     <!-- Luyện tập 1 -->
     <div class="question">
-      Luyện tập 1 trang 61: Tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.
+      Luyện tập 1 trang 61: Viết đoạn mã để tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.
     </div>
 
     <div class="solution">
       <h2>Trang thông tin CLB</h2>
-      <h3>Nội dung trang</h3>
       <p>Đây là trang thông tin về CLB của chúng ta.</p>
-      <!-- Liên kết quay về trang chủ -->
       <a href="CLB.html" class="btn">Quay về trang chủ</a>
     </div>
 
     <!-- Luyện tập 2 -->
     <div class="question">
-      Luyện tập 2 trang 61: Giới thiệu bản thân với ít nhất 3 liên kết tới Facebook của bạn cùng lớp.
+      Luyện tập 2 trang 61: Viết một trang web giới thiệu bản thân, trong đó để ít nhất 3 liên kết tới trang web (Facebook) của ba bạn cùng lớp.
     </div>
 
     <div class="solution">
