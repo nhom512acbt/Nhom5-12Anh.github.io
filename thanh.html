@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Huỳnh Thị Kim Thanh</title>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <style>
     :root{
-      --g1:#ffe6f0; 
-      --g2:#ffb6d9; 
-      --g3:#e6396f; 
+      --g1:#d4ffd4; 
+      --g2:#a0ff9e; 
+      --g3:#2ecc71; 
       --dark:#0d1b2a;
     }
 
-    /* NỀN LẤP LÁNH */
     body{
       margin:0;
       font-family: "Segoe UI", Arial;
@@ -46,33 +47,33 @@
       max-width:750px;
       margin:100px auto 80px;
       background:white;
-      padding:45px;
       border-radius:25px;
+      padding:45px;
       position:relative;
       z-index:2;
       border:5px solid var(--g2);
-      box-shadow:0 0 30px rgba(230, 57, 111,0.4);
-      animation: glowCard 4s ease-in-out infinite;
+      box-shadow:0 0 30px rgba(46,204,113,0.4);
+      animation: cardGlow 4s ease-in-out infinite;
       text-align:center;
     }
 
-    @keyframes glowCard{
-      0%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
-      50%{ box-shadow:0 0 40px rgba(230,57,111,0.9); }
-      100%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
+    @keyframes cardGlow{
+      0%{ box-shadow:0 0 20px rgba(46,204,113,0.35); }
+      50%{ box-shadow:0 0 40px rgba(46,204,113,0.9); }
+      100%{ box-shadow:0 0 20px rgba(46,204,113,0.35); }
     }
 
-    /* ENVY ĐI NGANG */
-    .envy-walk{
+    /* Nhân vật Disgust đi ngang */
+    .disgust-walk{
       position:absolute;
       bottom:-35px;
       left:-150px;
       width:160px;
       opacity:0.97;
-      animation: envyWalk 11s linear infinite;
+      animation: disgustWalk 11s linear infinite;
     }
 
-    @keyframes envyWalk{
+    @keyframes disgustWalk{
       0%{ left:-180px; transform:scaleX(1); }
       45%{ left:calc(100% - 60px); transform:scaleX(1); }
       50%{ transform:scaleX(-1); }
@@ -80,31 +81,31 @@
       100%{ transform:scaleX(1); }
     }
 
-    /* AVATAR */
-    img.avatar{
+    /* Avatar */
+    .avatar{
       width:170px;
       height:170px;
       border-radius:50%;
       object-fit:cover;
-      border:6px solid #ffb6d9;
-      box-shadow:0 0 30px rgba(230,57,111,0.7);
+      border:6px solid #a0ff9e;
+      box-shadow:0 0 30px rgba(46,204,113,0.7);
       animation: glowAvatar 4s ease-in-out infinite;
       margin-top:15px;
     }
 
     @keyframes glowAvatar{
-      0%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
-      50%{ box-shadow:0 0 40px rgba(230,57,111,0.8); }
-      100%{ box-shadow:0 0 20px rgba(230,57,111,0.35); }
+      0%{ box-shadow:0 0 20px rgba(46,204,113,0.35); }
+      50%{ box-shadow:0 0 40px rgba(46,204,113,0.8); }
+      100%{ box-shadow:0 0 20px rgba(46,204,113,0.35); }
     }
 
-    /* ICON LUNG LINH */
-    .envy-sparkle{
+    /* Sparkle */
+    .sparkle{
       position:absolute;
       top:-10px;
       right:20px;
       font-size:28px;
-      color:#ff4da6;
+      color:#2ecc71;
       opacity:0.9;
       animation: sparkle 2.8s linear infinite;
     }
@@ -122,92 +123,115 @@
       font-weight:700;
     }
 
-    p{
-      font-size:18px;
-      margin:5px 0 15px 0;
-    }
-
     .section-title{
       font-size:22px;
-      font-weight:600;
+      font-weight:700;
       margin-top:25px;
+      margin-bottom:12px;
       color:var(--g3);
-      text-align:left;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
 
     .box{
+      background:var(--g1);
+      padding:20px;
+      border-radius:15px;
       text-align:left;
-      margin:10px 0 20px 0;
+      border-left:6px solid var(--g3);
+      color:var(--dark);
+      margin-bottom:18px;
+      box-shadow:0 5px 12px rgba(0,0,0,0.1);
       line-height:1.6;
     }
 
     a{
       display:inline-block;
       margin-top:35px;
-      padding:12px 25px;
+      padding:12px 20px;
       background:var(--g3);
       color:white;
       border-radius:10px;
       text-decoration:none;
       font-weight:600;
-      box-shadow:0 5px 15px rgba(230,57,111,0.3);
       transition:.2s;
+      box-shadow:0 5px 15px rgba(46,204,113,0.4);
     }
-    a:hover{ background:#b5174f; }
-
+    a:hover{ background:#27ae60; }
   </style>
 </head>
-
 <body>
 
   <div class="dust"></div>
 
   <div class="card">
 
-    <img class="envy-walk"
-      src="https://i.pinimg.com/originals/df/aa/11/dfaa11e4de1e9e41e983d85396de423d.png"
-      alt="Inside Out 2 - Envy">
+    <img class="disgust-walk"
+      src="https://i.pinimg.com/originals/6d/0e/5b/6d0e5b2d03d4bfa6a1b6e5ee3ed0a9e4.png"
+      alt="Inside Out - Disgust">
 
-    <div class="envy-sparkle">✨</div>
+    <div class="sparkle">✨</div>
 
-    <img class="avatar" src="hinhthanh.jpg" alt="Avatar Kim Thanh">
+    <img class="avatar" src="kimthanh.jpg" alt="Avatar Kim Thanh">
 
     <h2>Huỳnh Thị Kim Thanh</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 25/05/2008</p>
 
-    <div class="section-title">🌿 Sơ lược</div>
+    <div class="section-title"><span class="material-icons">person</span> Giới thiệu</div>
     <div class="box">
-      Mình là một cá nhân năng động, luôn tràn đầy năng lượng và ham học hỏi. Mình luôn tìm cách khám phá những điều mới mẻ và không ngại thử thách bản thân trong mọi lĩnh vực.
+      Mình là một cô gái tràn đầy năng lượng, luôn tìm tòi và ham học hỏi.  
+      Mình yêu thích việc khám phá những điều mới mẻ, thử thách bản thân trong mọi lĩnh vực và luôn muốn tạo năng lượng tích cực đến mọi người xung quanh.
     </div>
 
-    <div class="section-title">💚 Tính cách</div>
+    <div class="section-title"><span class="material-icons">emoji_emotions</span> Tính cách</div>
     <div class="box">
-      • Vui vẻ, thân thiện và hòa đồng<br>
-      • Kiên nhẫn, quyết tâm, luôn kiên trì đạt mục tiêu
+      • Vui vẻ, thân thiện, hòa đồng<br>
+      • Kiên nhẫn, quyết tâm và luôn cố gắng đạt mục tiêu<br>
+      • Thích giúp đỡ bạn bè và quan sát tỉ mỉ<br>
+      • Đôi khi hơi bướng nhưng rất chân thành
     </div>
 
-    <div class="section-title">✨ Sở thích</div>
+    <div class="section-title"><span class="material-icons">favorite</span> Sở thích</div>
     <div class="box">
-      • Đọc sách<br>
-      • Nghe nhạc<br>
-      • Khám phá nghệ thuật<br>
-      • Tham gia các hoạt động nhóm và dự án xã hội
+      • Đọc sách và nghe nhạc nhẹ nhàng<br>
+      • Khám phá nghệ thuật và tham gia các dự án nhóm<br>
+      • Thử sức với những món mới, khám phá điều mới<br>
+      • Chăm chút từng chi tiết nhỏ trong công việc và học tập
     </div>
 
-    <div class="section-title">🎯 Định hướng nghề nghiệp</div>
+    <div class="section-title"><span class="material-icons">group</span> Bạn cùng bàn – Huỳnh Ngọc</div>
     <div class="box">
-      Mình hướng tới một sự nghiệp trong lĩnh vực quản lý dự án hoặc marketing, nơi có thể kết hợp khả năng sáng tạo, tư duy logic và kỹ năng giao tiếp hiệu quả.
+      <strong>Huỳnh Ngọc</strong> là người bạn cùng bàn tuyệt vời.  
+      Bạn ấy rất cao, da trắng, và hay mua đồ ăn sáng dùm mình.  
+      Khả năng chụp hình đẹp của bạn ấy luôn khiến mình phải trầm trồ, nhưng đôi khi với những câu hỏi "vì sao" liên tục, ngồi cạnh bạn mình vừa thấy vui vừa thấy phiền.  
+      Ngồi bên Ngọc, mình không còn cảm giác cô đơn nữa mà chuyển sang cảm giác "vừa bị tra tấn tinh thần vừa thấy vui".
+      <br><br>
+      🌐 Facebook: <a href="https://www.facebook.com/huynh.ngoc.697854" target="_blank">facebook.com/huynh.ngoc.697854</a>
     </div>
 
-    <div class="section-title">🏆 Mục tiêu</div>
+    <div class="section-title"><span class="material-icons">person_pin_circle</span> Bạn thân – Phương Thy</div>
     <div class="box">
-      Phấn đấu trở thành chuyên gia trong lĩnh vực mình chọn, xây dựng sự nghiệp vững chắc và cân bằng cuộc sống, đồng thời truyền cảm hứng tích cực đến mọi người xung quanh.
+      <strong>Phương Thy</strong> là cô bạn thân vừa tinh nghịch vừa hài hước.  
+      Thích thú với chó mèo, các món đồ kì lạ, hay liếc bạn chọc ghẹo và đôi khi bị "trả đũa" rất vui.  
+      Nói chuyện đôi lúc mất não, nhưng học cực giỏi, đặc biệt các môn tự nhiên.  
+      Bạn chạy xe rất an toàn nhờ luôn đeo tai nghe. Những lúc ở cạnh Thy luôn khiến mình vừa bật cười vừa phải "chỉnh lại não".
+      <br><br>
+      🌐 Facebook: <a href="https://www.facebook.com/phuong.thy.19508" target="_blank">facebook.com/phuong.thy.19508</a>
+    </div>
+
+    <div class="section-title"><span class="material-icons">emoji_people</span> Bạn thân – Yến Ngân</div>
+    <div class="box">
+      <strong>Yến Ngân</strong> là cô bạn thân thú vị, sở thích móc len, trồng cây, niềng răng từ năm lớp 6.  
+      Bạn hay nghi ngờ bạn bè sẽ dùng điện thoại làm những việc bậy bạ, nhưng lại rất đáng yêu và vui tính.  
+      Ngân thích thử sức với những trải nghiệm mới cùng mình và đôi khi có những trò hài hước khiến cả lớp bật cười.
+      <br><br>
+      🌐 Facebook: <a href="https://www.facebook.com/yen.ngan.857598" target="_blank">facebook.com/yen.ngan.857598</a>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
 
   </div>
-
 </body>
 </html>
