@@ -13,7 +13,6 @@
       --dark:#0d1b2a;
     }
 
-    /* NỀN LẤP LÁNH ENVY */
     body{
       margin:0;
       font-family: "Segoe UI", Arial;
@@ -21,7 +20,7 @@
       overflow-x:hidden;
     }
 
-    /* BỤI ENVY BAY */
+    /* Hiệu ứng bụi lấp lánh */
     .dust{
       position:fixed;
       top:0; left:0;
@@ -41,7 +40,7 @@
       to{ background-position:-3px 60px, 2px 40px; }
     }
 
-    /* CARD */
+    /* CARD chính */
     .card{
       max-width:750px;
       margin:100px auto 80px;
@@ -62,7 +61,7 @@
       100%{ box-shadow:0 0 20px rgba(0,255,150,0.35); }
     }
 
-    /* ENVY ĐI NGANG */
+    /* Envy đi ngang */
     .envy-walk{
       position:absolute;
       bottom:-35px;
@@ -80,7 +79,7 @@
       100%{ transform:scaleX(1); }
     }
 
-    /* AVATAR */
+    /* Avatar */
     img.avatar{
       width:170px;
       height:170px;
@@ -98,7 +97,7 @@
       100%{ box-shadow:0 0 20px rgba(0,255,150,0.35); }
     }
 
-    /* ICON ENVY LUNG LINH */
+    /* Lấp lánh */
     .envy-sparkle{
       position:absolute;
       top:-10px;
@@ -115,20 +114,38 @@
       100%{ transform:translateY(140px) scale(1.4); opacity:0; }
     }
 
-    h2{
-      font-size:30px;
-      color:var(--dark);
-      margin-bottom:10px;
+    /* Tiêu đề mục */
+    .section-title{
+      margin-top:40px;
+      font-size:24px;
       font-weight:700;
+      color:#0f3d2e;
+      text-align:left;
+      padding-left:8px;
     }
 
-    p{
-      font-size:18px;
+    /* Box nội dung */
+    .box{
+      background:#edfff7;
+      border-left:6px solid var(--g3);
+      padding:18px 20px;
+      border-radius:10px;
+      text-align:left;
+      margin-top:12px;
+      font-size:17px;
+      line-height:1.6;
     }
 
     a{
+      color:var(--g3);
+      text-decoration:none;
+      font-weight:600;
+    }
+    a:hover{ text-decoration:underline; }
+
+    .back{
       display:inline-block;
-      margin-top:35px;
+      margin-top:40px;
       padding:12px 25px;
       background:var(--g3);
       color:white;
@@ -138,15 +155,17 @@
       box-shadow:0 5px 15px rgba(0,120,80,0.3);
       transition:.2s;
     }
-    a:hover{ background:#20674d; }
+
+    .back:hover{
+      background:#20674d;
+    }
 
   </style>
 </head>
 
 <body>
-<body>
 
-  <!-- 🎵 NHẠC YOUTUBE TỰ PHÁT (ẩn) -->
+  <!-- Nhạc tự phát -->
   <iframe width="0" height="0"
     src="https://www.youtube.com/embed/_TNwN92mw6E?autoplay=1&mute=1&loop=1&playlist=_TNwN92mw6E"
     frameborder="0"
@@ -156,18 +175,10 @@
 
   <div class="dust"></div>
 
-  <div class="dust"></div>
-
   <div class="card">
-    <div class="section-title">🌿 Giới thiệu</div>
-<div class="box">
-  Xin chào! Mình là <strong>Ngọc Diệp</strong>.  
-  Mình thích sự nhẹ nhàng, tinh tế và luôn quan sát thật kỹ mọi việc trước khi hành động.
-
 
     <img class="envy-walk"
-      src="https://i.pinimg.com/originals/df/aa/11/dfaa11e4de1e9e41e983d85396de423d.png"
-      alt="Inside Out 2 - Envy">
+      src="https://i.pinimg.com/originals/df/aa/11/dfaa11e4de1e9e41e983d85396de423d.png">
 
     <div class="envy-sparkle">✨</div>
 
@@ -176,91 +187,75 @@
     <h2>Huỳnh Thị Ngọc Diệp</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 10/02/2008</p>
-  <div class="section-title">🌿 Giới thiệu</div>
-<div class="box">
-  Xin chào! Mình là <strong>Ngọc Diệp</strong>.  
-  Mình thích sự nhẹ nhàng, tinh tế và luôn quan sát thật kỹ mọi việc trước khi hành động.
-</div>
 
-<div class="section-title">💚 Tính cách</div>
-<div class="box">
-  • Tỉ mỉ và tinh tế  
-  • Khá trầm nhưng rất chu đáo  
-  • Đồng cảm tốt, dễ hiểu người khác  
-  • Suy nghĩ sâu sắc, cẩn trọng  
-</div>
-
-<div class="section-title">✨ Sở thích</div>
-<div class="box">
-  • Thích màu xanh pastel  
-  • Xem phim hoạt hình hoặc phim nhẹ nhàng  
-  • Nghe nhạc dễ chịu lúc học  
-  • Chăm chút từng chi tiết nhỏ  
-</div>
-    <!-- GIỚI THIỆU BẠN CÙNG BÀN -->
-    <div class="section-title">
-      <span class="material-icons">group</span> Bạn cùng bàn – Như Quyên
-    </div>
+    <!-- GIỚI THIỆU -->
+    <div class="section-title">🌿 Giới thiệu</div>
     <div class="box">
-      <strong>Như Quyên</strong> là người bạn cùng bàn khiến cuộc sống mỗi ngày của mình vui hơn hẳn.  
-      Quyên có một khả năng mà ai cũng phải ghen tị: <strong>vẽ rất đẹp</strong>, kiểu
-      chỉ cần vài nét phác là ra một bức tranh có hồn như nghệ sĩ chuyên nghiệp.  
-      Ngoài ra, bạn ấy còn <strong>makeup cực xịn</strong>, nhìn vào là thấy sự tỉ mỉ và gu thẩm mỹ rõ ràng.  
-      Một điểm giúp Quyên trở nên vô cùng đáng yêu là bạn mê <em>nói lái</em> — cứ mỗi lần nói là cả bàn học 
-      bật cười như xem hài độc thoại.  
-      Đặc biệt, Quyên có một “tuyệt chiêu”: <strong>chụp ảnh dìm người khác rất đẹp</strong>. Nhưng lạ một điều là
-      dù bị dìm bao nhiêu lần, mình vẫn cực kỳ quý bạn này vì sự chân thành và vui vẻ mà Quyên đem đến.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/wuqishere" target="_blank">facebook.com/wuqishere</a>
+      Xin chào! Mình là <strong>Ngọc Diệp</strong>.  
+      Mình thích sự nhẹ nhàng, tinh tế và luôn quan sát thật kỹ trước khi hành động—giống như Envy vậy: 
+      yên lặng, mềm mại nhưng luôn để ý mọi thứ xung quanh.
     </div>
 
-
-    <!-- BẠN THÂN: THÀNH DANH -->
-    <div class="section-title">
-      <span class="material-icons">person_pin_circle</span> Bạn thân – Thành Danh
-    </div>
+    <!-- TÍNH CÁCH -->
+    <div class="section-title">💚 Tính cách</div>
     <div class="box">
-      <strong>Thành Danh</strong> là một trong những người bạn thân thiết nhất của mình, và cũng là người mà
-      mình cảm thấy “an tâm” khi ở cạnh.  
-      Danh rất <strong>cao</strong> — cao tới mức đứng cạnh là thấy mình như người tí hon.  
-      Bạn ấy còn <strong>học giỏi</strong>, <strong>chăm chỉ</strong>, và luôn cố gắng trong mọi việc, từ học tập
-      đến việc đối xử với bạn bè.  
-      Mặc dù cả hai đã chơi với nhau vài năm, nhưng phải nói là chỉ trong <strong>1 năm trở lại đây</strong> thì
-      tụi mình mới trở nên thân thiết nhất.  
-      Danh là người <em>hiểu mình</em>, biết cách <em>chiều chuộng mình</em>, và luôn tạo cảm giác thoải mái.  
-      Dù đôi lúc bạn ấy có nói vài câu <strong>vô tri, thiếu suy nghĩ</strong> khiến mình chỉ muốn 
-      “đập cho tỉnh”, nhưng chính những điều đó lại làm tình bạn thêm thú vị. Những khoảnh khắc vui vẻ từ Danh
-      đến rất tự nhiên, chẳng cần cố gượng.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/vothanhdanh08" target="_blank">facebook.com/vothanhdanh08</a>
+      • Tỉ mỉ và tinh tế  
+      • Nhẹ nhàng, trầm ổn nhưng rất chu đáo  
+      • Dễ đồng cảm và hiểu người khác  
+      • Suy nghĩ sâu sắc, cẩn trọng  
     </div>
 
-
-    <!-- BẠN THÂN 2: HUỲNH NGỌC -->
-    <div class="section-title">
-      <span class="material-icons">emoji_people</span> Bạn thân – Huỳnh Ngọc
-    </div>
+    <!-- SỞ THÍCH -->
+    <div class="section-title">✨ Sở thích</div>
     <div class="box">
-      <strong>Huỳnh Ngọc</strong> là cô bạn thân vui tính, luôn mang lại năng lượng tích cực cho mọi người.  
-      Ngọc <strong>học giỏi</strong>, tư duy nhanh và hiếm khi áp lực hay nản lòng — đúng kiểu “nói ít làm nhiều”.  
-      Thỉnh thoảng Ngọc có những câu nói mà… <em>không ai hiểu nổi</em>, nhưng bạn vẫn cứ nói,
-      nói một cách hồn nhiên đến mức khiến ai cũng phải bật cười.  
-      Bạn ấy có một ước mơ cực kỳ lớn: <strong>debut làm ca sĩ trong tương lai</strong>.  
-      Dù mình rất quý và luôn ủng hộ bạn, nhưng thú thật là mình hơi… nghi ngờ về
-      <em>khả năng debut</em> của bạn ấy (nhưng biết đâu bất ngờ!).  
-      Bù lại, Ngọc cực kỳ <strong>tốt tính</strong>, luôn giúp đỡ mọi người và đặc biệt là có một làn da 
-      <strong>trắng đến mức nổi bật giữa đám đông</strong>. Nhìn vào là thấy “ánh sáng cuộc đời”.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/huynh.ngoc.697854" target="_blank">facebook.com/huynh.ngoc.697854</a>
+      • Yêu màu xanh pastel  
+      • Thích xem phim nhẹ nhàng  
+      • Nghe nhạc thư giãn khi học  
+      • Thích chăm chút từng chi tiết nhỏ  
     </div>
 
-    <a href="index.html">← Quay lại trang chính</a>
+    <!-- NHƯ QUYÊN -->
+    <div class="section-title">🎨 Bạn cùng bàn – Như Quyên</div>
+    <div class="box">
+      <strong>Như Quyên</strong> là người mang năng lượng tươi sáng mỗi ngày.  
+      Quyên <strong>vẽ rất đẹp</strong>, chỉ vài nét là ra tranh cực có hồn.  
+      Makeup cũng đẹp xuất sắc, nhìn vào là biết người có gu.  
+      Bạn rất mê <em>nói lái</em>, nên bàn học lúc nào cũng vui như một sân khấu hài mini.  
+      Quyên còn nổi tiếng với tuyệt chiêu <strong>chụp ảnh dìm</strong> người khác—và dìm một cách… nghệ thuật.  
+      Dù vậy, mình rất quý bạn bởi sự chân thành và đáng yêu.
+      <br><br>
+      🌐 FB: <a href="https://www.facebook.com/wuqishere" target="_blank">facebook.com/wuqishere</a>
+    </div>
+
+    <!-- THÀNH DANH -->
+    <div class="section-title">🧩 Bạn thân – Thành Danh</div>
+    <div class="box">
+      <strong>Thành Danh</strong> là người bạn khiến mình cảm thấy rất an tâm khi ở cạnh.  
+      Danh <strong>rất cao</strong>, học giỏi và chăm chỉ.  
+      Dù quen nhau mấy năm, nhưng chỉ trong <strong>1 năm gần đây</strong> cả hai mới trở nên thân nhất.  
+      Danh luôn hiểu và chiều mình, dù đôi lúc có lỡ miệng nói vài câu… vô tri, nhưng cũng chính vì vậy mà vui.  
+      Tình bạn với Danh tự nhiên, thoải mái và rất quý.
+      <br><br>
+      🌐 FB: <a href="https://www.facebook.com/vothanhdanh08" target="_blank">facebook.com/vothanhdanh08</a>
+    </div>
+
+    <!-- HUỲNH NGỌC -->
+    <div class="section-title">💎 Bạn thân – Huỳnh Ngọc</div>
+    <div class="box">
+      <strong>Huỳnh Ngọc</strong> là cô bạn vui tính và luôn tỏa ra năng lượng tích cực.  
+      Bạn <strong>học giỏi</strong> và tư duy nhanh, nhưng đôi lúc lại có những câu nói mà… không ai hiểu, 
+      nhưng vẫn nói đầy hồn nhiên.  
+      Ngọc có ước mơ <strong>debut làm ca sĩ</strong> trong tương lai—dù mình hơi nghi ngờ năng lực debut thật, 
+      nhưng vẫn ủng hộ hết mình.  
+      Da của Ngọc cực kỳ <strong>trắng</strong>, nhìn vào thấy nổi bật giữa đám đông.  
+      Bạn tốt tính và đáng quý.
+      <br><br>
+      🌐 FB: <a href="https://www.facebook.com/huynh.ngoc.697854" target="_blank">facebook.com/huynh.ngoc.697854</a>
+    </div>
+
+    <a class="back" href="index.html">← Quay lại trang chính</a>
 
   </div>
 
 </body>
 </html>
-
