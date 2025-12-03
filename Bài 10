@@ -81,7 +81,15 @@
       padding:16px;
       border-radius:12px;
       margin-bottom:20px;
+      animation: glow 1.5s infinite alternate;
     }
+
+    @keyframes glow{
+      from { box-shadow: 0 0 10px rgba(30,144,255,0.5);}
+      to { box-shadow: 0 0 20px rgba(30,144,255,0.8);}
+    }
+
+    ul{ margin-left:20px; }
 
     .btn{
       display:inline-block;
@@ -107,8 +115,6 @@
       color: var(--muted);
       font-style: italic;
     }
-
-    ul{ margin-left:20px; }
   </style>
 </head>
 
