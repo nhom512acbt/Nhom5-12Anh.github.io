@@ -123,7 +123,6 @@
 
     <div class="solution">
       <p><strong>Lời giải:</strong></p>
-
 <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -142,7 +141,6 @@
 </pre>
     </div>
 
-
     <!-- Luyện tập 2 -->
     <div class="question">
       Luyện tập 2 trang 61: Viết một trang web giới thiệu bản thân, có ít nhất 3 liên kết tới Facebook của ba bạn cùng lớp.
@@ -150,7 +148,6 @@
 
     <div class="solution">
       <p><strong>Lời giải:</strong></p>
-
 <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
