@@ -105,6 +105,15 @@
       font-weight:bold;
     }
 
+    ul, ol{
+      margin-left:20px;
+      margin-bottom:16px;
+    }
+
+    li{
+      margin-bottom:6px;
+    }
+
     .btn{
       display:inline-block;
       padding:10px 16px;
@@ -136,6 +145,7 @@
   <main class="container">
     <h1>Bài 9 – Tạo danh sách, bảng</h1>
 
+    <!-- Bài tập 1: Sửa bảng Hình 9.5a -->
     <div class="question">
       Luyện tập trang 56 Tin học 12: Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì border để tạo viền cho bảng. Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
     </div>
@@ -155,8 +165,9 @@
       </table>
     </div>
 
+    <!-- Bài tập 2: Bảng dữ liệu nx4 -->
     <div class="question">
-      Vận dụng trang 56 Tin học 12: Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình để tạo ra bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
+      Vận dụng trang 56 Tin học 12: Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) tạo bảng tương tự Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
     </div>
 
     <div class="solution">
@@ -191,6 +202,118 @@
           <td style="border: 2px solid black;">9.0</td>
           <td style="border: 2px solid black;">8.5</td>
           <td style="border: 2px solid black;">7.5</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Thực hành 1: Tạo danh sách CLB -->
+    <div class="question">
+      Thực hành 1: Tạo danh sách các câu lạc bộ của trường
+    </div>
+
+    <div class="solution">
+      <h2>Danh sách Câu lạc bộ</h2>
+      <ul>
+        <li>THỂ THAO
+          <ol>
+            <li>Bóng đá</li>
+            <li>Bóng chuyền</li>
+            <li>Bóng rổ</li>
+            <li>Võ
+              <ol type="a">
+                <li>Karatedo</li>
+                <li>Taewondo</li>
+                <li>Vovinam</li>
+              </ol>
+            </li>
+            <li>Bơi</li>
+          </ol>
+        </li>
+        <li>NGHỆ THUẬT
+          <ol>
+            <li>Mĩ thuật</li>
+            <li>Nhiếp ảnh</li>
+            <li>Âm nhạc
+              <ol type="a">
+                <li>Thanh nhạc</li>
+                <li>Piano</li>
+                <li>Violin</li>
+              </ol>
+            </li>
+            <li>Khiêu vũ</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Thực hành 2: Lập bảng lịch hoạt động CLB -->
+    <div class="question">
+      Thực hành 2: Lập bảng lịch hoạt động của các câu lạc bộ
+    </div>
+
+    <div class="solution">
+      <p><strong>Lịch hoạt động CLB Thể thao</strong></p>
+      <table>
+        <tr>
+          <th rowspan="2">Bộ môn</th>
+          <th rowspan="2">GV phụ trách</th>
+          <th colspan="5">Ngày</th>
+        </tr>
+        <tr>
+          <th>Thứ 2</th>
+          <th>Thứ 3</th>
+          <th>Thứ 4</th>
+          <th>Thứ 5</th>
+          <th>Thứ 6</th>
+        </tr>
+        <tr>
+          <td>Bóng đá</td>
+          <td>Thầy Khải</td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+        </tr>
+        <tr>
+          <td>Bóng chuyền</td>
+          <td>Cô Lan</td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bóng rổ</td>
+          <td>Thầy Vũ</td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Võ thuật</td>
+          <td>
+            Thầy Hoàng - Karatedo<br>
+            Thầy Đức - Taekwondo<br>
+            Thầy Thắng - Vovinam
+          </td>
+          <td>X</td>
+          <td>X</td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bơi</td>
+          <td>Cô Bích</td>
+          <td></td>
+          <td></td>
+          <td>X</td>
+          <td></td>
+          <td>X</td>
         </tr>
       </table>
     </div>
