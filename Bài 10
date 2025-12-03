@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bài 9 – Liên kết</title>
+  <title>Bài 10 – Tạo liên kết</title>
 
   <style>
     :root{
@@ -114,7 +114,7 @@
 
 <body>
   <main class="container">
-    <h1>Bài 9 – Liên kết</h1>
+    <h1>Bài 10 – Tạo liên kết</h1>
 
     <!-- Luyện tập 1 -->
     <div class="question">
