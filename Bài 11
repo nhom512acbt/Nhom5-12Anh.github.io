@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 11 – Luyện tập & Vận dụng (Tin học 12)</title>
+
+    <style>
+        :root {
+            --navy: #0a1a2f;
+            --navy-light: #12345b;
+            --white: #ffffff;
+            --gray-bg: #f4f6f9;
+            --code-bg: #0d223a;
+            --accent: #1e90ff;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--gray-bg);
+            margin: 0;
+            padding: 0;
+            color: #111;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            text-align: center;
+            padding: 28px;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1100px;
+            background: var(--white);
+            margin: 35px auto;
+            padding: 35px 45px;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-left: 8px solid var(--navy-light);
+        }
+
+        h2 {
+            color: var(--navy);
+            border-left: 6px solid var(--accent);
+            padding-left: 12px;
+            font-size: 24px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--navy-light);
+            margin-bottom: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        /* CODE BLOCK */
+        pre {
+            background: var(--code-bg);
+            color: #d6eaff;
+            padding: 18px;
+            border-left: 5px solid var(--accent);
+            overflow-x: auto;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        code {
+            background: #1b324d;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #ffdd8a;
+        }
+
+        p {
+            font-size: 17px;
+            margin: 12px 0;
+        }
+
+        /* IMAGES & IFRAME */
+        iframe, img {
+            margin-top: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 18px;
+            background: var(--navy);
+            color: white;
+            margin-top: 50px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Bài 11 – Chèn tệp đa phương tiện & Khung nội tuyến (Luyện tập – Vận dụng)
+</header>
+
+<div class="container">
+
+    <!-- Luyện tập 1 -->
+    <h2>Luyện tập 1 – Trang 66 (Tin học 12)</h2>
+
+    <p><b>Câu hỏi:</b><br>
+    Cho ảnh có kích thước gốc <b>720 × 450 pixels</b>. Chèn ảnh bằng câu lệnh:</p>
+
+    <pre>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</pre>
+
+    <p><b>Hỏi:</b> Ảnh hiển thị trên trang web có kích thước bao nhiêu?</p>
+
+    <h3>Lời giải:</h3>
+
+    <p>Thuộc tính <code>width="600"</code> cho biết ảnh sẽ có chiều rộng 600 pixels.</p>
+
+    <p>Do không đặt <code>height</code>, trình duyệt tự giữ tỉ lệ gốc:</p>
+
+    <p>
+        Tỉ lệ gốc ảnh:  
+        <br>720 (rộng) → 450 (cao)
+    </p>
+
+    <p>Chiều cao mới được tính theo tỉ lệ:</p>
+
+    <pre>Chiều cao = (450 / 720) × 600 = 375 pixels</pre>
+
+    <p><b>➡ Kết luận:</b><br>
+    Ảnh hiển thị với kích thước:</p>
+
+    <p><b>600 × 375 pixels</b></p>
+
+    <hr>
+
+    <!-- Luyện tập 2 -->
+    <h2>Luyện tập 2 – Trang 66 (Tin học 12)</h2>
+
+    <p>Yêu cầu: Chèn thêm một số ảnh cá nhân vào trang web giới thiệu bản thân (đã tạo tại Bài 10).</p>
+
+    <h3>Mẫu code hoàn chỉnh:</h3>
+
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là trang web giới thiệu bản thân.&lt;/p&gt;
+
+    &lt;h2&gt;Ảnh của tôi&lt;/h2&gt;
+    &lt;img src="images/image1.jpg" alt="Ảnh của tôi" width="300"&gt;
+    &lt;img src="images/image2.jpg" alt="Ảnh của tôi" width="300"&gt;
+    &lt;img src="images/image3.jpg" alt="Ảnh của tôi" width="300"&gt;
+
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://facebook.com/friend1" target="_blank"&gt;Facebook Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://facebook.com/friend2" target="_blank"&gt;Facebook Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://facebook.com/friend3" target="_blank"&gt;Facebook Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <hr>
+
+    <!-- Vận dụng -->
+    <h2>Vận dụng – Trang 66 (Tin học 12)</h2>
+
+    <p>Yêu cầu: Tạo một khung nội tuyến (iframe) và chèn bài hát YouTube yêu thích vào trang giới thiệu bản thân.</p>
+
+    <h3>Mẫu code hoàn chỉnh:</h3>
+
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là trang web giới thiệu bản thân.&lt;/p&gt;
+
+    &lt;h2&gt;Bài hát yêu thích của tôi&lt;/h2&gt;
+    &lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/video_id" 
+        frameborder="0" allowfullscreen&gt;
+    &lt;/iframe&gt;
+
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://facebook.com/friend1" target="_blank"&gt;Facebook Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://facebook.com/friend2" target="_blank"&gt;Facebook Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://facebook.com/friend3" target="_blank"&gt;Facebook Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+</div>
+
+<footer>
+    © 2025 – Bài 11 Tin học 12 – Luyện tập & Vận dụng
+</footer>
+
+</body>
+</html>
