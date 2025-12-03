@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thiều Quang Thảo</title>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <style>
     :root{
       --g1:#e3dfff; 
@@ -15,12 +17,12 @@
 
     body{
       margin:0;
-      font-family:"Segoe UI", Arial;
+      font-family: "Segoe UI", Arial;
       background:linear-gradient(180deg, var(--g1), var(--g2));
       overflow-x:hidden;
     }
 
-    /* HIỆU ỨNG BỤI */
+    /* BỤI BAY */
     .dust{
       position:fixed;
       top:0; left:0;
@@ -45,95 +47,73 @@
       max-width:750px;
       margin:100px auto 80px;
       background:white;
-      padding:45px;
       border-radius:25px;
+      padding:45px;
       position:relative;
       z-index:2;
       border:5px solid var(--g2);
       box-shadow:0 0 30px rgba(138,99,255,0.4);
-      animation:glowCard 4s ease-in-out infinite;
+      animation: cardGlow 4s ease-in-out infinite;
       text-align:center;
     }
 
-    @keyframes glowCard{
-      0%{box-shadow:0 0 20px rgba(138,99,255,0.35);}
-      50%{box-shadow:0 0 40px rgba(138,99,255,0.9);}
-      100%{box-shadow:0 0 20px rgba(138,99,255,0.35);}
+    @keyframes cardGlow{
+      0%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
+      50%{ box-shadow:0 0 40px rgba(138,99,255,0.9); }
+      100%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
     }
 
-    /* Anxiety đi ngang */
+    /* Nhân vật Anxiety đi ngang */
     .anxiety-walk{
       position:absolute;
       bottom:-35px;
       left:-150px;
       width:160px;
       opacity:0.97;
-      animation:walkAnxiety 11s linear infinite;
+      animation: anxietyWalk 11s linear infinite;
     }
 
-    @keyframes walkAnxiety{
-      0%{left:-180px; transform:scaleX(1);}
-      45%{left:calc(100% - 60px); transform:scaleX(1);}
-      50%{transform:scaleX(-1);}
-      95%{left:-180px; transform:scaleX(-1);}
-      100%{transform:scaleX(1);}
+    @keyframes anxietyWalk{
+      0%{ left:-180px; transform:scaleX(1); }
+      45%{ left:calc(100% - 60px); transform:scaleX(1); }
+      50%{ transform:scaleX(-1); }
+      95%{ left:-180px; transform:scaleX(-1); }
+      100%{ transform:scaleX(1); }
     }
 
-    /* AVATAR */
-    img.avatar{
+    /* Avatar */
+    .avatar{
       width:170px;
       height:170px;
       border-radius:50%;
       object-fit:cover;
       border:6px solid #c2b3ff;
       box-shadow:0 0 30px rgba(138,99,255,0.7);
-      animation:glowAvatar 4s ease-in-out infinite;
+      animation: glowAvatar 4s ease-in-out infinite;
       margin-top:15px;
     }
 
     @keyframes glowAvatar{
-      0%{box-shadow:0 0 20px rgba(138,99,255,0.35);}
-      50%{box-shadow:0 0 40px rgba(138,99,255,0.8);}
-      100%{box-shadow:0 0 20px rgba(138,99,255,0.35);}
+      0%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
+      50%{ box-shadow:0 0 40px rgba(138,99,255,0.8); }
+      100%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
     }
 
-    /* ICON SPARKLE */
-    .envy-sparkle{
+    /* Sparkle */
+    .sparkle{
       position:absolute;
       top:-10px;
       right:20px;
       font-size:28px;
-      color:#a97fff;
+      color:#8a63ff;
       opacity:0.9;
-      animation:sparkle 2.5s linear infinite;
+      animation: sparkle 2.8s linear infinite;
     }
 
     @keyframes sparkle{
-      0%{transform:translateY(0) scale(1); opacity:0;}
-      30%{opacity:1;}
-      100%{transform:translateY(140px) scale(1.4); opacity:0;}
-    }
-
-    /* CHỮ ANXIETY RƠI */
-    .anxiety-fall {
-      position: fixed;
-      top: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 32px;
-      color: #8a63ff;
-      font-weight: bold;
-      text-shadow: 0 0 12px rgba(138,99,255,0.9);
-      animation: anxietyDrop 4s ease-in-out infinite;
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    @keyframes anxietyDrop {
-      0% { top: -80px; opacity: 0; }
-      20% { opacity: 1; }
-      70% { top: 140px; opacity: 1; }
-      100% { top: 180px; opacity: 0; }
+      0%{ transform:translateY(0) scale(1); opacity:0; }
+      30%{ opacity:1; }
+      100%{ transform:translateY(140px) scale(1.4); opacity:0; }
     }
 
     h2{
@@ -143,56 +123,55 @@
       font-weight:700;
     }
 
-    p{
-      font-size:18px;
-      margin:5px 0 15px 0;
-    }
-
     .section-title{
       font-size:22px;
-      font-weight:600;
+      font-weight:700;
       margin-top:25px;
+      margin-bottom:12px;
       color:var(--g3);
-      text-align:left;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
 
     .box{
+      background:var(--g1);
+      padding:20px;
+      border-radius:15px;
       text-align:left;
-      margin:10px 0 20px;
+      border-left:6px solid var(--g3);
+      color:var(--dark);
+      margin-bottom:18px;
+      box-shadow:0 5px 12px rgba(0,0,0,0.1);
       line-height:1.6;
     }
 
     a{
       display:inline-block;
       margin-top:35px;
-      padding:12px 25px;
+      padding:12px 20px;
       background:var(--g3);
       color:white;
       border-radius:10px;
       text-decoration:none;
       font-weight:600;
-      box-shadow:0 5px 15px rgba(138,99,255,0.3);
       transition:.2s;
+      box-shadow:0 5px 15px rgba(138,99,255,0.3);
     }
-    a:hover{background:#6b44ff;}
-
+    a:hover{ background:#6b44ff; }
   </style>
 </head>
-
 <body>
-
-  <!-- CHỮ ANXIETY RƠI -->
-  <div class="anxiety-fall">ANXIETY…</div>
 
   <div class="dust"></div>
 
   <div class="card">
 
-    <img class="anxiety-walk" 
-      src="https://static.wikia.nocookie.net/pixar/images/7/7a/Anxiety.png" 
-      alt="Anxiety - Inside Out">
+    <img class="anxiety-walk"
+      src="https://static.wikia.nocookie.net/pixar/images/7/7a/Anxiety.png"
+      alt="Inside Out - Anxiety">
 
-    <div class="envy-sparkle">✨</div>
+    <div class="sparkle">✨</div>
 
     <img class="avatar" src="avatar_quangthao.jpg" alt="Avatar Quang Thảo">
 
@@ -200,48 +179,50 @@
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 04/04/2008</p>
 
-    <div class="section-title">🌿 Giới thiệu</div>
+    <div class="section-title"><span class="material-icons">person</span> Giới thiệu</div>
     <div class="box">
-      Mình là người khá lo lắng, luôn quan sát kỹ mọi thứ và thường suy nghĩ trước khi hành động. Tuy hơi nhút nhát, nhưng lại rất chu đáo và luôn cố gắng giúp mọi người xung quanh.
+      Mình là người hơi lo lắng, thường quan sát mọi thứ xung quanh và suy nghĩ trước khi hành động.  
+      Mình hơi nhút nhát nhưng chu đáo, luôn cố gắng giúp đỡ và tạo cảm giác an toàn cho bạn bè.
     </div>
 
-    <div class="section-title">💚 Tính cách</div>
+    <div class="section-title"><span class="material-icons">emoji_emotions</span> Tính cách</div>
     <div class="box">
-      • Cẩn thận, tỉ mỉ, thích chuẩn bị trước mọi việc<br>
-      • Hay suy nghĩ, đôi khi hơi lo lắng quá mức<br>
-      • Thân thiện nhưng có chút rụt rè
+      • Cẩn thận, tỉ mỉ và thích chuẩn bị trước mọi việc<br>
+      • Hơi lo lắng quá mức nhưng luôn chu đáo<br>
+      • Thân thiện, biết quan tâm và lắng nghe<br>
+      • Thỉnh thoảng nhút nhát nhưng rất chân thành
     </div>
 
-    <div class="section-title">✨ Sở thích</div>
+    <div class="section-title"><span class="material-icons">favorite</span> Sở thích</div>
     <div class="box">
       • Nghe nhạc nhẹ và đọc sách<br>
       • Chơi trò chơi tư duy<br>
-      • Quan sát xung quanh và phân tích tình huống
+      • Quan sát và phân tích tình huống<br>
+      • Tham gia hoạt động nhóm nhỏ
     </div>
 
-    <!-- BẠN CÙNG BÀN -->
-    <div class="section-title">👥 Bạn cùng bàn – Chí Cường</div>
+    <div class="section-title"><span class="material-icons">group</span> Bạn cùng bàn – Chí Cường</div>
     <div class="box">
-      <strong>Chí Cường</strong> là người bạn cùng bàn đáng tin cậy, luôn tạo cảm giác an toàn nhưng cũng hay làm mình “giật mình” với những suy nghĩ nhanh nhạy của bạn ấy.  
-      Chí Cường hiểu mình, đôi khi trêu đùa nhưng cũng biết lúc nào nên nghiêm túc.  
+      <strong>Chí Cường</strong> là người bạn cùng bàn đáng tin cậy, đôi khi hay làm mình “giật mình” với những suy nghĩ nhanh nhạy của bạn ấy.  
+      Ngồi cạnh Cường, mình cảm giác vừa an toàn vừa hơi bị “hơi áp lực tinh thần”, nhưng bạn luôn biết lúc nào nên nghiêm túc.  
       <br><br>
       🌐 Facebook: <a href="https://www.facebook.com/chi.cuong.759149" target="_blank">facebook.com/chi.cuong.759149</a>
     </div>
 
-    <!-- BẠN THÂN 1 -->
-    <div class="section-title">💜 Bạn thân – Nguyên Phương</div>
+    <div class="section-title"><span class="material-icons">person_pin_circle</span> Bạn thân – Nguyên Phương</div>
     <div class="box">
-      <strong>Nguyên Phương</strong> là người bạn thân mà mình luôn cảm thấy an tâm khi ở cạnh. Bạn ấy hiểu mình, biết cách lắng nghe và luôn đưa ra những lời khuyên hữu ích.  
-      Phương rất đáng yêu, đôi khi hơi vụng về nhưng chính điều đó lại làm tình bạn thêm vui nhộn.  
+      <strong>Nguyên Phương</strong> là người bạn thân mà mình luôn cảm thấy an tâm khi ở cạnh.  
+      Bạn hiểu mình, biết cách lắng nghe và đưa ra những lời khuyên hữu ích.  
+      Đôi khi vụng về nhưng chính điều đó lại làm tình bạn thêm vui nhộn.  
       <br><br>
       🌐 Facebook: <a href="https://www.facebook.com/le.ngoc.nguyen.phuong.160071" target="_blank">facebook.com/le.ngoc.nguyen.phuong.160071</a>
     </div>
 
-    <!-- BẠN THÂN 2 -->
-    <div class="section-title">💜 Bạn thân 2 – Kim Khánh</div>
+    <div class="section-title"><span class="material-icons">emoji_people</span> Bạn thân – Kim Khánh</div>
     <div class="box">
-      <strong>Kim Khánh</strong> là người bạn vui tính, luôn làm không khí xung quanh trở nên sôi động. Bạn ấy có sở thích độc đáo, luôn tìm tòi những điều mới mẻ và có khả năng tạo tiếng cười bất ngờ.  
-      Khánh học giỏi, chăm chỉ và đôi khi nói những câu làm mình vừa cười vừa… lắc đầu.  
+      <strong>Kim Khánh</strong> là người bạn vui tính, tạo không khí xung quanh trở nên sôi động.  
+      Khánh thích khám phá điều mới mẻ, làm mọi người bật cười bất ngờ, học giỏi và chăm chỉ.  
+      Đôi khi nói những câu hài hước khiến mình vừa cười vừa… lắc đầu.  
       <br><br>
       🌐 Facebook: <a href="https://www.facebook.com/huynh.kim.khanh.776190" target="_blank">facebook.com/huynh.kim.khanh.776190</a>
     </div>
@@ -249,6 +230,5 @@
     <a href="index.html">← Quay lại trang chính</a>
 
   </div>
-
 </body>
 </html>
