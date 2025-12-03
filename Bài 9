@@ -98,6 +98,7 @@
     th, td{
       padding:8px 12px;
       text-align:center;
+      border: 2px solid black;
     }
 
     th{
@@ -155,7 +156,7 @@
     </div>
 
     <div class="question">
-      Vận dụng trang 56 Tin học 12: Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình Python để tạo ra tệp HTML thực hiện việc vẽ bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
+      Vận dụng trang 56 Tin học 12: Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình để tạo ra bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
     </div>
 
     <div class="solution">
@@ -202,4 +203,5 @@
   </main>
 </body>
 </html>
+
 
