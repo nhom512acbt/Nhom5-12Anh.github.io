@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 12 – Tạo Biểu Mẫu | Nhóm 5</title>
+
+  <style>
+    body{
+      font-family: "Segoe UI", Arial;
+      background: linear-gradient(135deg, #8ec5ff, #c7d2ff);
+      margin:0;
+      padding:0;
+      color:#333;
+    }
+
+    .container{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    h1{
+      text-align:center;
+      color:#2c3ea7;
+      margin-bottom:10px;
+      font-size: 42px;
+      text-shadow: 2px 2px 0px white;
+    }
+
+    .tabs{
+      display:flex;
+      justify-content:center;
+      margin-bottom:25px;
+      flex-wrap: wrap;
+      gap:10px;
+    }
+
+    .tab{
+      background:white;
+      padding:10px 20px;
+      border-radius:20px;
+      cursor:pointer;
+      font-weight:600;
+      border:2px solid #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition:0.25s;
+    }
+
+    .tab:hover{
+      transform:scale(1.05);
+      background:#e0e7ff;
+    }
+
+    .active{
+      background:#4150ff;
+      color:white;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      display:none;
+      animation: fade 0.4s;
+    }
+
+    @keyframes fade{
+      from{opacity:0; transform: translateY(10px);}
+      to{opacity:1; transform: translateY(0);}
+    }
+
+    pre{
+      background:#f7f7ff;
+      padding:15px;
+      border-radius:12px;
+      overflow-x:auto;
+      border-left:4px solid #4150ff;
+    }
+
+    .highlight{
+      color:#2944ff;
+      font-weight:600;
+    }
+  </style>
+
+  <script>
+    function showTab(id){
+      document.querySelectorAll(".card").forEach(c => c.style.display="none");
+      document.getElementById(id).style.display="block";
+
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      document.getElementById("t-" + id).classList.add("active");
+    }
+
+    window.onload = () => {
+      showTab("form");
+    };
+  </script>
+
+</head>
+<body>
+
+<div class="container">
+
+  <h1>BÀI 12 – TẠO BIỂU MẪU</h1>
+
+  <div class="tabs">
+    <div class="tab active" id="t-form" onclick="showTab('form')">Phần tử Form</div>
+    <div class="tab" id="t-input" onclick="showTab('input')">Phần tử Input</div>
+    <div class="tab" id="t-apply" onclick="showTab('apply')">Vận dụng 1</div>
+  </div>
+
+  <!-- PHẦN TỬ FORM -->
+  <div class="card" id="form">
+    <h2>1. Phần tử Form</h2>
+
+    <h3>- Form cơ bản</h3>
+    <p><span class="highlight">Ví dụ:</span> Biểu mẫu đăng ký tài khoản.</p>
+    <pre>
+<form action="/register" method="post">
+  <!-- Các phần tử input và nút gửi -->
+</form>
+    </pre>
+
+    <h3>- Form có phần tử select</h3>
+    <p><span class="highlight">Ví dụ:</span> Chọn quốc gia.</p>
+
+    <pre>
+<form>
+  <label for="country">Quốc gia:</label>
+  <select id="country" name="country">
+    <option value="vietnam">Việt Nam</option>
+    <option value="usa">United States</option>
+    <option value="uk">United Kingdom</option>
+  </select>
+</form>
+    </pre>
+
+    <h3>- Form với textarea</h3>
+    <p><span class="highlight">Ví dụ:</span> Ô nhập phản hồi.</p>
+
+    <pre>
+<form>
+  <label for="feedback">Phản hồi:</label><br>
+  <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+</form>
+    </pre>
+  </div>
+
+  <!-- PHẦN TỬ INPUT -->
+  <div class="card" id="input">
+    <h2>2. Phần tử Input</h2>
+
+    <h3>- Input kiểu text</h3>
+    <p><span class="highlight">Ví dụ:</span> Ô nhập tên người dùng.</p>
+
+    <pre>
+<form>
+  <label for="username">Tên người dùng:</label>
+  <input type="text" id="username" name="username">
+</form>
+    </pre>
+
+    <h3>- Input kiểu email</h3>
+    <p><span class="highlight">Ví dụ:</span> Nhập email.</p>
+
+    <pre>
+<form>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+</form>
+    </pre>
+
+    <h3>- Input kiểu date</h3>
+    <p><span class="highlight">Ví dụ:</span> Chọn ngày sinh.</p>
+
+    <pre>
+<form>
+  <label for="birthdate">Ngày sinh:</label>
+  <input type="date" id="birthdate" name="birthdate">
+</form>
+    </pre>
+  </div>
+
+  <!-- VẬN DỤNG -->
+  <div class="card" id="apply">
+    <h2>3. Vận dụng 1 – Tạo biểu mẫu đăng ký thành viên</h2>
+
+    <pre>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Biểu mẫu đăng ký thành viên</title>
+</head>
+<body>
+
+<h2>Đăng ký thành viên</h2>
+
+<form action="/submit_registration" method="post">
+  <label for="fullname">Họ và tên:</label><br>
+  <input type="text" id="fullname" name="fullname" required><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+
+  <label for="birthdate">Ngày sinh:</label><br>
+  <input type="date" id="birthdate" name="birthdate" required><br>
+
+  <label for="membership">Loại thành viên:</label><br>
+  <select id="membership" name="membership">
+    <option value="basic">Thành viên cơ bản</option>
+    <option value="premium">Thành viên cao cấp</option>
+  </select><br><br>
+
+  <input type="submit" value="Đăng ký">
+</form>
+
+</body>
+</html>
+    </pre>
+
+  </div>
+
+</div>
+
+</body>
+</html>
