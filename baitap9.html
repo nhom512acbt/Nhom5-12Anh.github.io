@@ -43,29 +43,54 @@
       border-radius:16px;
       box-shadow:0 8px 20px rgba(0,0,0,0.1);
       border: 4px solid var(--joy);
-      animation: slide-down 0.8s ease-out;
-    }
-
-    @keyframes slide-down {
-      from { opacity: 0; transform: translateY(-30px);}
-      to { opacity: 1; transform: translateY(0);}
     }
 
     h1{
       font-size:32px;
       color: var(--joy);
       text-align:center;
-      margin-bottom:10px;
-    }
-
-    h2{
-      color: var(--sadness);
-      border-bottom: 2px solid var(--fear);
-      display:inline-block;
-      padding-bottom:4px;
       margin-bottom:20px;
     }
 
+    /* --- Accordion Title --- */
+    .section-title{
+      font-size: 22px;
+      font-weight: bold;
+      padding:14px 18px;
+      border-radius:12px;
+      margin-top:20px;
+      cursor:pointer;
+      transition:0.25s;
+      color:white;
+    }
+
+    .section-title:hover{
+      transform: scale(1.03);
+      filter: brightness(1.1);
+    }
+
+    .lt{ background: var(--joy); }
+    .vd{ background: var(--sadness); }
+    .th{ background: var(--anger); }
+
+    /* Accordion content */
+    .section-content{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.5s ease;
+      background:#fafafa;
+      padding:0 10px;
+      border-left:6px solid transparent;
+      border-radius:12px;
+      margin-bottom:20px;
+    }
+
+    .section-content.open{
+      padding:18px;
+      border-left:6px solid var(--fear);
+    }
+
+    /* Bên trong content */
     .question{
       background: var(--highlight);
       border-left: 6px solid var(--anger);
@@ -81,12 +106,6 @@
       padding:16px;
       border-radius:12px;
       margin-bottom:20px;
-      animation: glow 1.5s infinite alternate;
-    }
-
-    @keyframes glow{
-      from { box-shadow: 0 0 10px rgba(30,144,255,0.5);}
-      to { box-shadow: 0 0 20px rgba(30,144,255,0.8);}
     }
 
     table{
@@ -110,10 +129,6 @@
       margin-bottom:16px;
     }
 
-    li{
-      margin-bottom:6px;
-    }
-
     .btn{
       display:inline-block;
       padding:10px 16px;
@@ -122,12 +137,6 @@
       color:white;
       border-radius:8px;
       font-weight:600;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .btn:hover{
-      background: var(--anger);
-      transform: scale(1.05);
     }
 
     .site-footer{
@@ -145,177 +154,143 @@
   <main class="container">
     <h1>Bài 9 – Tạo danh sách, bảng</h1>
 
-    <!-- Bài tập 1: Sửa bảng Hình 9.5a -->
-    <div class="question">
-      Luyện tập trang 56 Tin học 12: Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì border để tạo viền cho bảng. Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.
+    <!--=========================-->
+    <!--      LUYỆN TẬP         -->
+    <!--=========================-->
+    <div class="section-title lt">📘 Luyện tập</div>
+    <div class="section-content">
+
+      <div class="question">
+        Luyện tập trang 56 Tin học 12: Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style để tạo viền cho bảng. Màu xanh cho hai dòng đầu, đỏ – vàng – xanh cho Toán, Lý, Hóa.
+      </div>
+
+      <div class="solution">
+        <p><strong>Lời giải:</strong></p>
+        <table>
+          <tr>
+            <th rowspan="2" style="border:2px solid blue;">Họ tên</th>
+            <th colspan="3" style="border:2px solid blue;">Điểm thi</th>
+          </tr>
+          <tr>
+            <td style="border:2px solid red;">Toán</td>
+            <td style="border:2px solid yellow;">Vật lí</td>
+            <td style="border:2px solid green;">Hóa học</td>
+          </tr>
+        </table>
+      </div>
+
     </div>
 
-    <div class="solution">
-      <p><strong>Lời giải:</strong></p>
-      <table>
-        <tr>
-          <th rowspan="2" style="border: 2px solid blue;">Họ tên</th>
-          <th colspan="3" style="border: 2px solid blue;">Điểm thi</th>
-        </tr>
-        <tr>
-          <td style="border: 2px solid red;">Toán</td>
-          <td style="border: 2px solid yellow;">Vật lí</td>
-          <td style="border: 2px solid green;">Hóa học</td>
-        </tr>
-      </table>
+    <!--=========================-->
+    <!--      VẬN DỤNG          -->
+    <!--=========================-->
+    <div class="section-title vd">📙 Vận dụng</div>
+    <div class="section-content">
+
+      <div class="question">
+        Vận dụng trang 56 Tin học 12: Tạo bảng nx4 gồm họ tên – Toán – Lý – Hóa và điền dữ liệu.
+      </div>
+
+      <div class="solution">
+        <p><strong>Lời giải:</strong></p>
+        <table>
+          <tr>
+            <th style="border:2px solid blue;">Họ tên</th>
+            <th style="border:2px solid blue;">Toán</th>
+            <th style="border:2px solid blue;">Vật lí</th>
+            <th style="border:2px solid blue;">Hóa học</th>
+          </tr>
+          <tr><td>Nguyễn Văn A</td><td>8.5</td><td>7.0</td><td>9.0</td></tr>
+          <tr><td>Trần Thị B</td><td>7.0</td><td>8.0</td><td>8.5</td></tr>
+          <tr><td>Lê Quang C</td><td>6.5</td><td>7.5</td><td>8.0</td></tr>
+          <tr><td>Phạm Thị D</td><td>9.0</td><td>8.5</td><td>7.5</td></tr>
+        </table>
+      </div>
+
     </div>
 
-    <!-- Bài tập 2: Bảng dữ liệu nx4 -->
-    <div class="question">
-      Vận dụng trang 56 Tin học 12: Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) tạo bảng tương tự Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.
-    </div>
+    <!--=========================-->
+    <!--      THỰC HÀNH         -->
+    <!--=========================-->
+    <div class="section-title th">📗 Thực hành</div>
+    <div class="section-content">
 
-    <div class="solution">
-      <p><strong>Lời giải:</strong></p>
-      <table>
-        <tr>
-          <th style="border: 2px solid blue;">Họ tên</th>
-          <th style="border: 2px solid blue;">Điểm Toán</th>
-          <th style="border: 2px solid blue;">Điểm Vật lí</th>
-          <th style="border: 2px solid blue;">Điểm Hóa học</th>
-        </tr>
-        <tr>
-          <td style="border: 2px solid black;">Nguyễn Văn A</td>
-          <td style="border: 2px solid black;">8.5</td>
-          <td style="border: 2px solid black;">7.0</td>
-          <td style="border: 2px solid black;">9.0</td>
-        </tr>
-        <tr>
-          <td style="border: 2px solid black;">Trần Thị B</td>
-          <td style="border: 2px solid black;">7.0</td>
-          <td style="border: 2px solid black;">8.0</td>
-          <td style="border: 2px solid black;">8.5</td>
-        </tr>
-        <tr>
-          <td style="border: 2px solid black;">Lê Quang C</td>
-          <td style="border: 2px solid black;">6.5</td>
-          <td style="border: 2px solid black;">7.5</td>
-          <td style="border: 2px solid black;">8.0</td>
-        </tr>
-        <tr>
-          <td style="border: 2px solid black;">Phạm Thị D</td>
-          <td style="border: 2px solid black;">9.0</td>
-          <td style="border: 2px solid black;">8.5</td>
-          <td style="border: 2px solid black;">7.5</td>
-        </tr>
-      </table>
-    </div>
+      <!-- Thực hành 1 -->
+      <div class="question">Thực hành 1: Tạo danh sách các câu lạc bộ của trường</div>
 
-    <!-- Thực hành 1: Tạo danh sách CLB -->
-    <div class="question">
-      Thực hành 1: Tạo danh sách các câu lạc bộ của trường
-    </div>
+      <div class="solution">
+        <h2>Danh sách Câu lạc bộ</h2>
+        <ul>
+          <li>THỂ THAO
+            <ol>
+              <li>Bóng đá</li>
+              <li>Bóng chuyền</li>
+              <li>Bóng rổ</li>
+              <li>Võ
+                <ol type="a">
+                  <li>Karatedo</li>
+                  <li>Taewondo</li>
+                  <li>Vovinam</li>
+                </ol>
+              </li>
+              <li>Bơi</li>
+            </ol>
+          </li>
+          <li>NGHỆ THUẬT
+            <ol>
+              <li>Mĩ thuật</li>
+              <li>Nhiếp ảnh</li>
+              <li>Âm nhạc
+                <ol type="a">
+                  <li>Thanh nhạc</li>
+                  <li>Piano</li>
+                  <li>Violin</li>
+                </ol>
+              </li>
+              <li>Khiêu vũ</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
 
-    <div class="solution">
-      <h2>Danh sách Câu lạc bộ</h2>
-      <ul>
-        <li>THỂ THAO
-          <ol>
-            <li>Bóng đá</li>
-            <li>Bóng chuyền</li>
-            <li>Bóng rổ</li>
-            <li>Võ
-              <ol type="a">
-                <li>Karatedo</li>
-                <li>Taewondo</li>
-                <li>Vovinam</li>
-              </ol>
-            </li>
-            <li>Bơi</li>
-          </ol>
-        </li>
-        <li>NGHỆ THUẬT
-          <ol>
-            <li>Mĩ thuật</li>
-            <li>Nhiếp ảnh</li>
-            <li>Âm nhạc
-              <ol type="a">
-                <li>Thanh nhạc</li>
-                <li>Piano</li>
-                <li>Violin</li>
-              </ol>
-            </li>
-            <li>Khiêu vũ</li>
-          </ol>
-        </li>
-      </ul>
-    </div>
+      <!-- Thực hành 2 -->
+      <div class="question">Thực hành 2: Lập bảng lịch hoạt động CLB Thể thao</div>
 
-    <!-- Thực hành 2: Lập bảng lịch hoạt động CLB -->
-    <div class="question">
-      Thực hành 2: Lập bảng lịch hoạt động của các câu lạc bộ
-    </div>
+      <div class="solution">
+        <p><strong>Lịch hoạt động CLB Thể thao</strong></p>
+        <table>
+          <tr>
+            <th rowspan="2">Bộ môn</th>
+            <th rowspan="2">GV phụ trách</th>
+            <th colspan="5">Ngày</th>
+          </tr>
+          <tr>
+            <th>Thứ 2</th><th>Thứ 3</th><th>Thứ 4</th><th>Thứ 5</th><th>Thứ 6</th>
+          </tr>
+          <tr>
+            <td>Bóng đá</td><td>Thầy Khải</td><td></td><td>X</td><td></td><td></td><td>X</td>
+          </tr>
+          <tr>
+            <td>Bóng chuyền</td><td>Cô Lan</td><td>X</td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>Bóng rổ</td><td>Thầy Vũ</td><td></td><td></td><td>X</td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>Võ thuật</td>
+            <td>
+              Thầy Hoàng - Karatedo<br>
+              Thầy Đức - Taekwondo<br>
+              Thầy Thắng - Vovinam
+            </td>
+            <td>X</td><td>X</td><td></td><td>X</td><td></td>
+          </tr>
+          <tr>
+            <td>Bơi</td><td>Cô Bích</td><td></td><td></td><td>X</td><td></td><td>X</td>
+          </tr>
+        </table>
+      </div>
 
-    <div class="solution">
-      <p><strong>Lịch hoạt động CLB Thể thao</strong></p>
-      <table>
-        <tr>
-          <th rowspan="2">Bộ môn</th>
-          <th rowspan="2">GV phụ trách</th>
-          <th colspan="5">Ngày</th>
-        </tr>
-        <tr>
-          <th>Thứ 2</th>
-          <th>Thứ 3</th>
-          <th>Thứ 4</th>
-          <th>Thứ 5</th>
-          <th>Thứ 6</th>
-        </tr>
-        <tr>
-          <td>Bóng đá</td>
-          <td>Thầy Khải</td>
-          <td></td>
-          <td>X</td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <td>Bóng chuyền</td>
-          <td>Cô Lan</td>
-          <td>X</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Bóng rổ</td>
-          <td>Thầy Vũ</td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Võ thuật</td>
-          <td>
-            Thầy Hoàng - Karatedo<br>
-            Thầy Đức - Taekwondo<br>
-            Thầy Thắng - Vovinam
-          </td>
-          <td>X</td>
-          <td>X</td>
-          <td></td>
-          <td>X</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Bơi</td>
-          <td>Cô Bích</td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-          <td></td>
-          <td>X</td>
-        </tr>
-      </table>
     </div>
 
     <p><a href="index.html" class="btn">Quay lại Trang chính</a></p>
@@ -324,5 +299,19 @@
       <p>© 2025 – Nhóm 5 – 12Anh | Theme: Inside Out</p>
     </footer>
   </main>
+
+  <script>
+    // Accordion mở/đóng nội dung khi nhấp
+    document.querySelectorAll(".section-title").forEach(title =>{
+      title.addEventListener("click", ()=>{
+        let content = title.nextElementSibling;
+        content.classList.toggle("open");
+        content.style.maxHeight = content.classList.contains("open") 
+          ? content.scrollHeight + "px"
+          : "0px";
+      });
+    });
+  </script>
+
 </body>
 </html>
