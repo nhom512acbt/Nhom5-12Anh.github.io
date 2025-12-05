@@ -17,12 +17,12 @@
 
     body{
       margin:0;
-      font-family: "Segoe UI", Arial;
+      font-family:"Segoe UI", Arial;
       background:linear-gradient(180deg, var(--g1), var(--g2));
       overflow-x:hidden;
     }
 
-    /* BỤI BAY */
+    /* Bụi bay */
     .dust{
       position:fixed;
       top:0; left:0;
@@ -32,7 +32,7 @@
         radial-gradient(rgba(255,255,255,0.8) 2px, transparent 2px),
         radial-gradient(rgba(255,255,255,0.5) 1.5px, transparent 1.5px);
       background-size: 3px 60px, 2px 40px;
-      animation: dustMove 1.5s linear infinite;
+      animation:dustMove 1.5s linear infinite;
       opacity:0.55;
       z-index:0;
     }
@@ -42,10 +42,10 @@
       to{ background-position:-3px 60px, 2px 40px; }
     }
 
-    /* CARD */
+    /* Thẻ CARD */
     .card{
       max-width:750px;
-      margin:100px auto 80px;
+      margin:120px auto 80px;
       background:white;
       border-radius:25px;
       padding:45px;
@@ -53,7 +53,7 @@
       z-index:2;
       border:5px solid var(--g2);
       box-shadow:0 0 30px rgba(46,204,113,0.4);
-      animation: cardGlow 4s ease-in-out infinite;
+      animation:cardGlow 4s ease-in-out infinite;
       text-align:center;
     }
 
@@ -63,11 +63,23 @@
       100%{ box-shadow:0 0 20px rgba(46,204,113,0.35); }
     }
 
-    @keyframes disgustWalk{
-      0%{ left:-180px; transform:scaleX(1); }
-      45%{ left:calc(100% - 60px); transform:scaleX(1); }
+    /* NHÂN VẬT CHẠY */
+    .character-walk{
+      position:absolute;
+      bottom:-40px;
+      left:-200px;
+      width:170px;
+      animation:charWalk 10s linear infinite;
+      opacity:1;
+      z-index:3;
+      pointer-events:none;
+    }
+
+    @keyframes charWalk{
+      0%{ left:-220px; transform:scaleX(1); }
+      45%{ left:calc(100% - 40px); transform:scaleX(1); }
       50%{ transform:scaleX(-1); }
-      95%{ left:-180px; transform:scaleX(-1); }
+      95%{ left:-220px; transform:scaleX(-1); }
       100%{ transform:scaleX(1); }
     }
 
@@ -79,7 +91,7 @@
       object-fit:cover;
       border:6px solid #a0ff9e;
       box-shadow:0 0 30px rgba(46,204,113,0.7);
-      animation: glowAvatar 4s ease-in-out infinite;
+      animation:glowAvatar 4s ease-in-out infinite;
       margin-top:15px;
     }
 
@@ -89,7 +101,7 @@
       100%{ box-shadow:0 0 20px rgba(46,204,113,0.35); }
     }
 
-    /* Sparkle */
+    /* Lấp lánh */
     .sparkle{
       position:absolute;
       top:-10px;
@@ -97,7 +109,7 @@
       font-size:28px;
       color:#2ecc71;
       opacity:0.9;
-      animation: sparkle 2.8s linear infinite;
+      animation:sparkle 2.8s linear infinite;
     }
 
     @keyframes sparkle{
@@ -148,6 +160,7 @@
       transition:.2s;
       box-shadow:0 5px 15px rgba(46,204,113,0.4);
     }
+
     a:hover{ background:#27ae60; }
   </style>
 </head>
@@ -157,14 +170,12 @@
 
   <div class="card">
 
-    <img class="disgust-walk"
-      src="hinhthanh.png"
-      alt="Inside Out - Disgust">
-
-   <div class="card">
+    <!-- NHÂN VẬT CHẠY (CHỈ 1 LẦN, KHÔNG NỀN) -->
+    <img class="character-walk" 
+         src="https://i.imgur.com/Y4iFfXH.png"
+         alt="Joy">
 
     <div class="sparkle">✨</div>
-
 
     <img class="avatar" src="hinhthanh.jpg" alt="Avatar Kim Thanh">
 
@@ -226,5 +237,6 @@
     <a href="index.html">← Quay lại trang chính</a>
 
   </div>
+
 </body>
 </html>
