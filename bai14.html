@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Luyện tập - Phông chữ (Tin học 12)</title>
 
-  <!-- Nếu bạn muốn dùng Google Fonts cho các font thay thế, load ở đây (ví dụ Courier Prime, Cascadia Code) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Cascadia+Code&display=swap" rel="stylesheet">
 
   <style>
@@ -30,6 +30,33 @@
       padding:24px;
       box-shadow:0 8px 30px rgba(0,0,0,0.08);
     }
+
+    /* ---------------- TAB STYLE ---------------- */
+    .tabs {
+      display:flex;
+      gap:12px;
+      margin-bottom:20px;
+    }
+    .tab-btn{
+      padding:10px 18px;
+      border-radius:8px;
+      background:#e8f5e9;
+      color:#2e8b57;
+      cursor:pointer;
+      font-weight:600;
+      border:2px solid transparent;
+      transition:0.2s;
+    }
+    .tab-btn.active{
+      background:#2e8b57;
+      color:white;
+      border-color:#1e6c42;
+    }
+    .tab-content{ display:none; }
+    .tab-content.active{ display:block; }
+
+    /* ---------------- ORIGINAL STYLE ---------------- */
+
     h1{ margin:0 0 18px; color:var(--accent); }
     p.lead{ margin:0 0 22px; color:var(--muted); }
 
@@ -49,134 +76,121 @@
       background:linear-gradient(90deg, rgba(0,0,0,0.02), transparent);
     }
 
-    /* ---------- IMPORTANT: font-family declarations below ---------- */
-    /* If the exact font is installed on the viewer's machine, it will be used.
-       Otherwise the browser falls back to the listed fallback fonts.
-       If you upload webfont files to your repo, uncomment and use @font-face (instructions below). */
-
-    /* a) Times New Roman */
+    /* FONT CLASSES */
     .f-times { font-family: "Times New Roman", Times, "TimesNewRoman", serif; font-weight:700; }
-
-    /* b) Courier (use Courier Prime from Google as fallback) */
     .f-courier { font-family: "Courier New", "Courier Prime", Courier, monospace; font-weight:700; }
-
-    /* c) Abadi (often Abadi MT on Windows/Office) */
     .f-abadi { font-family: "Abadi MT", "Abadi", "Helvetica Neue", Arial, sans-serif; font-weight:700; }
-
-    /* d) Bradley Hand ITC (handwritten style, MS/Office) */
     .f-bradley { font-family: "Bradley Hand ITC", "Bradley Hand", "Bradley", "Comic Sans MS", cursive; font-weight:700; }
-
-    /* e) Berlin Sans FB (MS Office font) */
     .f-berlin { font-family: "Berlin Sans FB", "Berlin", "Gill Sans", "Trebuchet MS", sans-serif; font-weight:700; }
-
-    /* f) ALGERIAN (display / decorative) */
     .f-algerian { font-family: "Algerian", "Playfair Display", "Georgia", serif; font-weight:700; letter-spacing:1px; }
-
-    /* g) Consolas (monospace) */
     .f-consolas { font-family: "Consolas", "Cascadia Code", "Inconsolata", monospace; font-weight:700; }
-
-    /* h) Caseadia -> interpreted as "Cascadia" (Cascadia Code) */
     .f-cascadia { font-family: "Cascadia Code", "Cascadia Mono", "Fira Code", monospace; font-weight:700; }
 
-    /* small caption */
     .note { color:var(--muted); font-size:13px; margin-top:10px; }
-
-    /* make the font-name label sit nicely */
     .label { color:#333; margin-left:8px; }
 
-    /* responsive */
     @media (max-width:560px){
       .item{ flex-direction:column; align-items:flex-start; gap:8px; }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <h1>Luyện tập — Phông chữ (Tin học 12)</h1>
-    <p class="lead">Mỗi phông chữ ở dưới sẽ được hiển thị bằng chính phông đó (nếu có trên máy hoặc đã được đưa lên web).</p>
 
-    <div class="exercise">
-      <!-- a -->
-      <div class="item">
-        <div> <strong>a)</strong> <span class="label">Times New Roman</span> </div>
-        <div class="f-times">Times New Roman</div>
-      </div>
+    <h1>Bài học — Phông chữ (Tin học 12)</h1>
 
-      <!-- b -->
-      <div class="item">
-        <div> <strong>b)</strong> <span class="label">Courier</span> </div>
-        <div class="f-courier">Courier / Courier New</div>
-      </div>
-
-      <!-- c -->
-      <div class="item">
-        <div> <strong>c)</strong> <span class="label">Abadi</span> </div>
-        <div class="f-abadi">Abadi</div>
-      </div>
-
-      <!-- d -->
-      <div class="item">
-        <div> <strong>d)</strong> <span class="label">Bradley Hand ITC</span> </div>
-        <div class="f-bradley">Bradley Hand ITC</div>
-      </div>
-
-      <!-- e -->
-      <div class="item">
-        <div> <strong>e)</strong> <span class="label">Berlin Sans FB</span> </div>
-        <div class="f-berlin">Berlin Sans FB</div>
-      </div>
-
-      <!-- f -->
-      <div class="item">
-        <div> <strong>f)</strong> <span class="label">ALGERIAN</span> </div>
-        <div class="f-algerian">ALGERIAN</div>
-      </div>
-
-      <!-- g -->
-      <div class="item">
-        <div> <strong>g)</strong> <span class="label">Consolas</span> </div>
-        <div class="f-consolas">Consolas</div>
-      </div>
-
-      <!-- h -->
-      <div class="item">
-        <div> <strong>h)</strong> <span class="label">Caseadia (Cascadia)</span> </div>
-        <div class="f-cascadia">Cascadia Code</div>
-      </div>
-
+    <!-- TAB BUTTONS -->
+    <div class="tabs">
+      <div class="tab-btn active" data-tab="lt">Luyện tập</div>
+      <div class="tab-btn" data-tab="vd">Vận dụng</div>
     </div>
 
-    <p class="note">
-      Ghi chú: một số font (Abadi, Bradley Hand ITC, Berlin Sans FB, Algerian, Consolas, Times New Roman...) là **font hệ thống / Microsoft** — nghĩa là
-      nếu người xem không cài font đó thì trình duyệt sẽ hiển thị font dự phòng. Nếu bạn muốn chắc chắn mọi người đều thấy **chính xác** font,
-      hãy upload file webfont (.woff / .woff2) vào thư mục <code>/fonts</code> của repo và dùng @font-face (hướng dẫn bên dưới).
-    </p>
+    <!-- ============= TAB 1: LUYỆN TẬP ============= -->
+    <div class="tab-content active" id="lt">
 
-    <details style="margin-top:12px">
-      <summary style="cursor:pointer">Cách thêm file font (.woff2) vào repo & dùng @font-face (nhấn để xem)</summary>
-      <ol style="margin:10px 0 0 18px">
-        <li>Tải file .woff2/.woff tương ứng (ví dụ <code>AbadiMT.woff2</code>).</li>
-        <li>Đặt file vào thư mục <code>fonts/</code> trong repo GitHub.</li>
-        <li>Thêm block @font-face trong thẻ &lt;style&gt; của bạn, ví dụ:</li>
-      </ol>
+      <p class="lead">Mỗi phông chữ ở dưới sẽ được hiển thị bằng chính phông đó (nếu có trên máy hoặc đã được đưa lên web).</p>
 
-      <pre style="background:#f7f7f7;padding:10px;border-radius:6px">
-/* ví dụ @font-face */
-@font-face{
-  font-family: "Abadi MT Web";
-  src: url("/fonts/AbadiMT.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+      <div class="exercise">
 
-/* sau đó dùng */
-.f-abadi { font-family: "Abadi MT Web", "Abadi MT", Arial, sans-serif; }
-      </pre>
+        <!-- a -->
+        <div class="item">
+          <div> <strong>a)</strong> <span class="label">Times New Roman</span> </div>
+          <div class="f-times">Times New Roman</div>
+        </div>
 
-      <p style="margin:8px 0 0">Lưu ý về license: nếu font có bản quyền (ví dụ Abadi/Algerian/Bradley Hand), bạn cần có giấy phép để host webfont công khai.</p>
-    </details>
+        <!-- b -->
+        <div class="item">
+          <div> <strong>b)</strong> <span class="label">Courier</span> </div>
+          <div class="f-courier">Courier / Courier New</div>
+        </div>
+
+        <!-- c -->
+        <div class="item">
+          <div> <strong>c)</strong> <span class="label">Abadi</span> </div>
+          <div class="f-abadi">Abadi</div>
+        </div>
+
+        <!-- d -->
+        <div class="item">
+          <div> <strong>d)</strong> <span class="label">Bradley Hand ITC</span> </div>
+          <div class="f-bradley">Bradley Hand ITC</div>
+        </div>
+
+        <!-- e -->
+        <div class="item">
+          <div> <strong>e)</strong> <span class="label">Berlin Sans FB</span> </div>
+          <div class="f-berlin">Berlin Sans FB</div>
+        </div>
+
+        <!-- f -->
+        <div class="item">
+          <div> <strong>f)</strong> <span class="label">ALGERIAN</span> </div>
+          <div class="f-algerian">ALGERIAN</div>
+        </div>
+
+        <!-- g -->
+        <div class="item">
+          <div> <strong>g)</strong> <span class="label">Consolas</span> </div>
+          <div class="f-consolas">Consolas</div>
+        </div>
+
+        <!-- h -->
+        <div class="item">
+          <div> <strong>h)</strong> <span class="label">Caseadia (Cascadia)</span> </div>
+          <div class="f-cascadia">Cascadia Code</div>
+        </div>
+
+      </div>
+
+      <p class="note">
+        Ghi chú: một số font là **font hệ thống / Microsoft** — nếu người xem không cài font, trình duyệt sẽ dùng font dự phòng.
+      </p>
+    </div>
+
+    <!-- ============= TAB 2: VẬN DỤNG ============= -->
+    <div class="tab-content" id="vd">
+      <h2>Phần vận dụng</h2>
+      <p>Bạn có thể thêm bài tập vận dụng vào đây.</p>
+    </div>
 
   </div>
+
+  <!-- SCRIPT TAB -->
+  <script>
+    const btns = document.querySelectorAll(".tab-btn");
+    const tabs = document.querySelectorAll(".tab-content");
+
+    btns.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        btns.forEach(b=>b.classList.remove("active"));
+        tabs.forEach(t=>t.classList.remove("active"));
+
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
