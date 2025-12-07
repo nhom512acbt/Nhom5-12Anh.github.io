@@ -193,11 +193,9 @@
 <!-- ============= TAB 2: VẬN DỤNG ============= -->
 <div class="tab-content" id="vd">
 
-  <h2 style="color:#2e8b57;">Phần vận dụng</h2>
-
   <p class="lead" style="font-weight:700; color:#2e8b57;">
-    Vận dụng 1: Tìm hiểu thêm các thuộc tính phông chữ như font-variant, letter-spacing,
-    word-spacing và text-shadow.
+    Vận dụng 1: Tìm hiểu thêm các thuộc tính phông chữ như font-variant và thuộc tính dòng văn bản như letter-space (khoảng cách giữa các kí tự), word-space (khoảng cách các từ) và text-shadow (chữ bóng).
+
   </p>
 
   <p class="lead" style="font-weight:700; color:#2e8b57;">Giải</p>
@@ -217,7 +215,10 @@
 - text-shadow: Thêm bóng cho văn bản (màu, độ mờ, vị trí).
   Ví dụ: text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   </pre>
-
+ <p class="lead" style="font-weight:700; color:#2e8b57;">
+    Vận dụng 2: Với bài đọc thêm Lịch sử CSS (Bài 13), em hãy thiết lập hai tệp CSS khác nhau để định dạng cho trang web mô tả bài đọc thêm này. Hai kiểu định dạng được thiết lập cần khác nhau về phông chữ, cỡ chữ và màu chữ.
+  </p>
+  <p class="lead" style="font-weight:700; color:#2e8b57;">Giải</p>
 </div>
 
 <!-- NÚT QUAY LẠI TRANG CHÍNH — nổi bật, căn giữa -->
@@ -225,6 +226,53 @@
   <a href="index.html"
      style="display:inline-block; padding:12px 24px; background:#2e8b57; color:white;
             text-decoration:none; font-weight:700; border-radius:8px; font-size:18px;">
+    <h3>Kiểu 1:</h3>
+
+<pre style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:16px; white-space:pre-wrap;">
+/* style1.css */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 28px;
+  color: #990000;
+}
+
+p {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: #666666;
+}
+</pre>
+
+
+<h3>- Kiểu 2:</h3>
+
+<pre style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:16px; white-space:pre-wrap;">
+/* style2.css */
+body {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 18px;
+  color: #555555;
+}
+
+h1 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 32px;
+  color: #006600;
+}
+
+p {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #888888;
+}
+</pre>
+
     ← Quay lại trang chính
   </a>
 </div>
