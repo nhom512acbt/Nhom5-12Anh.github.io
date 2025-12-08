@@ -2,98 +2,88 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BÀI 13: KHÁI NIỆM, VAI TRÒ CỦA CSS - LUYỆN TẬP & VẬN DỤNG</title>
+
 <style>
     body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #e8ecff, #f3e9ff);
         margin: 0;
         padding: 0;
-        background: radial-gradient(circle at top, #6ecbff, #1b1b3a);
-        font-family: "Arial", sans-serif;
-        color: white;
-        animation: bgMove 10s infinite alternate ease-in-out;
+        color: #333;
+        animation: fadeIn 1.2s ease-in-out;
     }
 
-    @keyframes bgMove {
-        0% { background-position: 0 0; }
-        100% { background-position: 0 80%; }
-    }
-
-    .container {
-        width: 90%;
-        margin: auto;
-        padding: 20px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 45px;
-        text-shadow: 0 0 20px #ffe600;
-        animation: pulse 2s infinite alternate;
-    }
-
-    @keyframes pulse {
-        from { transform: scale(1); }
-        to { transform: scale(1.05); }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .section-title {
-        font-size: 35px;
-        margin-top: 50px;
-        font-weight: bold;
-        text-shadow: 0 0 12px #ffd7ff;
+        font-size: 32px;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 40px;
+        color: #5a4fcf;
+        text-shadow: 0 2px 6px rgba(98, 74, 255, 0.25);
+        animation: breathe 3s infinite ease-in-out;
     }
 
-    .item {
-        background: rgba(255,255,255,0.12);
-        padding: 18px;
-        border-radius: 12px;
-        margin-top: 20px;
-        backdrop-filter: blur(5px);
-        animation: slideDown 0.9s ease-out;
+    @keyframes breathe {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+        100% { transform: scale(1); }
     }
 
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-22px); }
-        to   { opacity: 1; transform: translateY(0); }
+    .box {
+        background: #ffffff;
+        width: 85%;
+        margin: 25px auto;
+        padding: 20px 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        animation: fadeIn 0.8s ease-in-out;
     }
 
-    b {
-        color: #ffe3ff;
+    .question {
+        font-weight: 700;
+        color: #483ccf;
+        margin-bottom: 10px;
+    }
+
+    .answer {
+        margin-left: 10px;
+        font-weight: 400;
     }
 
     pre {
-        background: #111;
-        color: #0aff8c;
-        padding: 18px;
-        white-space: pre-wrap;
-        border-radius: 10px;
+        background: #27282b;
+        color: #e6e6e6;
+        padding: 15px;
+        border-radius: 12px;
         overflow-x: auto;
-        font-size: 15px;
-        border: 2px solid #4affff;
-        box-shadow: 0 0 12px cyan;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 10px;
     }
 
     .result-box {
-        background: white;
-        color: black;
-        padding: 25px;
+        background: #f9f9ff;
+        padding: 15px;
         border-radius: 12px;
-        margin-top: 20px;
-        box-shadow: 0 0 15px #fff;
+        border: 1px solid #d4d4ff;
     }
 
+    h2 {
+        color: #4b42c3;
+    }
 </style>
 </head>
+
 <body>
 
-<div class="container">
-
-<h1>BÀI 13: KHÁI NIỆM, VAI TRÒ CỦA CSS - LUYỆN TẬP & VẬN DỤNG</h1>
-
-<!-- =========================== -->
-<!--       LUYỆN TẬP            -->
-<!-- =========================== -->
-
+<!-- ====================== LUYỆN TẬP ======================= -->
 <h2 class="section-title">Luyện tập</h2>
 
 <div class="item">
@@ -110,13 +100,7 @@
     Đúng. Việc chỉ cần thay đổi thông tin trong tệp CSS có thể làm thay đổi định dạng của nhiều trang web hoặc thậm chí của cả một trang web. Điều này là do CSS được sử dụng để kiểm soát phong cách và định dạng của các phần tử HTML trên trang web. Thay đổi các thuộc tính trong tệp CSS, chẳng hạn như màu sắc, kích thước, font chữ, độ dày của đường viền, và khoảng cách, có thể ảnh hưởng đến cách mà các phần tử HTML được hiển thị trên trang web. Do đó, việc chỉnh sửa CSS có thể ảnh hưởng lớn đến giao diện của nhiều trang web hoặc thậm chí của cả một trang web.</p>
 </div>
 
-<!-- =========================== -->
-<!--       VẬN DỤNG             -->
-<!-- =========================== -->
-
-<h2 class="section-title">Vận dụng</h2>
-
-<!-- =============== VẬN DỤNG 1 ============== -->
+<!-- ====================== VẬN DỤNG ======================= -->
 <div class="item">
     <b>Vận dụng 1 trang 75 Tin học 12:</b>  
     <p><b>Lời giải:</b><br>
@@ -127,46 +111,41 @@
     <br>- Kiểm soát phong cách và định dạng: Cả hai đều cho phép điều chỉnh màu sắc, font, khoảng cách... để tạo giao diện phù hợp.</p>
 </div>
 
-<!-- =============== VẬN DỤNG 2 ============== -->
-<div class="item">
-    <b>Vận dụng 2 trang 75 Tin học 12: Thiết lập trang web với nội dung sau và định dạng trang bằng các mẫu CSS</b>
 
-    <!-- PHẦN CODE MẪU -->
-    <h3 style="margin-top:20px; font-weight:bold; color:#ffeb3b;">PHẦN CODE MẪU:</h3>
+<!-- ====================== VẬN DỤNG 2 ======================= -->
+<div class="box">
+    <p class="question"><b>Vận dụng 2 (trang 75 – Tin học 12):</b></p>
+    <p class="answer">
+        Thiết lập trang web với nội dung sau và định dạng trang bằng các mẫu CSS.
+    </p>
 
-    <pre><code>
-Lịch sử CSS
-Ý tưởng của CSS do kỹ sư Hakon Wium Line, người Na Uy thiết lập năm 1994 trong khi làm việc với Tim Berners-Lê tại viện hạt nhân CERN.
-Ý tưởng của CSS là tạo ra các mẫu định dạng riêng, độc lập cho các phần tử HTML của trang web. Cách tạo ngôn ngữ định dạng riêng này sẽ giúp ích rất nhiều nếu so sánh với việc định dạng theo từng thẻ HTML 
-Lịch sử các phiên bản CSS đầu tiên
-Các ý tưởng ban đầu được đưa ra năm 1994 nhưng phiên bản CSS1 chính thức ra đời năm 1996.
-Phiên bản tiếp theo CSS2 được khởi động ngay sau đó nhưng mãi đến năm 1998 mới hoàn thiện. Phiên bản chính thức hoàn thiện nhất của CSS2 là CSS2.1 ra đời năm 2011, bản CSS2.1 nâng cấp được hoàn thiện năm 2016.
-Các phiên bản CSS tiếp theo
-Từ bản CSS3 trở đi CSS được phát triển theo từng gói riêng biệt. Hiện nay các gói của CSS3 vẫn đang được phát triển và hoàn thiện. Đồng thời một số chuẩn CSS4 và CSS 5 vẫn đang được tiếp tục thiết lập mới.
-Hiện tại hiệp hội chịu trách nhiệm phát triển các chuẩn của HTML, CSS và các công nghệ có liên quan là tổ chức World Wide Web Consotium (W3C), có địa chỉ tại http://www.w3.org/.
-Lời giải:
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch sử CSS</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1 class="title">Lịch sử CSS</h1>
-        <p>Ý tưởng của CSS do kỹ sư Hakon Wium Lie, người Na Uy thiết lập năm 1994 trong khi làm việc với Tim Berners-Lee tại viện hạt nhân CERN.</p>
-        <p>Ý tưởng của CSS là tạo ra các mẫu định dạng riêng, độc lập cho các phần tử HTML của trang web. Cách tạo ngôn ngữ định dạng riêng này sẽ giúp ích rất nhiều nếu so sánh với việc định dạng theo từng thẻ HTML.</p>
-        <h2 class="subtitle">Lịch sử các phiên bản CSS đầu tiên</h2>
-        <p>Các ý tưởng ban đầu được đưa ra năm 1994 nhưng phiên bản CSS1 chính thức ra đời năm 1996.</p>
-<p>Phiên bản tiếp theo, CSS2, được khởi động ngay sau đó nhưng mãi đến năm 1998 mới hoàn thiện. Phiên bản chính thức hoàn thiện nhất của CSS2 là CSS2.1, ra đời năm 2011, bản CSS2.1 nâng cấp được hoàn thiện năm 2016.</p>
-        <h2 class="subtitle">Các phiên bản CSS tiếp theo</h2>
-        <p>Từ bản CSS3 trở đi, CSS được phát triển theo từng gói riêng biệt. Hiện nay các gói của CSS3 vẫn đang được phát triển và hoàn thiện. Đồng thời một số chuẩn CSS4 và CSS5 vẫn đang được tiếp tục thiết lập mới.</p>
-        <p>Hiện tại, hiệp hội chịu trách nhiệm phát triển các chuẩn của HTML, CSS và các công nghệ có liên quan là tổ chức World Wide Web Consortium (W3C), có địa chỉ tại &lt;a href="http://www.w3.org/"&gt;www.w3.org&lt;/a&gt;.</p>
-    </div>
-</body>
-</html>
+    <h2>📌 PHẦN CODE MẪU </h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lịch sử CSS&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="title"&gt;Lịch sử CSS&lt;/h1&gt;
+        &lt;p&gt;Ý tưởng của CSS do kỹ sư Hakon Wium Lie, người Na Uy thiết lập năm 1994 trong khi làm việc với Tim Berners-Lee tại viện hạt nhân CERN.&lt;/p&gt;
+        &lt;p&gt;Ý tưởng của CSS là tạo ra các mẫu định dạng riêng, độc lập cho các phần tử HTML của trang web. Cách tạo ngôn ngữ định dạng riêng này sẽ giúp ích rất nhiều nếu so sánh với việc định dạng theo từng thẻ HTML.&lt;/p&gt;
+
+        &lt;h2 class="subtitle"&gt;Lịch sử các phiên bản CSS đầu tiên&lt;/h2&gt;
+        &lt;p&gt;Các ý tưởng ban đầu được đưa ra năm 1994 nhưng phiên bản CSS1 chính thức ra đời năm 1996.&lt;/p&gt;
+        &lt;p&gt;Phiên bản tiếp theo, CSS2, được khởi động ngay sau đó nhưng mãi đến năm 1998 mới hoàn thiện. Phiên bản chính thức hoàn thiện nhất của CSS2 là CSS2.1, ra đời năm 2011, bản CSS2.1 nâng cấp được hoàn thiện năm 2016.&lt;/p&gt;
+
+        &lt;h2 class="subtitle"&gt;Các phiên bản CSS tiếp theo&lt;/h2&gt;
+        &lt;p&gt;Từ bản CSS3 trở đi, CSS được phát triển theo từng gói riêng biệt. Hiện nay các gói của CSS3 vẫn đang được phát triển và hoàn thiện. Đồng thời một số chuẩn CSS4 và CSS5 vẫn đang được tiếp tục thiết lập mới.&lt;/p&gt;
+
+        &lt;p&gt;Hiện tại, hiệp hội chịu trách nhiệm phát triển các chuẩn của HTML, CSS và các công nghệ có liên quan là tổ chức World Wide Web Consortium (W3C), có địa chỉ tại &lt;a href="http://www.w3.org/"&gt;www.w3.org&lt;/a&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 
 CSS:
 body {
@@ -177,7 +156,6 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
- 
 .container {
     width: 80%;
     margin: auto;
@@ -204,27 +182,29 @@ a:hover {
 p {
     margin: 10px 0;
 }
-    </code></pre>
+</code></pre>
 
-    <!-- PHẦN KẾT QUẢ -->
-    <h3 style="margin-top:20px; font-weight:bold; color:#4affff;">KẾT QUẢ HIỂN THỊ:</h3>
+    <h2>📌 KẾT QUẢ KHI CHẠY CODE</h2>
 
     <div class="result-box">
-        <h1 class="title">Lịch sử CSS</h1>
+        <h1>Lịch sử CSS</h1>
+
         <p>Ý tưởng của CSS do kỹ sư Hakon Wium Lie, người Na Uy thiết lập năm 1994 trong khi làm việc với Tim Berners-Lee tại viện hạt nhân CERN.</p>
+
         <p>Ý tưởng của CSS là tạo ra các mẫu định dạng riêng, độc lập cho các phần tử HTML của trang web. Cách tạo ngôn ngữ định dạng riêng này sẽ giúp ích rất nhiều nếu so sánh với việc định dạng theo từng thẻ HTML.</p>
-        
-        <h2 class="subtitle">Lịch sử các phiên bản CSS đầu tiên</h2>
+
+        <h2>Lịch sử các phiên bản CSS đầu tiên</h2>
+
         <p>Các ý tưởng ban đầu được đưa ra năm 1994 nhưng phiên bản CSS1 chính thức ra đời năm 1996.</p>
+
         <p>Phiên bản tiếp theo, CSS2, được khởi động ngay sau đó nhưng mãi đến năm 1998 mới hoàn thiện. Phiên bản chính thức hoàn thiện nhất của CSS2 là CSS2.1, ra đời năm 2011, bản CSS2.1 nâng cấp được hoàn thiện năm 2016.</p>
 
-        <h2 class="subtitle">Các phiên bản CSS tiếp theo</h2>
+        <h2>Các phiên bản CSS tiếp theo</h2>
+
         <p>Từ bản CSS3 trở đi, CSS được phát triển theo từng gói riêng biệt. Hiện nay các gói của CSS3 vẫn đang được phát triển và hoàn thiện. Đồng thời một số chuẩn CSS4 và CSS5 vẫn đang được tiếp tục thiết lập mới.</p>
 
-        <p>Hiện tại, hiệp hội chịu trách nhiệm phát triển các chuẩn của HTML, CSS và các công nghệ có liên quan là tổ chức World Wide Web Consortium (W3C), có địa chỉ tại 
-        <a href="http://www.w3.org/">www.w3.org</a>.</p>
+        <p>Hiện tại, hiệp hội chịu trách nhiệm phát triển các chuẩn của HTML, CSS và các công nghệ có liên quan là tổ chức World Wide Web Consortium (W3C), có địa chỉ tại <a href="http://www.w3.org/">www.w3.org</a>.</p>
     </div>
-
 </div>
 
 </body>
