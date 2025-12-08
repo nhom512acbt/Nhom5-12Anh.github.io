@@ -1,379 +1,331 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Hồ Hải Đăng</title>
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nhóm 5 – 12Anh (Inside Out Theme)</title>
 
   <style>
-    
-    :root{
-      --s1:#90a7ff;
-      --s2:#4a6bff;
-      --s3:#283a87;
-      --bg1:#d8e1ff;
-      --bg2:#b5c3ff;
+  body{
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Background hình mờ */
+  body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background.jpg") center/cover no-repeat;
+    filter: blur(5px) brightness(0.85);
+    -webkit-filter: blur(15px) brightness(0.85);
+    z-index: -1;
+  }
+
+  /* ===========================
+        BANNER FULL + SƯƠNG MÙ
+     =========================== */
+
+  .top-banner{
+    width: 100%;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .top-banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fog{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: url("fog.png") repeat-x;
+    opacity: 0.45;
+    animation: fog-move 18s linear infinite;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    filter: blur(8px);
+  }
+
+  @keyframes fog-move{
+    from{ transform: translateX(-20%); }
+    to{ transform: translateX(20%); }
+  }
+
+  /* ===========================
+          CÁC STYLE GỐC
+     =========================== */
+
+  :root{
+      --joy: #FFD700;
+      --sadness: #1E90FF;
+      --anger: #FF4500;
+      --fear: #8A2BE2;
+      --disgust: #32CD32;
+      --background: #FFF8E7;
+      --text: #333;
+      --muted: #555;
+      --card: #FFFFFF;
     }
 
-    /* Nền */
+    *{ box-sizing:border-box; margin:0; padding:0; }
+
     body{
-      margin:0;
-      font-family: "Segoe UI", Arial;
-      background: linear-gradient(180deg, var(--bg1), var(--bg2));
-      overflow-x:hidden;
-      position:relative;
-      height:100%;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      min-height: 100vh;
     }
 
-    /* ---- HIỆU ỨNG MƯA ---- */
-    .rain{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      pointer-events:none;
-      z-index:0;
-      background-image:
-       radial-gradient(circle, rgba(255,255,255,0.9) 2px, transparent 2px);
-      background-size: 3px 40px;
-      animation: rainFall 0.7s linear infinite;
-      opacity:0.55;
+    .container{
+      max-width:900px;
+      margin:40px auto;
+      background: var(--card);
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      border: 4px solid var(--joy);
     }
 
-    @keyframes rainFall {
-      from{ background-position: 0 0; }
-      to{ background-position: -3px 40px; }
-    }
-
-    /* ---- SƯƠNG MÙ ---- */
-    .fog{
-      position:fixed;
-      top:0;
-      left:0;
-      width:160%;
-      height:160%;
-      pointer-events:none;
-      background:url('https://i.imgur.com/2ZC5ZVn.png');
-      background-size:cover;
-      opacity:0.55;
-      filter:blur(14px);
-      animation:fogMove 35s linear infinite;
-      z-index:1;
-    }
-
-    @keyframes fogMove{
-      0%{ transform:translate(-60px,-40px); }
-      50%{ transform:translate(70px,40px); }
-      100%{ transform:translate(-60px,-40px); }
-    }
-
-    /* Bong bóng nổi */
-    .bubble{
-      position:fixed;
-      bottom:-50px;
-      width:20px;
-      height:20px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.4);
-      animation: bubble 6s linear infinite;
-      filter:blur(1px);
-      z-index:1;
-    }
-
-    @keyframes bubble {
-      0%{ transform:translateY(0) scale(1); }
-      100%{ transform:translateY(-120vh) scale(1.8); opacity:0; }
-    }
-
-    /* CARD PROFILE */
-    .card{
-      max-width:750px;
-      margin:100px auto 80px;
-      background:white;
-      border-radius:25px;
-      padding:45px;
+    h1{
+      font-size:36px;
+      color: var(--joy);
       text-align:center;
-      position:relative;
-      z-index:3;
-      box-shadow:0 0 30px rgba(70,90,255,0.4);
-      border:5px solid var(--s1);
-      animation: cardGlow 4s ease-in-out infinite;
-    }
-
-    @keyframes cardGlow{
-      0%{ box-shadow:0 0 20px rgba(70,90,255,0.35); }
-      50%{ box-shadow:0 0 40px rgba(70,90,255,0.8); }
-      100%{ box-shadow:0 0 20px rgba(70,90,255,0.35); }
-    }
-
-    /* Sadness đi qua lại */
-    .sadness-walk{
-      position:absolute;
-      bottom:-30px;
-      left:-120px;
-      width:150px;
-      z-index:3;
-      animation: walk 12s linear infinite;
-      opacity:0.92;
-    }
-
-    @keyframes walk{
-      0%{ left:-200px; transform:scaleX(1); }
-      45%{ left:calc(100% - 50px); transform:scaleX(1); }
-      50%{ transform:scaleX(-1); }
-      95%{ left:-200px; transform:scaleX(-1); }
-      100%{ transform:scaleX(1); }
-    }
-
-    /* Avatar */
-    .avatar{
-      width:170px;
-      height:170px;
-      border-radius:50%;
-      object-fit:cover;
-      border:6px solid #cdd9ff;
-      box-shadow:0 0 30px rgba(90,110,255,0.6);
-      animation: glowAvatar 4s ease-in-out infinite;
-      margin-top:15px;
-    }
-
-    @keyframes glowAvatar{
-      0%{ box-shadow:0 0 20px rgba(60,80,255,0.35); }
-      50%{ box-shadow:0 0 40px rgba(60,80,255,0.7); }
-      100%{ box-shadow:0 0 20px rgba(60,80,255,0.35); }
-    }
-
-    .tear{
-      position:absolute;
-      top:-10px;
-      right:15px;
-      font-size:25px;
-      animation: tearDrop 2.5s linear infinite;
-      opacity:0.8;
-    }
-
-    @keyframes tearDrop {
-      0%{ transform:translateY(0); opacity:0; }
-      30%{ opacity:1; }
-      100%{ transform:translateY(150px); opacity:0; }
-    }
-
-    h2{
-      color:var(--s3);
-      font-size:30px;
       margin-bottom:10px;
-      font-weight:700;
     }
 
-    .section-title{
-      font-size:22px;
-      font-weight:700;
-      margin-top:30px;
-      margin-bottom:12px;
-      color:var(--s2);
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .lead{
+      text-align:center;
+      font-size:18px;
+      color: var(--muted);
+      margin-bottom:28px;
     }
 
-    .box{
-      background:var(--s1);
-      padding:20px;
-      border-radius:15px;
-      text-align:left;
-      border-left:6px solid var(--s3);
-      color:#0d1b2a;
-      margin-bottom:18px;
-      box-shadow:0 5px 12px rgba(0,0,0,0.1);
-    }
+    section{ margin-top:28px; }
 
-    a{
+    .members h2{
+      color: var(--sadness);
+      border-bottom: 2px solid var(--fear);
       display:inline-block;
-      margin-top:35px;
-      padding:12px 20px;
-      background:var(--s2);
-      color:white;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      transition:.2s;
-      box-shadow:0 5px 15px rgba(60,80,255,0.4);
-    }
-    a:hover{
-      background:var(--s3);
+      padding-bottom:4px;
+      margin-bottom:14px;
     }
 
-    /* Nút bật/tắt âm thanh */
+    /* ===========================
+        LAYOUT Ô THÀNH VIÊN
+     =========================== */
+
+    .member-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .member-card{
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      text-align:center;
+      border: 3px solid var(--disgust);
+      transition: 0.25s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .member-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .member-card img{
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border:3px solid var(--fear);
+    }
+
+    .member-card a{
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* =========================== */
+
+    .task{
+      background: #FFF5E6;
+      border:2px solid var(--joy);
+      border-radius:12px;
+      padding:16px;
+      margin-bottom:16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .task:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .task h3{
+      color: var(--anger);
+      margin-bottom:6px;
+    }
+
     .btn{
-      position:fixed;
-      top:20px;
-      right:20px;
-      z-index:5;
-      padding:10px 18px;
-      background:rgba(255,255,255,0.2);
-      border:1px solid white;
-      border-radius:10px;
+      display:inline-block;
+      padding:10px 16px;
+      text-decoration:none;
+      background: var(--joy);
       color:white;
-      backdrop-filter:blur(6px);
-      cursor:pointer;
+      border-radius:8px;
       font-weight:600;
+      transition: background 0.2s, transform 0.2s;
     }
 
+    .btn:hover{
+      background: var(--anger);
+      transform: scale(1.05);
+    }
+
+    .site-footer{
+      margin-top:36px;
+      padding-top:16px;
+      border-top:2px dashed var(--fear);
+      text-align:center;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    audio{
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- SƯƠNG MÙ -->
-  <div class="fog"></div>
-
-  <!-- MƯA -->
-  <div class="rain"></div>
-
-  <!-- Bong bóng -->
-  <script>
-    for(let i=0;i<18;i++){
-      const b=document.createElement("div");
-      b.className="bubble";
-      b.style.left=Math.random()*100+"%";
-      b.style.width=b.style.height=(10+Math.random()*20)+"px";
-      b.style.animationDuration=(5+Math.random()*4)+"s";
-      document.body.appendChild(b);
-    }
-  </script>
-
-  <!-- ÂM THANH MƯA -->
-  <audio id="rainSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7f4d9f22b0.mp3?filename=rain-ambient-110239.mp3" loop></audio>
-
-  <button class="btn" onclick="toggleRain()">🔊 Âm mưa</button>
-
-  <script>
-    const sound = document.getElementById("rainSound");
-
-    function toggleRain(){
-      if(sound.paused){
-        sound.play();
-      } else {
-        sound.pause();
-      }
-    }
-  </script>
-
-  <div class="card">
-
-    <img class="sadness-walk" 
-         src="https://th.bing.com/th/id/R.fc7156f24d0e1b875ad0ccf6f9d69064?rik=cYzMPei36vJkdg&pid=ImgRaw&r=0">
-
-    <div class="tear">💧</div>
-
-    <img class="avatar" src="hinhdang.jpg">
-
-    <h2>Hồ Hải Đăng</h2>
-    <p><strong>Lớp:</strong> 12A</p>
-    <p><strong>Ngày sinh:</strong> 15/07/2008</p>
-
-    <div class="section-title">
-      <span class="material-icons">person</span> Giới thiệu
-    </div>
-    <div class="box">
-      Xin chào! Mình là <strong>Hồ Hải Đăng</strong>.  
-      Mình thích sự bình yên, thích lắng nghe và luôn muốn giúp đỡ người khác theo cách nhẹ nhàng nhất.
-    </div>
-
-    <div class="section-title">
-      <span class="material-icons">emoji_emotions</span> Tính cách
-    </div>
-    <div class="box">
-      • Nhạy cảm nhưng chân thành  
-      • Kiên nhẫn  
-      • Suy nghĩ logic  
-      • Tốt bụng và thấu hiểu  
-    </div>
-
-    <div class="section-title">
-      <span class="material-icons">favorite</span> Sở thích
-    </div>
-    <div class="box">
-      • Học tiếng Anh mỗi ngày  
-      • Nghe nhạc nhẹ  
-      • Đọc sách khám phá điều mới  
-      • Ngắm trời mưa  
-    </div>
-    <!-- GIỚI THIỆU BẠN CÙNG BÀN -->
-    <div class="section-title">
-      <span class="material-icons">group</span> Bạn cùng bàn – Yến Ngân
-    </div>
-    <div class="box">
-      Đây là <strong>Yến Ngân</strong> – người bạn cùng bàn thân quen của mình.  
-      Ngân là người có sở thích rất đặc biệt: <em>móc len</em> thành những con thú nhỏ xinh,
-      tự tay <em>trồng cây</em> và chăm chúng mỗi ngày như những “đứa con cưng”.  
-      Điều thú vị là Ngân đã <strong>niềng răng từ năm lớp 6</strong>, và nhờ sự kiên trì đó mà
-      giờ bạn ấy cười rất duyên, kiểu “cười cái là thấy mùa xuân tới”.  
-      Tuy nhiên, Ngân có một tính cách rất dễ thương: <strong>luôn nghi ngờ</strong> việc 
-      bạn bè sẽ lén dùng điện thoại của mình để làm trò bậy bạ, nên lúc nào cũng giữ khư khư.
-      Dù vậy, Ngân vẫn là người chu đáo, tinh tế và biết quan tâm đến người khác theo cách riêng.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/yen.ngan.857598" target="_blank">facebook.com/yen.ngan.857598</a>
-    </div>
-
-
-    <!-- BẠN THÂN 1: THẢO UYÊN -->
-    <div class="section-title">
-      <span class="material-icons">diversity_3</span> Bạn thân – Thảo Uyên
-    </div>
-    <div class="box">
-      <strong>Thảo Uyên</strong> là đứa bạn thân lâu năm của mình – người có chiều cao “huyền thoại”
-      đến mức bọn mình hay đùa là <strong>3 mét bẻ đôi</strong>.  
-      Uyên mang tính cách cực kỳ vui vẻ, hài hước, nói chuyện lúc nào cũng khiến 
-      không khí thoải mái như đang trong một buổi tấu hài.  
-      Tuy vậy, Uyên cũng là người hay <em>cãi lộn chơi chơi</em> với mình, kiểu lời qua tiếng lại 
-      nhưng vui thôi không quạu.  
-      Cả hai đứa có một sở thích chung khá… khó đỡ: thường xuyên cùng nhau chơi trò 
-      <strong>đen ta phọt</strong>, và đó gần như là “đặc sản” mỗi lần gặp nhau.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/thaouyen.qrr" target="_blank">facebook.com/thaouyen.qrr</a>
-    </div>
-
-
-   
-     <!-- BẠN THÂN 2: NHƯ QUYÊN -->
-    <div class="section-title">
-      <span class="material-icons">hiking</span> Bạn thân – Như Quyên
-    </div>
-    <div class="box">
-      <strong>Như Quyên</strong> là cô bạn thân luôn mang trong mình tinh thần khám phá.  
-      Hai đứa thường rủ nhau đi dạo khắp thành phố, tìm những góc nhỏ thú vị, 
-      thử những món ăn mới lạ và lưu lại thật nhiều kỷ niệm.  
-      Quyên có một sở thích nghe rất “truyền thống”: <strong>ngủ</strong> – ngủ ở mọi nơi, mọi trạng thái,
-      từ ghế đá, công viên cho tới bàn học.  
-      Ngoài ra, bạn ấy còn thích <em>ghẹo Thomas</em>, và đó gần như là niềm vui bất tận mỗi ngày.
-      Với mình, Quyên là người mang lại cảm giác tự do, thoải mái mỗi khi đồng hành.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/wuqishere" target="_blank">facebook.com/wuqishere</a>
-    </div>
-
-     <!-- BẠN THÂN 3: ĐỨC MẠNH -->
-    <div class="section-title">
-      <span class="material-icons">hiking</span> Bạn thân – Đức Mạnh
-    </div>
-    <div class="box">
-   <strong>Mạnh</strong> là kiểu bạn hiền đến mức nhìn là biết không bao giờ giận ai quá 5 phút.  
-Cậu ấy thông minh một cách nhẹ nhàng: không khoe, không làm màu, nhưng mỗi lần nhóm bí bài thì Mạnh chỉ cần nói đúng một câu là mọi người sáng mắt ra ngay  
-Lúc nào đi chung với Mạnh cũng có cảm giác an toàn, vui vẻ và… đỡ stress hẳn, vì cậu ấy vừa tử tế vừa biết cách chọc cười đúng lúc.  
-Nói chung, thiếu Mạnh thì nhóm mất đi một nửa bình yên và ba phần rưỡi năng lượng tích cực.
-      <br><br>
-      🌐 Facebook:  
-      <a href="https://www.facebook.com/share/1D1ZrEbJBb/?mibextid=wwXIfr" target="_blank">facebook.com/manhduc</a>
-    </div>
-
-    <a href="index.html">← Quay lại trang chính</a>
+  <!-- BANNER -->
+  <div class="top-banner">
+    <img src="banner.jpg" alt="Banner của nhóm">
+    <div class="fog"></div>
   </div>
 
+  <main class="container">
+    <h1>Nhóm 5 – 12Anh</h1>
+    <p class="lead">Trang web tổng hợp bài tập – thuyết trình – sản phẩm học tập</p>
+
+    <!-- ===========================
+          NHẠC — DÙNG FILE LOCAL
+         =========================== -->
+    <audio controls autoplay loop>
+      <source src="relax.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- ===========================
+          THÀNH VIÊN – Ô CARD
+         =========================== -->
+    <section class="members">
+      <h2>Thành viên nhóm</h2>
+
+      <div class="member-grid">
+
+        <div class="member-card">
+          <img src="thanh.jpg" alt="Thanh">
+          <a href="thanh.html">Huỳnh Thị Kim Thanh</a>
+        </div>
+
+        <div class="member-card">
+          <img src="diep.jpg" alt="Diệp">
+          <a href="diep.html">Huỳnh Thị Ngọc Diệp</a>
+        </div>
+
+        <div class="member-card">
+          <img src="dang.jpg" alt="Đăng">
+          <a href="dang.html">Hồ Hải Đăng</a>
+        </div>
+
+        <div class="member-card">
+          <img src="thao.jpg" alt="Thảo">
+          <a href="thao.html">Thiều Quang Thảo</a>
+        </div>
+
+        <div class="member-card">
+          <img src="thuan.jpg" alt="Thuận">
+          <a href="thuan.html">Lương Huy Thuận</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+          BÀI TẬP
+         =========================== -->
+    <section class="assignments">
+      <h2>Bài tập</h2>
+
+      <article class="task">
+        <h3>Bài 8: Định dạng văn bản</h3>
+        <p>Mô tả bài làm: Luyện tập, Vận dụng</p>
+        <p><a href="baitap8.html" class="btn">Xem bài</a></p>
+      </article>
+
+      <article class="task">
+        <h3>Bài 9: Tạo danh sách, bảng</h3>
+        <p>Mô tả bài làm: Luyện tập, Vận dụng</p>
+        <p><a href="baitap9.html" class="btn">Xem bài</a></p>
+      </article>
+
+      <article class="task">
+        <h3>Bài 10: Tạo liên kết</h3>
+        <p>Mô tả bài làm: Luyện tập, Vận dụng</p>
+        <p><a href="baitap10.html" class="btn">Xem bài</a></p>
+      </article>
+
+      <article class="task">
+        <h3>Bài 11: Chèn ảnh – âm thanh – khung nội tuyến</h3>
+        <p>Mô tả bài làm: Nhiệm vụ 1, 2 và 3</p>
+        <p><a href="baitap11.html" class="btn">Xem bài</a></p>
+      </article>
+
+      <article class="task">
+        <h3>Bài 12: Tạo biểu mẫu</h3>
+        <p>Mô tả bài làm: Luyện tập, vận dụng</p>
+        <p><a href="baitap-buoi12.html" class="btn">Xem bài</a></p>
+      </article>
+
+      <article class="task">
+        <h3>Bài 13: Khái niệm, vai trò của CSS </h3>
+        <p>Mô tả bài làm: Luyện tập, vận dụng</p>
+        <p><a href="bai13.html" class="btn">Xem bài</a></p>
+      </article>
+
+      <article class="task">
+        <h3>Bài 14: Định dạng văn bản bằng CSS</h3>
+        <p>Mô tả bài làm: Luyện tập, vận dụng</p>
+        <p><a href="bai14.html" class="btn">Xem bài</a></p>
+      </article>
+
+    </section>
+
+    <footer class="site-footer">
+      <p>© 2025 – Nhóm 5 – 12Anh | Theme: Inside Out</p>
+    </footer>
+
+  </main>
 </body>
 </html>
+
