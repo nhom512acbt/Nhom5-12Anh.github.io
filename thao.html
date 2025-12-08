@@ -9,10 +9,11 @@
 
   <style>
     :root{
-      --g1:#e3dfff; 
-      --g2:#c2b3ff; 
-      --g3:#8a63ff; 
-      --dark:#2b1a4a;
+      --g1:#d8d5ff; 
+      --g2:#b7b3ff; 
+      --g3:#6c63ff; 
+      --dark:#1d1342;
+      --anxiety-glow:#5b47ff;
     }
 
     body{
@@ -20,100 +21,158 @@
       font-family: "Segoe UI", Arial;
       background:linear-gradient(180deg, var(--g1), var(--g2));
       overflow-x:hidden;
+      animation:bgMove 10s linear infinite alternate,
+              anxietyPulse 5s ease-in-out infinite;
     }
 
-    /* BỤI BAY */
-    .dust{
+    /* BACKGROUND THỞ GẤP */
+    @keyframes anxietyPulse{
+      0%{ filter:brightness(1); }
+      50%{ filter:brightness(1.18); }
+      100%{ filter:brightness(1); }
+    }
+
+    @keyframes bgMove{
+      0%{ background-position:0 0; }
+      100%{ background-position:0 400px; }
+    }
+
+    /* ICON LO ÂU BAY */
+    .anxiety-particles{
       position:fixed;
-      top:0; left:0;
-      width:100%; height:100%;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
       pointer-events:none;
-      background-image:
-        radial-gradient(rgba(255,255,255,0.8) 2px, transparent 2px),
-        radial-gradient(rgba(200,180,255,0.5) 1.5px, transparent 1.5px);
-      background-size:3px 60px, 2px 40px;
-      animation:dustMove 1.7s linear infinite;
-      opacity:0.55;
-      z-index:0;
+      z-index:1;
     }
 
-    @keyframes dustMove{
-      from{background-position:0 0, 0 0;}
-      to{background-position:-3px 60px, 2px 40px;}
+    .anxiety-particles span{
+      position:absolute;
+      font-size:26px;
+      color:#6c63ff;
+      opacity:0.7;
+      animation: floatIcon 4s linear infinite;
+    }
+
+    @keyframes floatIcon{
+      0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+      40%{ opacity:1; }
+      100%{ transform:translateY(180px) rotate(160deg); opacity:0; }
     }
 
     /* CARD */
     .card{
-      max-width:750px;
+      max-width:780px;
       margin:100px auto 80px;
       background:white;
       border-radius:25px;
       padding:45px;
       position:relative;
-      z-index:2;
+      z-index:3;
       border:5px solid var(--g2);
-      box-shadow:0 0 30px rgba(138,99,255,0.4);
+      box-shadow:0 0 30px rgba(108,99,255,0.45);
       animation: cardGlow 4s ease-in-out infinite;
       text-align:center;
     }
 
     @keyframes cardGlow{
-      0%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
-      50%{ box-shadow:0 0 40px rgba(138,99,255,0.9); }
-      100%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
+      0%{ box-shadow:0 0 20px rgba(108,99,255,0.3); }
+      50%{ box-shadow:0 0 45px rgba(108,99,255,0.9); }
+      100%{ box-shadow:0 0 20px rgba(108,99,255,0.3); }
     }
 
-    /* Anxiety walking */
-    .anxiety-walk{
+    /* ========= ANXIETY ANIMATION PRO MAX ========= */
+
+    .anxiety-container{
       position:absolute;
       bottom:-35px;
-      left:-150px;
-      width:160px;
-      opacity:0.97;
+      left:-160px;
+      width:180px;
+      z-index:4;
       animation: anxietyWalk 11s linear infinite;
     }
 
+    /* Anxiety đi qua lại */
     @keyframes anxietyWalk{
-      0%{ left:-180px; transform:scaleX(1); }
-      45%{ left:calc(100% - 60px); transform:scaleX(1); }
+      0%{ left:-200px; transform:scaleX(1); }
+      45%{ left:calc(100% - 40px); transform:scaleX(1); }
       50%{ transform:scaleX(-1); }
-      95%{ left:-180px; transform:scaleX(-1); }
+      95%{ left:-200px; transform:scaleX(-1); }
       100%{ transform:scaleX(1); }
     }
 
-    /* Avatar */
+    /* RUNG LO ÂU */
+    .anxiety-img{
+      width:160px;
+      opacity:0.96;
+      animation:
+        anxietyShake 0.18s infinite,
+        panicJump 3s infinite ease-in-out,
+        headShake 4s infinite ease-in-out;
+    }
+
+    /* run run */
+    @keyframes anxietyShake{
+      0%{ transform:translate(0,0); }
+      50%{ transform:translate(-2px,1px); }
+      100%{ transform:translate(2px,-1px); }
+    }
+
+    /* giật mình nhẹ */
+    @keyframes panicJump{
+      0%{ transform:translateY(0); }
+      45%{ transform:translateY(-8px); }
+      100%{ transform:translateY(0); }
+    }
+
+    /* lắc đầu */
+    @keyframes headShake{
+      0%{ transform:rotate(0deg); }
+      30%{ transform:rotate(3deg); }
+      60%{ transform:rotate(-3deg); }
+      100%{ transform:rotate(0deg); }
+    }
+
+    /* Hiệu ứng sét chạy quanh Anxiety */
+    .anxiety-light{
+      position:absolute;
+      width:35px;
+      height:35px;
+      color:#6c63ff;
+      font-size:32px;
+      left:50%;
+      top:-10px;
+      animation: lightning 1.2s infinite;
+      transform:translateX(-50%);
+    }
+
+    @keyframes lightning{
+      0%{ opacity:0; transform:translateY(0) scale(0.8); }
+      20%{ opacity:1; transform:translateY(-10px) scale(1.2); }
+      40%{ opacity:0; transform:translateY(0) scale(0.8); }
+      100%{ opacity:0; }
+    }
+
+    /* ============================================ */
+
+    /* Avatar giữ nguyên */
     .avatar{
       width:170px;
       height:170px;
       border-radius:50%;
       object-fit:cover;
-      border:6px solid #c2b3ff;
-      box-shadow:0 0 30px rgba(138,99,255,0.7);
+      border:6px solid var(--g2);
+      box-shadow:0 0 30px rgba(108,99,255,0.7);
       animation: glowAvatar 4s ease-in-out infinite;
       margin-top:15px;
     }
 
     @keyframes glowAvatar{
-      0%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
-      50%{ box-shadow:0 0 40px rgba(138,99,255,0.8); }
-      100%{ box-shadow:0 0 20px rgba(138,99,255,0.35); }
-    }
-
-    /* Sparkle */
-    .sparkle{
-      position:absolute;
-      top:-10px;
-      right:20px;
-      font-size:28px;
-      color:#8a63ff;
-      opacity:0.9;
-      animation: sparkle 2.8s linear infinite;
-    }
-
-    @keyframes sparkle{
-      0%{ transform:translateY(0) scale(1); opacity:0; }
-      30%{ opacity:1; }
-      100%{ transform:translateY(140px) scale(1.4); opacity:0; }
+      0%{ box-shadow:0 0 20px rgba(108,99,255,0.35); }
+      50%{ box-shadow:0 0 40px rgba(108,99,255,0.8); }
+      100%{ box-shadow:0 0 20px rgba(108,99,255,0.35); }
     }
 
     h2{
@@ -156,90 +215,111 @@
       text-decoration:none;
       font-weight:600;
       transition:.2s;
-      box-shadow:0 5px 15px rgba(138,99,255,0.3);
+      box-shadow:0 5px 15px rgba(108,99,255,0.3);
     }
-    a:hover{ background:#6b44ff; }
+    a:hover{ background:#513aff; }
   </style>
+
 </head>
 <body>
 
-  <div class="dust"></div>
+  <!-- ICON CHUYỂN ĐỘNG KIỂU LO ÂU -->
+  <div class="anxiety-particles">
+      <span style="top:10%; left:20%;">⚡</span>
+      <span style="top:30%; left:70%; animation-delay:.5s">⚡</span>
+      <span style="top:50%; left:40%; animation-delay:1.2s">⚡</span>
+      <span style="top:70%; left:10%; animation-delay:.8s">⚡</span>
+      <span style="top:20%; left:85%; animation-delay:1.5s">⚡</span>
+  </div>
 
   <div class="card">
 
-    <img class="anxiety-walk"
-      src="hinhthao.png"
-      alt="Inside Out - Anxiety">
+    <!-- Anxiety PRO MAX -->
+    <div class="anxiety-container">
+        <img class="anxiety-img" src="hinhthao.png" alt="Inside Out Anxiety">
+        <div class="anxiety-light">⚡</div>
+    </div>
 
-    <div class="sparkle">✨</div>
-
-    <!-- Sửa lỗi ảnh avatar (đổi đuôi .png nếu file thật là PNG) -->
+    <!-- Avatar giữ nguyên -->
     <img class="avatar" src="hinhthao.png" alt="Avatar Quang Thảo">
 
     <h2>Thiều Quang Thảo</h2>
     <p><strong>Lớp:</strong> 12A</p>
     <p><strong>Ngày sinh:</strong> 04/04/2008</p>
 
+    <!-- GIỚI THIỆU -->
     <div class="section-title"><span class="material-icons">person</span> Giới thiệu</div>
     <div class="box">
-      Mình là người hơi lo lắng, thường quan sát mọi thứ xung quanh và suy nghĩ trước khi hành động.  
-      Mình hơi nhút nhát nhưng chu đáo, luôn cố gắng giúp đỡ và tạo cảm giác an toàn cho bạn bè.
+      Mình là người hay lo lắng nhưng luôn cố gắng làm mọi thứ thật chỉn chu.  
+      Mình quan sát tốt, thích làm việc gọn gàng và luôn muốn giúp đỡ bạn bè.
     </div>
 
+    <!-- TÍNH CÁCH -->
     <div class="section-title"><span class="material-icons">emoji_emotions</span> Tính cách</div>
     <div class="box">
-      • Cẩn thận, tỉ mỉ và thích chuẩn bị trước mọi việc<br>
-      • Hơi lo lắng quá mức nhưng luôn chu đáo<br>
-      • Thân thiện, biết quan tâm và lắng nghe<br>
-      • Thỉnh thoảng nhút nhát nhưng rất chân thành
+      • Cẩn thận, tỉ mỉ<br>
+      • Lo lắng nhưng chu đáo<br>
+      • Lắng nghe tốt<br>
+      • Chân thành và ấm áp
     </div>
 
+    <!-- SỞ THÍCH -->
     <div class="section-title"><span class="material-icons">favorite</span> Sở thích</div>
     <div class="box">
-      • Nghe nhạc nhẹ và đọc sách<br>
-      • Chơi trò chơi tư duy<br>
-      • Quan sát và phân tích tình huống<br>
-      • Tham gia hoạt động nhóm nhỏ
+      • Nghe nhạc nhẹ<br>
+      • Đọc sách<br>
+      • Chơi game tư duy<br>
+      • Hoạt động nhóm nhỏ
     </div>
 
-    <!-- === NHẠC YÊU THÍCH === -->
+    <!-- NHẠC YÊU THÍCH -->
     <div class="section-title">
       <span class="material-icons">library_music</span> Nhạc yêu thích
     </div>
 
     <div class="box">
-      Đây là bài nhạc mình thường nghe mỗi khi thư giãn hoặc muốn lấy lại năng lượng tích cực.
-      <br><br>
+      Đây là bài nhạc mình hay nghe để thư giãn.<br><br>
 
-      <audio controls style="width:100%; border-radius:12px; outline:none;">
-        <source src="qtmusic.audio" type="audio">
+      <audio controls style="width:100%; border-radius:12px;">
+        <source src="qtmusic.mp3" type="mp3">
         Trình duyệt không hỗ trợ phát nhạc.
       </audio>
     </div>
 
+    <!-- PHÂN CÔNG CÔNG VIỆC -->
+    <div class="section-title"><span class="material-icons">task_alt</span> Phân công công việc</div>
+    <div class="box">
+      • Tự thiết lập trang cá nhân<br><br>
+      • Thực hiện Bài 9 – Tạo danh sách và bảng<br><br>
+      • Viết code cho Bài 13 – Khái niệm và vai trò của CSS<br>
+    </div>
+
+    <!-- THÔNG TIN BẠN BÈ -->
     <div class="section-title"><span class="material-icons">group</span> Bạn cùng bàn – Chí Cường</div>
     <div class="box">
-      <strong>Chí Cường</strong> là người bạn cùng bàn đáng tin cậy, đôi khi hay làm mình “giật mình” với những suy nghĩ nhanh nhạy của bạn ấy.  
-      Ngồi cạnh Cường, mình cảm giác vừa an toàn vừa hơi bị “áp lực tinh thần”, nhưng bạn luôn biết lúc nào nên nghiêm túc.  
+      <strong>Chí Cường</strong> là người bạn thông minh, đôi lúc làm mình “giật mình” vì quá lanh.  
+      Ngồi cạnh rất vui nhưng cũng hơi áp lực tinh thần.  
       <br><br>
-      🌐 Facebook: <a href="https://www.facebook.com/chi.cuong.759149" target="_blank">facebook.com/chi.cuong.759149</a>
+      🌐 Facebook:  
+      <a href="https://www.facebook.com/chi.cuong.759149" target="_blank">facebook.com/chi.cuong.759149</a>
     </div>
 
     <div class="section-title"><span class="material-icons">person_pin_circle</span> Bạn thân – Nguyên Phương</div>
     <div class="box">
-      <strong>Nguyên Phương</strong> là người bạn thân mà mình luôn cảm thấy an tâm khi ở cạnh.  
-      Bạn hiểu mình, biết cách lắng nghe và đưa ra lời khuyên hữu ích.  
-      Đôi khi vụng về nhưng chính điều đó làm tình bạn thêm vui nhộn.  
+      <strong>Nguyên Phương</strong> luôn biết cách lắng nghe và hiểu mình.  
+      Vụng về chút nhưng rất dễ thương và đáng tin tưởng.  
       <br><br>
-      🌐 Facebook: <a href="https://www.facebook.com/le.ngoc.nguyen.phuong.160071" target="_blank">facebook.com/le.ngoc.nguyen.phuong.160071</a>
+      🌐 Facebook:
+      <a href="https://www.facebook.com/le.ngoc.nguyen.phuong.160071" target="_blank">facebook.com/le.ngoc.nguyen.phuong.160071</a>
     </div>
 
     <div class="section-title"><span class="material-icons">emoji_people</span> Bạn thân – Kim Khánh</div>
     <div class="box">
-      <strong>Kim Khánh</strong> là người vui tính, luôn làm bầu không khí sôi động.  
-      Khánh thích khám phá điều mới, học giỏi, chăm chỉ nhưng đôi lúc nói chuyện “mặn” quá khiến mình vừa cười vừa lắc đầu.  
+      <strong>Kim Khánh</strong> vui tính, hoạt bát và nói chuyện “mặn” cực kỳ.  
+      Điểm sáng của nhóm và luôn tạo tiếng cười.  
       <br><br>
-      🌐 Facebook: <a href="https://www.facebook.com/huynh.kim.khanh.776190" target="_blank">facebook.com/huynh.kim.khanh.776190</a>
+      🌐 Facebook:
+      <a href="https://www.facebook.com/huynh.kim.khanh.776190" target="_blank">facebook.com/huynh.kim.khanh.776190</a>
     </div>
 
     <a href="index.html">← Quay lại trang chính</a>
