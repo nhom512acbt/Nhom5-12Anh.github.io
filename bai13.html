@@ -1,1 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bài 13: Khái niệm, vai trò của CSS</title>
+
+<style>
+    /* ==== HIỆU ỨNG THEME INSIDE OUT (Năng lượng cảm xúc) ==== */
+    :root{
+        --c1:#ff9ed8;
+        --c2:#9db4ff;
+        --c3:#ffd166;
+        --bg:#f2ecff;
+    }
+
+    body{
+        margin:0;
+        font-family:"Segoe UI",Arial;
+        background: linear-gradient(150deg, var(--c1), var(--c2), var(--c3));
+        background-size: 400% 400%;
+        animation: gradientMove 10s ease-in-out infinite;
+        color:#2b1a3a;
+        padding-bottom:50px;
+    }
+
+    @keyframes gradientMove{
+        0%{background-position:0% 50%;}
+        50%{background-position:100% 50%;}
+        100%{background-position:0% 50%;}
+    }
+
+    /* CARD NỘI DUNG */
+    .wrapper{
+        width:85%;
+        background:white;
+        margin:40px auto;
+        padding:30px;
+        border-radius:20px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.15);
+        animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn{
+        from{opacity:0; transform:translateY(25px);}
+        to{opacity:1; transform:translateY(0);}
+    }
+
+    h1{
+        text-align:center;
+        font-size:35px;
+        color:#4b2e83;
+        margin-bottom:25px;
+        text-shadow:0 0 10px rgba(255,255,255,0.7);
+    }
+
+    /* TITLE HẠNG MỤC LỚN */
+    .category{
+        font-size:28px;
+        font-weight:700;
+        padding:15px 20px;
+        margin-top:40px;
+        background:linear-gradient(90deg,#ffd3ee,#cab8ff);
+        border-left:10px solid #8b5cf6;
+        border-radius:12px;
+        animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse{
+        0%{transform:scale(1);}
+        50%{transform:scale(1.02);}
+        100%{transform:scale(1);}
+    }
+
+    /* BOX NỘI DUNG */
+    .box{
+        margin-top:18px;
+        background:var(--bg);
+        padding:18px 22px;
+        border-radius:12px;
+        line-height:1.6;
+        border-left:6px solid #7c3aed;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* CODE BLOCK */
+    pre{
+        background:#1b1b1b;
+        color:#e6e6e6;
+        padding:15px;
+        border-radius:10px;
+        overflow-x:auto;
+        margin-top:15px;
+    }
+
+    /* Nút quay lại */
+    .back{
+        display:inline-block;
+        margin-top:35px;
+        padding:12px 20px;
+        background:#7c3aed;
+        color:white;
+        border-radius:10px;
+        text-decoration:none;
+        font-weight:600;
+        box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        transition:0.2s;
+    }
+    .back:hover{
+        background:#5b21b6;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <h1>Luyện tập và Vận dụng – Tin học 12 (Trang 75)</h1>
+
+    <!-- ====================== LUYỆN TẬP ======================= -->
+
+    <div class="category">Luyện tập</div>
+
+    <div class="box">
+        <strong>Luyện tập 1 – Trang 75:</strong>  
+        Khẳng định “Ngôn ngữ định dạng CSS chính là ngôn ngữ HTML” là đúng hay sai?
+        <br><br>
+        <strong>Lời giải:</strong><br>
+        Sai. Ngôn ngữ định dạng CSS không phải là HTML.  
+        HTML tạo cấu trúc nội dung trang web, còn CSS điều chỉnh cách các phần tử HTML hiển thị như màu sắc, kích thước, khoảng cách…
+    </div>
+
+    <div class="box">
+        <strong>Luyện tập 2 – Trang 75:</strong><br>
+        Khẳng định “Có thể chỉ cần thay đổi thông tin của tệp CSS sẽ làm thay đổi định dạng của nhiều trang web thậm chí của cả một trang website” là đúng hay sai?
+        <br><br>
+        <strong>Lời giải:</strong><br>
+        Đúng. Thay đổi tệp CSS sẽ ảnh hưởng đồng loạt đến nhiều trang trong website vì CSS là file định dạng chung.
+    </div>
+
+
+    <!-- ====================== VẬN DỤNG ======================= -->
+
+    <div class="category">Vận dụng</div>
+
+    <div class="box">
+        <strong>Vận dụng 1 – Trang 75:</strong><br>
+        Trình bày sự giống nhau và tương thích giữa Style Sheet (trong phần mềm soạn thảo văn bản) và CSS trên trang web.
+        <br><br>
+        <strong>Lời giải:</strong><br>
+        • Cấu trúc – cú pháp tương tự<br>
+        • Có tính tái sử dụng<br>
+        • Tạo khuôn mẫu định dạng cho văn bản<br>
+        • Kiểm soát phong cách (màu – font – khoảng cách…)
+    </div>
+
+
+    <!-- ====================== VẬN DỤNG 2 ======================= -->
+
+    <div class="box">
+        <strong>Vận dụng 2 – Trang 75:</strong><br>
+        Thiết lập trang web với nội dung sau và định dạng trang bằng các mẫu CSS:
+        <br><br>
+
+        <strong>🔧 PHẦN 1 – MẪU CODE:</strong>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lịch sử CSS&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="title"&gt;Lịch sử CSS&lt;/h1&gt;
+
+        &lt;p&gt;Ý tưởng của CSS do kỹ sư Hakon Wium Lie thiết lập năm 1994 khi làm việc với Tim Berners-Lee tại CERN.&lt;/p&gt;
+
+        &lt;p&gt;CSS tạo ra các mẫu định dạng riêng giúp tối ưu hóa việc thiết kế trang web.&lt;/p&gt;
+
+        &lt;h2 class="subtitle"&gt;Lịch sử các phiên bản CSS đầu tiên&lt;/h2&gt;
+        &lt;p&gt;CSS1 ra đời năm 1996.&lt;/p&gt;
+        &lt;p&gt;CSS2 hoàn thiện năm 1998, CSS2.1 được cập nhật năm 2011 và 2016.&lt;/p&gt;
+
+        &lt;h2 class="subtitle"&gt;Các phiên bản CSS tiếp theo&lt;/h2&gt;
+        &lt;p&gt;Từ CSS3, ngôn ngữ được phát triển theo từng module riêng biệt.&lt;/p&gt;
+
+        &lt;p&gt;W3C là tổ chức chịu trách nhiệm phát triển các chuẩn HTML/CSS.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+        <strong>🔧 PHẦN 2 – KẾT QUẢ HIỂN THỊ:</strong>
+
+        <div style="margin-top:18px; padding:15px; background:white; border-radius:12px; border-left:6px solid #8b5cf6;">
+            <h2 style="margin:0; color:#4b2e83;">Lịch sử CSS</h2>
+            <p>Ý tưởng của CSS do kỹ sư Hakon Wium Lie thiết lập năm 1994 khi làm việc tại CERN.</p>
+            <p>CSS tạo phong cách độc lập cho HTML.</p>
+
+            <h3 style="color:#6d28d9;">Lịch sử các phiên bản CSS đầu tiên</h3>
+            <p>CSS1 ra đời 1996.</p>
+            <p>CSS2 hoàn thiện 1998. CSS2.1 được cập nhật 2011 và 2016.</p>
+
+            <h3 style="color:#6d28d9;">Các phiên bản CSS tiếp theo</h3>
+            <p>CSS3 phát triển theo module.</p>
+            <p>W3C phát triển chuẩn CSS và HTML.</p>
+        </div>
+
+    </div>
+
+    <a class="back" href="index.html">← Quay lại trang chính</a>
+
+</div>
+
+</body>
+</html>
 
