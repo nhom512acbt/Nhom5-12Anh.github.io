@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập trang 51</title>
+</head>
+
+<body>
+
+    <h1>Bài tập trang 51</h1>
+
+    <!-- Luyện tập 1 -->
+    <h2>Luyện tập 1</h2>
+    <p>
+        <strong>Thẻ strong</strong> vào <em>thẻ em</em> được sử dụng để nhấn mạnh vào nội dung trong phần tử.
+        Thẻ <strong>b</strong> chỉ có tác dụng in đậm văn bản.
+    </p>
+
+    <!-- Luyện tập 2 -->
+    <h2>Luyện tập 2</h2>
+
+    <h1>INTERNET TỐC ĐỘ CAO</h1>
+    <p>
+        <em>Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao,
+        ổn định, giá cả hợp lí.</em>
+    </p>
+
+    <h2><strong>Các tính năng nổi bật:</strong></h2>
+    <ul>
+        <li>Tốc độ siêu cao từ 150 MBps trở lên</li>
+        <li>Lắp đặt nhanh chóng trong 24h</li>
+        <li>Phù hợp với cá nhân/Hộ gia đình</li>
+        <li>Tặng Modem 2 băng tần</li>
+        <li>Miễn phí lắp đặt</li>
+        <li>Hỗ trợ 24/7</li>
+    </ul>
+
+    <!-- Vận dụng 1 -->
+    <h2>Vận dụng 1</h2>
+    <p>Các bước để sử dụng màu trong ảnh làm màu tiêu đề bài thơ:</p>
+    <ol>
+        <li>Chọn màu cụ thể từ bức ảnh.</li>
+        <li>Chọn ảnh nền phù hợp.</li>
+        <li>Tạo tiêu đề bằng thẻ <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> hoặc <code>&lt;h3&gt;</code>.</li>
+        <li>Thêm CSS để đặt ảnh nền và đổi màu chữ bằng thuộc tính <code>color</code>.</li>
+    </ol>
+
+    <!-- Vận dụng 2 -->
+    <h2>Vận dụng 2</h2>
+    <p>Các định dạng văn bản cần áp dụng:</p>
+    <ul>
+        <li>Định dạng chữ đậm.</li>
+        <li>Định dạng chữ thường.</li>
+        <li>Định dạng cỡ chữ.</li>
+    </ul>
+
+</body>
+</html>
