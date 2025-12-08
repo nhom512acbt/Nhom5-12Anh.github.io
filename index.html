@@ -11,7 +11,6 @@
     overflow-x: hidden;
   }
 
-  /* Background hình mờ */
   body::before{
     content: "";
     position: fixed;
@@ -24,10 +23,6 @@
     -webkit-filter: blur(15px) brightness(0.85);
     z-index: -1;
   }
-
-  /* ===========================
-        BANNER FULL + SƯƠNG MÙ
-     =========================== */
 
   .top-banner{
     width: 100%;
@@ -60,10 +55,6 @@
     from{ transform: translateX(-20%); }
     to{ transform: translateX(20%); }
   }
-
-  /* ===========================
-          CÁC STYLE GỐC
-     =========================== */
 
   :root{
       --joy: #FFD700;
@@ -120,34 +111,6 @@
       margin-bottom:14px;
     }
 
-    .members ul{
-      list-style:none;
-      padding:0;
-      display:flex;
-      flex-wrap: wrap;
-      gap:10px;
-    }
-
-    .members li{
-      background: var(--disgust);
-      color:white;
-      padding:10px 14px;
-      border-radius:12px;
-      border:2px solid var(--fear);
-      font-weight:600;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .members li:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .members li a{
-      color:white;
-      text-decoration:none;
-    }
-
     .task{
       background: #FFF5E6;
       border:2px solid var(--joy);
@@ -191,12 +154,90 @@
       color: var(--muted);
       font-style: italic;
     }
+
+    /* ==========================
+         CARD THÀNH VIÊN
+       ========================== */
+
+    .member-grid{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .member-card{
+      width: 230px;
+      padding: 28px 18px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform .25s, box-shadow .25s;
+      color: white;
+    }
+
+    .member-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+
+    .member-card img{
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .member-name{
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .member-class{
+      font-size: 18px;
+      margin-bottom: 16px;
+      opacity: 0.85;
+    }
+
+    .member-btn{
+      display: inline-block;
+      padding: 10px 18px;
+      background: white;
+      color: #444;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .member-btn:hover{
+      transform: scale(1.06);
+    }
+
+    /* --- MÀU INSIDE OUT --- */
+    .joy{
+      background: linear-gradient(180deg, #ffe44c, #ffcc00);
+    }
+    .disgust{
+      background: linear-gradient(180deg, #4cd964, #2ecc71);
+    }
+    .sadness{
+      background: linear-gradient(180deg, #5aa0ff, #1e70ff);
+    }
+    .anger{
+      background: linear-gradient(180deg, #ff5733, #d90404);
+    }
+    .fear{
+      background: linear-gradient(180deg, #a569ff, #7d3cff);
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- BANNER FULL WIDTH + FOG -->
   <div class="top-banner">
     <img src="banner.jpg" alt="Banner của nhóm">
     <div class="fog"></div>
@@ -206,24 +247,54 @@
     <h1>Nhóm 5 – 12Anh</h1>
     <p class="lead">Trang web tổng hợp bài tập – thuyết trình – sản phẩm học tập</p>
 
+    <!-- =================================================
+           THÀNH VIÊN (ĐÃ CHỈNH THÀNH CARD INSIDE OUT)
+         ================================================= -->
     <section class="members">
       <h2>Thành viên nhóm</h2>
-      <ul>
-        <li><a href="thanh.html">Huỳnh Thị Kim Thanh</a></li>
-        <li><a href="diep.html">Huỳnh Thị Ngọc Diệp</a></li>
-        <li><a href="dang.html">Hồ Hải Đăng</a></li>
-        <li><a href="thao.html">Thiều Quang Thảo</a></li>
-        <li><a href="thuan.html">Lương Huy Thuận</a></li>
-      </ul>
-    </section>
 
-    <section class="welcome">
-      <h2>Xin chào!</h2>
-      <p>Chào mừng bạn đến với trang web của Nhóm 5 – 12Anh. Đây là nơi lưu trữ toàn bộ bài tập và sản phẩm học tập của nhóm.</p>
+      <div class="member-grid">
+
+        <div class="member-card joy">
+          <img src="yellow.png" alt="">
+          <div class="member-name">Huỳnh Thị Kim Thanh</div>
+          <div class="member-class"> Lớp 12A </div>
+          <a href="thanh.html" class="member-btn">Xem trang cá nhân</a>
+        </div>
+
+        <div class="member-card disgust">
+          <img src="green.png" alt="">
+          <div class="member-name">Huỳnh Thị Ngọc Diệp</div>
+          <div class="member-class"> Lớp 12A </div>
+          <a href="diep.html" class="member-btn">Xem trang cá nhân</a>
+        </div>
+
+        <div class="member-card sadness">
+          <img src="blue.png" alt="">
+          <div class="member-name">Hồ Hải Đăng</div>
+          <div class="member-class"> Lớp 12A </div>
+          <a href="dang.html" class="member-btn">Xem trang cá nhân</a>
+        </div>
+
+        <div class="member-card anger">
+          <img src="red.png" alt="">
+          <div class="member-name">Thiều Quang Thảo</div>
+          <div class="member-class"> Lớp 12A </div>
+          <a href="thao.html" class="member-btn">Xem trang cá nhân</a>
+        </div>
+
+        <div class="member-card fear">
+          <img src="purple.png" alt="">
+          <div class="member-name">Lương Huy Thuận</div>
+          <div class="member-class">  Lớp 12A </div>
+          <a href="thuan.html" class="member-btn">Xem trang cá nhân</a>
+        </div>
+
+      </div>
     </section>
 
     <!-- =============================
-          PHẦN BÀI TẬP (ĐÃ CHỈNH)
+          PHẦN BÀI TẬP (GIỮ NGUYÊN)
          ============================= -->
    <section class="assignments">
   <h2>Bài tập</h2>
@@ -276,4 +347,3 @@
   </main>
 </body>
 </html>
-
