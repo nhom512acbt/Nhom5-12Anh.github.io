@@ -1,18 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bài 16: Định dạng khung</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Cascadia+Code&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fbfffb;
+      --card:#ffffff;
+      --accent:#2e8b57;
+      --muted:#555;
+    }
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg,#f0fff4,var(--bg));
+      padding:30px;
+      color:#222;
+    }
+    .wrap{
+      max-width:820px;
+      margin:0 auto;
+      background:var(--card);
+      border-radius:12px;
+      padding:24px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      margin:0 0 18px;
+      color:var(--accent);
+    }
+
+    .exercise{
+      font-size:18px;
+      line-height:1.9;
+    }
+
+    .title{
+      color:var(--accent);
+      font-weight:700;
+      font-size:20px;
+      margin-bottom:12px;
+    }
+
+    .solution{
+      background:#f1fff5;
+      border-left:5px solid var(--accent);
+      padding:16px 20px;
+      border-radius:8px;
+    }
+
+    .solution strong{
+      color:var(--accent);
+    }
+
+    code{
+      font-family: "Cascadia Code","Courier Prime", monospace;
+      background:#e8f5e9;
+      padding:4px 8px;
+      border-radius:6px;
+      color:#1e6c42;
+      font-weight:600;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <h1>Bài 16: Định dạng khung</h1>
 
-    <h1>Bai 14: Định dạng văn bản bằng CSS </h1>
+    <div class="exercise">
+     <p>
+  <span class="green">Luyện tập 1 trang 95</span>
+</p>
 
-    <!-- TAB BUTTONS -->
-    <div class="tabs">
-      <div class="tab-btn active" data-tab="lt">Luyện tập</div>
-      <div class="tab-btn" data-tab="vd">Vận dụng</div>
+<p>
+  Phần tử HTML có thể ẩn đi trên trang web được không?
+  Nếu có thì dùng lệnh CSS gì?
+</p>
+
+<div class="solution">
+  <span class="green">Lời giải:</span><br>
+  Có, phần tử HTML có thể được ẩn đi trên trang web bằng cách sử dụng lệnh CSS
+  <span class="green">display: none;</span>.
+</div>
+
     </div>
-<span style="color: green; font-weight: bold;">Luyện tập 1 trang 95</span>
-
-<span style="color: green; font-weight: bold;">Lời giải:</span>  
-Có, phần tử HTML có thể được ẩn đi trên trang web bằng cách sử dụng lệnh CSS  
-<span style="color: green; font-weight: bold;">display: none;</span>.
+  </div>
+</body>
+</html>
