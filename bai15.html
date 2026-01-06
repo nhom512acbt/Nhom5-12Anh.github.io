@@ -1,163 +1,192 @@
+
+</div>
+</body>
+</html>
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bài 15 - Tạo màu cho chữ và nền</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài 15 - Tạo màu cho chữ và nền</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Cascadia+Code&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Cascadia+Code&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#fff6f2;
-      --card:#ffffff;
-      --accent:#ff5722;
-      --accent-dark:#e64a19;
-      --muted:#555;
-      --code-bg:#fff0e8;
-    }
+<style>
+:root{
+  --bg:#fff6f2;
+  --card:#ffffff;
+  --accent:#ff5722;
+  --accent-dark:#e64a19;
+  --code-bg:#fff0e8;
+}
 
-    body{
-      margin:0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg,#ffe3d6,var(--bg));
-      padding:30px;
-      color:#222;
-    }
+body{
+  margin:0;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:linear-gradient(180deg,#ffe3d6,var(--bg));
+  padding:30px;
+  color:#222;
+}
 
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      background:var(--card);
-      border-radius:14px;
-      padding:28px;
-      box-shadow:0 10px 35px rgba(0,0,0,0.12);
-    }
+.wrap{
+  max-width:1000px;
+  margin:auto;
+  background:var(--card);
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.12);
+}
 
-    h1{
-      margin:0 0 18px;
-      color:var(--accent);
-    }
+h1,h2,h4{
+  color:var(--accent);
+}
 
-    h2{
-      color:var(--accent-dark);
-      margin-top:28px;
-    }
+.exercise{
+  font-size:18px;
+  line-height:1.9;
+}
 
-    .exercise{
-      font-size:18px;
-      line-height:1.9;
-    }
+.solution{
+  background:#fff3ec;
+  border-left:6px solid var(--accent);
+  padding:18px 22px;
+  border-radius:10px;
+  margin-top:12px;
+}
 
-    .solution{
-      background:#fff3ec;
-      border-left:6px solid var(--accent);
-      padding:18px 22px;
-      border-radius:10px;
-      margin-top:12px;
-    }
+code{
+  font-family:"Cascadia Code","Courier Prime", monospace;
+  background:var(--code-bg);
+  padding:5px 9px;
+  border-radius:6px;
+  color:#bf360c;
+  font-weight:600;
+}
 
-    .solution strong{
-      color:var(--accent-dark);
-    }
+pre{
+  background:#fff;
+  padding:12px;
+  border-radius:8px;
+  overflow:auto;
+}
 
-    code{
-      font-family: "Cascadia Code","Courier Prime", monospace;
-      background:var(--code-bg);
-      padding:5px 9px;
-      border-radius:6px;
-      color:#bf360c;
-      font-weight:600;
-    }
+hr{
+  margin:28px 0;
+  border:none;
+  border-top:1px dashed #ffab91;
+}
 
-    hr{
-      margin:28px 0;
-      border:none;
-      border-top:1px dashed #ffab91;
-    }
+.color-sample{
+  width:100px;
+  height:100px;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #000;
+}
 
-    .color-sample{
-      width:100px;
-      height:100px;
-      display:inline-block;
-      margin:10px;
-      border:1px solid #000;
-    }
+/* ====== Layout vận dụng ====== */
+.demo-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin:24px 0;
+}
 
-    .back{
-      text-align:center;
-      margin-top:36px;
-    }
+.code-box{
+  background:#fff3ec;
+  padding:18px;
+  border-radius:10px;
+  border-left:6px solid var(--accent);
+}
 
-    .back a{
-      display:inline-block;
-      padding:14px 30px;
-      background:linear-gradient(135deg,#ff7043,#e64a19);
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      border-radius:10px;
-      font-size:18px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.2);
-    }
-  </style>
+.result-box{
+  background:#ffffff;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid #ffab91;
+}
+
+/* ====== CSS minh họa ====== */
+.parent > .child > span{
+  color:red;
+  font-weight:bold;
+}
+
+.container ul + p + ul{
+  background:#ffe0b2;
+  padding:10px;
+  border-radius:6px;
+}
+
+.back{
+  text-align:center;
+  margin-top:36px;
+}
+
+.back a{
+  display:inline-block;
+  padding:14px 30px;
+  background:linear-gradient(135deg,#ff7043,#e64a19);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:10px;
+  font-size:18px;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
+
 <h1>Luyện tập – Vận dụng Tin học 12 (CSS)</h1>
 
 <div class="exercise">
 
-<h2>Luyện tập 1 trang 88 Tin học 12</h2>
-<p>
-Thiết lập hệ màu cơ bản (17 màu của CSS2.1) theo bộ ba tham số R, G, B.
-</p>
-
-<p><strong>Mã HTML:</strong></p>
+<!-- ================== LUYỆN TẬP 1 ================== -->
+<h2>Luyện tập 1 trang 88</h2>
+<p>Thiết lập hệ màu cơ bản (17 màu của CSS2.1) theo bộ ba tham số R, G, B.</p>
 
 <code>&lt;title&gt;Màu cơ bản của CSS2.1&lt;/title&gt;</code>
 
 <div>
-  <div class="color-sample" style="background-color: rgb(0,0,0);"></div>
-  <div class="color-sample" style="background-color: rgb(255,255,255);"></div>
-  <div class="color-sample" style="background-color: rgb(255,0,0);"></div>
-  <div class="color-sample" style="background-color: rgb(0,128,0);"></div>
-  <div class="color-sample" style="background-color: rgb(0,0,255);"></div>
-  <div class="color-sample" style="background-color: rgb(0,0,128);"></div>
-  <div class="color-sample" style="background-color: rgb(255,255,0);"></div>
-  <div class="color-sample" style="background-color: rgb(255,165,0);"></div>
-  <div class="color-sample" style="background-color: rgb(255,192,203);"></div>
-  <div class="color-sample" style="background-color: rgb(128,0,128);"></div>
-  <div class="color-sample" style="background-color: rgb(0,0,139);"></div>
-  <div class="color-sample" style="background-color: rgb(128,128,128);"></div>
-  <div class="color-sample" style="background-color: rgb(169,169,169);"></div>
-  <div class="color-sample" style="background-color: rgb(211,211,211);"></div>
-  <div class="color-sample" style="background-color: rgb(165,42,42);"></div>
-  <div class="color-sample" style="background-color: rgb(128,128,0);"></div>
-  <div class="color-sample" style="background-color: rgb(0,100,0);"></div>
+  <div class="color-sample" style="background-color:rgb(0,0,0)"></div>
+  <div class="color-sample" style="background-color:rgb(255,255,255)"></div>
+  <div class="color-sample" style="background-color:rgb(255,0,0)"></div>
+  <div class="color-sample" style="background-color:rgb(0,128,0)"></div>
+  <div class="color-sample" style="background-color:rgb(0,0,255)"></div>
+  <div class="color-sample" style="background-color:rgb(0,0,128)"></div>
+  <div class="color-sample" style="background-color:rgb(255,255,0)"></div>
+  <div class="color-sample" style="background-color:rgb(255,165,0)"></div>
+  <div class="color-sample" style="background-color:rgb(255,192,203)"></div>
+  <div class="color-sample" style="background-color:rgb(128,0,128)"></div>
+  <div class="color-sample" style="background-color:rgb(0,0,139)"></div>
+  <div class="color-sample" style="background-color:rgb(128,128,128)"></div>
+  <div class="color-sample" style="background-color:rgb(169,169,169)"></div>
+  <div class="color-sample" style="background-color:rgb(211,211,211)"></div>
+  <div class="color-sample" style="background-color:rgb(165,42,42)"></div>
+  <div class="color-sample" style="background-color:rgb(128,128,0)"></div>
+  <div class="color-sample" style="background-color:rgb(0,100,0)"></div>
 </div>
 
 <hr>
 
-<h2>Luyện tập 2 trang 88 Tin học 12</h2>
-<p>
-Khi nào các mẫu định dạng E F và E &gt; F có tác dụng như nhau?
-</p>
+<!-- ================== LUYỆN TẬP 2 ================== -->
+<h2>Luyện tập 2 trang 88</h2>
 
 <div class="solution">
-<strong>Lời giải:</strong><br>
-Các mẫu định dạng E F và E &gt; F trong CSS có tác dụng như nhau trong trường hợp:
+<strong>Lời giải:</strong>
 <ul>
 <li>Phần tử F là con trực tiếp của phần tử E.</li>
-<li>F không nằm trong bất kỳ phần tử trung gian nào khác.</li>
+<li>F không nằm trong phần tử trung gian khác.</li>
 </ul>
 </div>
 
 <hr>
 
-<h2>Vận dụng 1 trang 88 Tin học 12</h2>
+<!-- ================== VẬN DỤNG 1 ================== -->
+<h2>Vận dụng 1 trang 88</h2>
 <p>
 Tìm ví dụ và giải thích ý nghĩa cho các mẫu định dạng CSS tổng quát.
 </p>
@@ -166,38 +195,78 @@ Tìm ví dụ và giải thích ý nghĩa cho các mẫu định dạng CSS tổ
 <strong>a) Mẫu định dạng E1 E2 E3</strong><br>
 Đây là mẫu kết hợp hậu duệ (descendant selector), áp dụng cho phần tử E3 nằm trong E2, và E2 nằm trong E1, không yêu cầu quan hệ cha–con trực tiếp.
 <br><br>
-Ví dụ: <code>.container .parent .child span</code>
-</div>
 
 <div class="solution">
 <strong>b) Mẫu định dạng E1 &gt; E2 &gt; E3</strong><br>
 Đây là mẫu kết hợp con trực tiếp (child combinator), yêu cầu E2 là con trực tiếp của E1 và E3 là con trực tiếp của E2.
 <br><br>
-Ví dụ: <code>.parent &gt; .child &gt; span</code>
+
+</div>
+
+  <div class="demo-box">
+
+<div class="code-box">
+<h4>Mẫu code</h4>
+<pre><code>&lt;ul class="parent"&gt;
+  &lt;li class="child"&gt;&lt;span&gt;Item 1&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="child"&gt;&lt;span&gt;Item 2&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+.parent &gt; .child &gt; span { color:red; }</code></pre>
+</div>
+
+<div class="result-box">
+<h4>Kết quả</h4>
+<ul class="parent">
+  <li class="child"><span>Item 1</span></li>
+  <li class="child"><span>Item 2</span></li>
+</ul>
+</div>
+
 </div>
 
 <hr>
 
-<h2>Vận dụng 2 trang 88 Tin học 12</h2>
-
+<!-- ================== VẬN DỤNG 2 ================== -->
+<h2>Vận dụng 2 trang 88</h2>
 <div class="solution">
 <strong>a) E + F + G</strong><br>
 Mẫu kết hợp anh em liền kề (adjacent sibling combinator), áp dụng cho phần tử G là anh em kế tiếp của F, và F là anh em kế tiếp của E.
 <br><br>
-Ví dụ: <code>.container h2 + p + p</code>
-</div>
 
 <div class="solution">
 <strong>b) E &gt; F + G</strong><br>
 Mẫu kết hợp giữa con trực tiếp và anh em liền kề, yêu cầu F là con trực tiếp của E và G là anh em kế tiếp của F.
 <br><br>
-Ví dụ: <code>.container &gt; ul + p + ul</code>
+
+<div class="demo-box">
+
+<div class="code-box">
+<h4>Mẫu code</h4>
+<pre><code>&lt;div class="container"&gt;
+  &lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;
+  &lt;p&gt;Paragraph&lt;/p&gt;
+  &lt;ul&gt;&lt;li&gt;Item 3&lt;/li&gt;&lt;li&gt;Item 4&lt;/li&gt;&lt;/ul&gt;
+&lt;/div&gt;
+
+.container ul + p + ul { background:#ffe0b2; }</code></pre>
+</div>
+
+<div class="result-box">
+<h4>Kết quả</h4>
+<div class="container">
+  <ul><li>Item 1</li><li>Item 2</li></ul>
+  <p>Paragraph</p>
+  <ul><li>Item 3</li><li>Item 4</li></ul>
+</div>
+</div>
+
 </div>
 
 </div>
 
 <div class="back">
-  <a href="index.html">← Quay lại trang chính</a>
+<a href="index.html">← Quay lại trang chính</a>
 </div>
 
 </div>
