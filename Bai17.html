@@ -1,99 +1,223 @@
-<section class="bai17">
-  <h1>BÀI 17: BỘ CHỌN NÂNG CAO TRONG CSS</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 17 – Luyện tập & Vận dụng (Tin học 12)</title>
 
-  <h2>Luyện tập 1 (trang 101 SGK Tin học 12)</h2>
-  <p><strong>Đề bài:</strong> Giải thích sự khác nhau giữa hai định dạng sau:</p>
+    <style>
+        :root {
+            --navy: #0a1a2f;
+            --navy-light: #12345b;
+            --white: #ffffff;
+            --gray-bg: #f4f6f9;
+            --code-bg: #0d223a;
+            --accent: #1e90ff;
+        }
 
-  <pre>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--gray-bg);
+            margin: 0;
+            padding: 0;
+            color: #111;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            text-align: center;
+            padding: 28px;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1100px;
+            background: var(--white);
+            margin: 35px auto;
+            padding: 35px 45px;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-left: 8px solid var(--navy-light);
+        }
+
+        h2 {
+            color: var(--navy);
+            border-left: 6px solid var(--accent);
+            padding-left: 12px;
+            font-size: 24px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--navy-light);
+            margin-bottom: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        pre {
+            background: var(--code-bg);
+            color: #d6eaff;
+            padding: 18px;
+            border-left: 5px solid var(--accent);
+            overflow-x: auto;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        code {
+            background: #1b324d;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #ffdd8a;
+        }
+
+        p {
+            font-size: 17px;
+            margin: 12px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 18px;
+            background: var(--navy);
+            color: white;
+            margin-top: 50px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Bài 17 – Các mức ưu tiên của bộ chọn (Luyện tập – Vận dụng)
+</header>
+
+<div class="container">
+
+    <!-- Luyện tập 1 -->
+    <h2>Luyện tập 1 – Trang 101 (Tin học 12)</h2>
+
+    <p><b>Câu hỏi:</b><br>
+    Giải thích sự khác nhau giữa hai định dạng CSS sau:</p>
+
+    <pre>
 #p123 + p
 h2#p123 + p
-  </pre>
+    </pre>
 
-  <p><strong>Lời giải:</strong></p>
-  <p>
-    Hai định dạng CSS <code>#p123 + p</code> và <code>h2#p123 + p</code> khác nhau
-    ở cách chọn phần tử HTML để áp dụng định dạng.
-  </p>
+    <h3>Lời giải:</h3>
 
-  <ul>
-    <li>
-      <strong>#p123 + p:</strong>  
-      Là bộ chọn kết hợp giữa <em>ID selector</em> và <em>sibling combinator</em>.  
-      Nó chọn phần tử <code>p</code> là anh em liền kề ngay sau phần tử có ID là
-      <code>p123</code>, không quan tâm phần tử đó là thẻ gì.
-    </li>
-    <li>
-      <strong>h2#p123 + p:</strong>  
-      Là bộ chọn kết hợp giữa <em>element selector</em>, <em>ID selector</em> và
-      <em>sibling combinator</em>.  
-      Nó chỉ chọn phần tử <code>p</code> đứng ngay sau thẻ <code>h2</code> có ID là
-      <code>p123</code>.
-    </li>
-  </ul>
+    <p>
+        Hai định dạng trên khác nhau ở cách chọn phần tử HTML để áp dụng CSS.
+    </p>
 
-  <h2>Luyện tập 2 (trang 101 SGK Tin học 12)</h2>
-  <p>
-    <strong>Đề bài:</strong> Trong phần Thực hành, các tên riêng (tên người, tên tổ chức)
-    cần được bổ sung định dạng đóng khung và in nghiêng. Em sẽ thực hiện như thế nào?
-  </p>
+    <p>
+        <b>#p123 + p:</b> là bộ chọn kết hợp giữa ID selector và sibling combinator,
+        dùng để chọn thẻ <code>p</code> đứng liền kề sau phần tử có ID là <code>p123</code>,
+        không quan tâm phần tử đó thuộc thẻ nào.
+    </p>
 
-  <p><strong>Lời giải:</strong></p>
+    <p>
+        <b>h2#p123 + p:</b> là bộ chọn kết hợp giữa element selector, ID selector
+        và sibling combinator, chỉ áp dụng cho thẻ <code>p</code> đứng ngay sau
+        thẻ <code>h2</code> có ID là <code>p123</code>.
+    </p>
 
-  <pre>
+    <hr>
+
+    <!-- Luyện tập 2 -->
+    <h2>Luyện tập 2 – Trang 101 (Tin học 12)</h2>
+
+    <p><b>Câu hỏi:</b><br>
+    Trong phần Thực hành, các tên riêng (tên người, tên tổ chức) cần được đóng khung
+    và in nghiêng. Em sẽ thực hiện như thế nào?</p>
+
+    <h3>Lời giải:</h3>
+
+    <p>Ta tạo một lớp CSS để định dạng tên riêng như sau:</p>
+
+    <pre>
 .name {
-  font-style: italic;      /* In nghiêng */
-  border: 1px solid #000;  /* Đóng khung */
+  font-style: italic;
+  border: 1px solid #000;
   padding: 2px;
   display: inline-block;
 }
-  </pre>
+    </pre>
 
-  <p>
-    Khi cần định dạng tên riêng, ta chỉ cần bọc nội dung trong thẻ
-    <code>&lt;span class="name"&gt;</code>.
-  </p>
+    <p>
+        Khi sử dụng, chỉ cần bọc tên riêng trong thẻ
+        <code>&lt;span class="name"&gt;</code>.
+    </p>
 
-  <h2>Vận dụng 1 (trang 101 SGK Tin học 12)</h2>
-  <p>
-    <strong>Đề bài:</strong> Tìm hiểu thêm các dạng <em>pseudo-class</em> khác,
-    nêu ý nghĩa và ví dụ ứng dụng thực tế.
-  </p>
+    <hr>
 
-  <p><strong>Lời giải:</strong></p>
-  <ul>
-    <li>
-      <strong>:hover</strong> – Áp dụng khi người dùng di chuột lên phần tử  
-      (ví dụ: đổi màu nút bấm).
-    </li>
-    <li>
-      <strong>:active</strong> – Áp dụng khi phần tử đang được nhấn giữ chuột.
-    </li>
-    <li>
-      <strong>:focus</strong> – Áp dụng khi phần tử được chọn (ô nhập liệu).
-    </li>
-    <li>
-      <strong>:nth-child(n)</strong> – Chọn phần tử con theo vị trí  
-      (ví dụ: tô màu xen kẽ các dòng trong bảng).
-    </li>
-  </ul>
+    <!-- Vận dụng 1 -->
+    <h2>Vận dụng 1 – Trang 101 (Tin học 12)</h2>
 
-  <h2>Vận dụng 2 (trang 101 SGK Tin học 12)</h2>
-  <p>
-    <strong>Đề bài:</strong> Tìm hiểu thêm các dạng <em>pseudo-element</em>,
-    nêu ý nghĩa và ví dụ ứng dụng thực tế.
-  </p>
+    <p>
+        <b>Yêu cầu:</b> Tìm hiểu thêm các dạng <i>pseudo-class</i>, nêu ý nghĩa và
+        ví dụ ứng dụng thực tế.
+    </p>
 
-  <p><strong>Lời giải:</strong></p>
-  <ul>
-    <li>
-      <strong>::before</strong> – Chèn nội dung trước nội dung chính của phần tử
-      (thêm biểu tượng, ký hiệu).
-    </li>
-    <li>
-      <strong>::after</strong> – Chèn nội dung sau nội dung chính của phần tử.
-    </li>
-    <li>
-      <strong>::first-line</strong> – Định dạng dòng đầu tiên của đoạn văn bản.
-    </li>
-  </ul>
-</section>
+    <h3>Lời giải:</h3>
+
+    <p>
+        <b>:hover</b> – Kích hoạt khi người dùng di chuột qua phần tử
+        (ví dụ: đổi màu nút bấm).
+    </p>
+
+    <p>
+        <b>:active</b> – Kích hoạt khi phần tử đang được nhấn giữ chuột.
+    </p>
+
+    <p>
+        <b>:focus</b> – Kích hoạt khi phần tử được chọn hoặc nhập dữ liệu.
+    </p>
+
+    <p>
+        <b>:nth-child(n)</b> – Chọn phần tử con dựa theo vị trí
+        (ví dụ: tô màu xen kẽ các dòng trong bảng).
+    </p>
+
+    <hr>
+
+    <!-- Vận dụng 2 -->
+    <h2>Vận dụng 2 – Trang 101 (Tin học 12)</h2>
+
+    <p>
+        <b>Yêu cầu:</b> Tìm hiểu thêm các dạng <i>pseudo-element</i>, nêu ý nghĩa
+        và ví dụ ứng dụng thực tế.
+    </p>
+
+    <h3>Lời giải:</h3>
+
+    <p>
+        <b>::before</b> – Chèn nội dung trước nội dung chính của phần tử
+        (thêm biểu tượng, ký hiệu).
+    </p>
+
+    <p>
+        <b>::after</b> – Chèn nội dung sau nội dung chính của phần tử.
+    </p>
+
+    <p>
+        <b>::first-line</b> – Áp dụng định dạng cho dòng đầu tiên của đoạn văn bản.
+    </p>
+
+</div>
+
+<footer>
+    © 2025 – Bài 17 Tin học 12 – Luyện tập & Vận dụng
+</footer>
+
+</body>
+</html>
